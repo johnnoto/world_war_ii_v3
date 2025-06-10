@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II v3 1941" version="1.7"/>
+  <info name="World War II v3 1940" version="1.7"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.7"/>
   <map>
@@ -591,6 +591,7 @@
     <player name="Italians" optional="false"/>
     <player name="Chinese" optional="false"/>
     <player name="Americans" optional="false"/>
+    <player name="French" optional="false"/>
     <!-- Axis Alliance -->
     <alliance player="Italians" alliance="Axis"/>
     <alliance player="Germans" alliance="Axis"/>
@@ -600,6 +601,7 @@
     <alliance player="British" alliance="Allies"/>
     <alliance player="Chinese" alliance="Allies"/>
     <alliance player="Americans" alliance="Allies"/>
+    <alliance player="French" alliance="Allies"/>
   </playerList>
   <unitList>
     <unit name="infantry"/>
@@ -643,6 +645,8 @@
       <step name="britishBidPlace" delegate="placeBid" player="British" maxRunCount="1"/>
       <step name="italiansBid" delegate="bid" player="Italians" maxRunCount="1"/>
       <step name="italiansBidPlace" delegate="placeBid" player="Italians" maxRunCount="1"/>
+      <step name="frenchBid" delegate="bid" player="French" maxRunCount="1"/>
+      <step name="frenchBidPlace" delegate="placeBid" player="French" maxRunCount="1"/>
       <step name="chineseBid" delegate="bid" player="Chinese" maxRunCount="1"/>
       <step name="chineseBidPlace" delegate="placeBid" player="Chinese" maxRunCount="1"/>
       <step name="americanBid" delegate="bid" player="Americans" maxRunCount="1"/>
@@ -692,24 +696,32 @@
       <step name="italianNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italianPlace" delegate="place" player="Italians"/>
       <step name="italianEndTurn" delegate="endTurn" player="Italians"/>
-      <!-- Chinese/Americans Game Sequence -->
+      <!-- Chinese/Americans/French Game Sequence -->
       <step name="americanTech" delegate="tech" player="Americans"/>
+      <step name="frenchTech" delegate="tech" player="French"/>
       <step name="americanTechActivation" delegate="tech_activation" player="Americans"/>
+      <step name="frenchTechActivation" delegate="tech_activation" player="french"/>
       <step name="americanPurchase" delegate="purchase" player="Americans"/>
+      <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="chinesePurchase" delegate="purchaseNoPU" player="Chinese"/>
       <step name="americanCombatMove" delegate="move" player="Americans"/>
       <step name="americanBattle" delegate="battle" player="Americans"/>
       <step name="americanNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
+      <step name="frenchCombatMove" delegate="move" player="French"/>
+      <step name="frenchBattle" delegate="battle" player="French"/>
+      <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="chineseCombatMove" delegate="move" player="Chinese"/>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="americanPlace" delegate="place" player="Americans"/>
+      <step name="frenchPlace" delegate="place" player="French"/>
+      <step name="frenchEndTurn" delegate="endTurn" player="French"/>
       <step name="chinesePlace" delegate="place" player="Chinese"/>
       <step name="chineseEndTurn" delegate="endTurnNoPU" player="Chinese">
         <stepProperty name="skipPosting" value="true"/>
       </step>
       <step name="americanEndTurn" delegate="endTurn" player="Americans">
-        <stepProperty name="turnSummaryPlayers" value="Americans:Chinese"/>
+        <stepProperty name="turnSummaryPlayers" value="Americans:French:Chinese"/>
       </step>
       <!-- End Round -->
       <step name="endRoundStep" delegate="endRound"/>
@@ -921,6 +933,7 @@
     <playerProduction player="Japanese" frontier="production"/>
     <playerProduction player="British" frontier="production"/>
     <playerProduction player="Italians" frontier="production"/>
+    <playerProduction player="French" frontier="production"/>
     <playerProduction player="Chinese" frontier="production"/>
     <playerProduction player="Americans" frontier="production"/>
     <playerRepair player="Germans" frontier="repair"/>
@@ -928,6 +941,7 @@
     <playerRepair player="Japanese" frontier="repair"/>
     <playerRepair player="British" frontier="repair"/>
     <playerRepair player="Italians" frontier="repair"/>
+    <playerRepair player="French" frontier="repair"/>
     <playerRepair player="Chinese" frontier="repair"/>
     <playerRepair player="Americans" frontier="repair"/>
   </production>
@@ -994,6 +1008,21 @@
     </attachment>
     <!-- Italians -->
     <attachment name="techAttachment" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
+      <option name="superSub" value="false"/>
+      <option name="jetPower" value="false"/>
+      <option name="shipyards" value="false"/>
+      <option name="aARadar" value="false"/>
+      <option name="longRangeAir" value="false"/>
+      <option name="heavyBomber" value="false"/>
+      <option name="improvedArtillerySupport" value="false"/>
+      <option name="rocket" value="false"/>
+      <option name="paratroopers" value="false"/>
+      <option name="increasedFactoryProduction" value="false"/>
+      <option name="warBonds" value="false"/>
+      <option name="mechanizedInfantry" value="false"/>
+    </attachment>
+    <!-- French -->
+    <attachment name="techAttachment" attachTo="French" javaClass="games.strategy.triplea.attachments.TechAttachment" type="player">
       <option name="superSub" value="false"/>
       <option name="jetPower" value="false"/>
       <option name="shipyards" value="false"/>
@@ -1225,7 +1254,9 @@
       <option name="production" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="France" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="unitProduction" value="6"/>
       <option name="production" value="6"/>
+      <option name="capital" value="French"/>
       <option name="victoryCity" value="1"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="French Equatorial Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -1589,10 +1620,7 @@
       <!-- German Owned Territories -->
       <territoryOwner territory="Czechoslovakia Hungary" owner="Germans"/>
       <territoryOwner territory="Finland" owner="Germans"/>
-      <territoryOwner territory="France" owner="Germans"/>
       <territoryOwner territory="Germany" owner="Germans"/>
-      <territoryOwner territory="Morocco Algeria" owner="Germans"/>
-      <territoryOwner territory="Northwestern Europe" owner="Germans"/>
       <territoryOwner territory="Norway" owner="Germans"/>
       <territoryOwner territory="Bulgaria Romania" owner="Germans"/>
       <territoryOwner territory="Poland" owner="Germans"/>
@@ -1616,7 +1644,6 @@
       <territoryOwner territory="Yakut S.S.R." owner="Russians"/>
       <!-- Japanese Owned Territories -->
       <territoryOwner territory="Caroline Islands" owner="Japanese"/>
-      <territoryOwner territory="French Indo-China Thailand" owner="Japanese"/>
       <territoryOwner territory="Formosa" owner="Japanese"/>
       <territoryOwner territory="Iwo Jima" owner="Japanese"/>
       <territoryOwner territory="Japan" owner="Japanese"/>
@@ -1632,16 +1659,13 @@
       <territoryOwner territory="East Indies" owner="British"/>
       <territoryOwner territory="Eastern Canada" owner="British"/>
       <territoryOwner territory="Egypt" owner="British"/>
-      <territoryOwner territory="French Equatorial Africa" owner="British"/>
-      <territoryOwner territory="French Madagascar" owner="British"/>
-      <territoryOwner territory="French West Africa" owner="British"/>
       <territoryOwner territory="Gibraltar" owner="British"/>
       <territoryOwner territory="Iceland" owner="British"/>
       <territoryOwner territory="India" owner="British"/>
-      <territoryOwner territory="Italian Africa" owner="British"/>
       <territoryOwner territory="Kwangtung" owner="British"/>
       <territoryOwner territory="New Guinea" owner="British"/>
       <territoryOwner territory="New Zealand" owner="British"/>
+      <territoryOwner territory="Northwestern Europe" owner="British"/>
       <territoryOwner territory="Persia" owner="British"/>
       <territoryOwner territory="Rhodesia" owner="British"/>
       <territoryOwner territory="Saudi Arabia" owner="British"/>
@@ -1654,6 +1678,14 @@
       <territoryOwner territory="Italy" owner="Italians"/>
       <territoryOwner territory="Libya" owner="Italians"/>
       <territoryOwner territory="Balkans" owner="Italians"/>
+      <territoryOwner territory="Italian Africa" owner="Italians"/>
+      <!-- US French Owned Territories -->
+      <territoryOwner territory="France" owner="French"/>
+      <territoryOwner territory="French Indo-China Thailand" owner="French"/>
+      <territoryOwner territory="Morocco Algeria" owner="French"/>
+      <territoryOwner territory="French Equatorial Africa" owner="French"/>
+      <territoryOwner territory="French Madagascar" owner="French"/>
+      <territoryOwner territory="French West Africa" owner="French"/>
       <!-- US Chinese Owned Territories -->
       <territoryOwner territory="Chinghai" owner="Chinese"/>
       <territoryOwner territory="Fukien" owner="Chinese"/>
@@ -1680,21 +1712,19 @@
     <unitInitialize>
       <!-- German Unit Placements -->
       <unitPlacement unitType="armour" territory="Czechoslovakia Hungary" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="France" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="France" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Balkans" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="Balkans" quantity="1" owner="Germans"/>
       <unitPlacement unitType="infantry" territory="Finland" quantity="2" owner="Germans"/>
       <unitPlacement unitType="factory" territory="Germany" quantity="1" owner="Germans"/>
       <unitPlacement unitType="aaGun" territory="Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Germany" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Germany" quantity="6" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="Germany" quantity="3" owner="Germans"/>
+      <unitPlacement unitType="armour" territory="Germany" quantity="3" owner="Germans"/>
+      <unitPlacement unitType="fighter" territory="Germany" quantity="3" owner="Germans"/>
       <unitPlacement unitType="bomber" territory="Germany" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Libya" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Libya" quantity="2" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="Libya" quantity="1" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Libya" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Morocco Algeria" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="infantry" territory="Northwestern Europe" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Northwestern Europe" quantity="1" owner="Germans"/>
       <unitPlacement unitType="infantry" territory="Norway" quantity="2" owner="Germans"/>
       <unitPlacement unitType="fighter" territory="Norway" quantity="1" owner="Germans"/>
       <unitPlacement unitType="infantry" territory="Bulgaria Romania" quantity="3" owner="Germans"/>
@@ -1704,27 +1734,31 @@
       <unitPlacement unitType="artillery" territory="Poland" quantity="1" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Poland" quantity="2" owner="Germans"/>
       <unitPlacement unitType="fighter" territory="Poland" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="submarine" territory="7 Sea Zone" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="submarine" territory="1 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="transport" territory="13 Sea Zone" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="transport" territory="14 Sea Zone" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="destroyer" territory="14 Sea Zone" quantity="1" owner="Germans"/>
       <!-- Russian Unit Placements -->
       <unitPlacement unitType="infantry" territory="Archangel" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Baltic States" quantity="3" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Belorussia" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Baltic States" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Belorussia" quantity="3" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Buryatia S.S.R." quantity="3" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Caucasus" quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Caucasus" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Caucasus" quantity="4" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="East Poland" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Caucasus" quantity="5" owner="Russians"/>
+      <unitPlacement unitType="artillery" territory="Caucasus" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="East Poland" quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Evenki National Okrug" quantity="1" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Karelia S.S.R." quantity="5" owner="Russians"/>
       <unitPlacement unitType="artillery" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Kazakh S.S.R." quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Eastern Ukraine" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Eastern Ukraine" quantity="3" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Novosibirsk" quantity="2" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Russia" quantity="1" owner="Russians"/>
@@ -1733,7 +1767,7 @@
       <unitPlacement unitType="armour" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Stanovoj Chrebet" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Ukraine" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Ukraine" quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Yakut S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="4 Sea Zone" quantity="1" owner="Russians"/>
       <!-- Japanese Unit Placements -->
@@ -1751,12 +1785,13 @@
       <unitPlacement unitType="infantry" territory="Manchuria" quantity="3" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="Manchuria" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Okinawa" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="51 Sea Zone" quantity="2" owner="Japanese"/>
+      <unitPlacement unitType="transport" territory="60 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="destroyer" territory="51 Sea Zone" quantity="1" owner="Japanese"/>
+      <unitPlacement unitType="transport" territory="51 Sea Zone" quantity="2" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="57 Sea Zone" quantity="2" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="57 Sea Zone" quantity="4" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="61 Sea Zone" quantity="2" owner="Japanese"/>
-      <unitPlacement unitType="infantry" territory="61 Sea Zone" quantity="3" owner="Japanese"/>
+      <unitPlacement unitType="transport" territory="61 Sea Zone" quantity="3" owner="Japanese"/>
+      <unitPlacement unitType="infantry" territory="61 Sea Zone" quantity="5" owner="Japanese"/>
       <unitPlacement unitType="artillery" territory="61 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="cruiser" territory="61 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="61 Sea Zone" quantity="1" owner="Japanese"/>
@@ -1777,8 +1812,10 @@
       <unitPlacement unitType="artillery" territory="India" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="India" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Kwangtung" quantity="1" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Northwestern Europe" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Trans-Jordan" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Union of South Africa" quantity="2" owner="British"/>
+      <unitPlacement unitType="artillery" territory="Union of South Africa" quantity="1" owner="British"/>
       <unitPlacement unitType="factory" territory="United Kingdom" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="United Kingdom" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="United Kingdom" quantity="2" owner="British"/>
@@ -1789,11 +1826,12 @@
       <unitPlacement unitType="infantry" territory="Western Canada" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="2 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="1" owner="British"/>
+      <unitPlacement unitType="destroyer" territory="3 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="12 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="12 Sea Zone" quantity="1" owner="British"/>
+      <unitPlacement unitType="transport" territory="28 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="35 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="35 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="41 Sea Zone" quantity="1" owner="British"/>
@@ -1805,12 +1843,24 @@
       <unitPlacement unitType="fighter" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="infantry" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="artillery" territory="Italy" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="infantry" territory="Italian Africa" quantity="2" owner="Italians"/>
       <unitPlacement unitType="infantry" territory="Libya" quantity="2" owner="Italians"/>
       <unitPlacement unitType="infantry" territory="Balkans" quantity="2" owner="Italians"/>
       <unitPlacement unitType="armour" territory="Balkans" quantity="1" owner="Italians"/>
       <unitPlacement unitType="transport" territory="14 Sea Zone" quantity="1" owner="Italians"/>
       <unitPlacement unitType="cruiser" territory="14 Sea Zone" quantity="2" owner="Italians"/>
       <unitPlacement unitType="battleship" territory="14 Sea Zone" quantity="1" owner="Italians"/>
+      <!-- US French Unit Placements -->
+      <unitPlacement unitType="infantry" territory="France" quantity="3" owner="French"/>
+      <unitPlacement unitType="artillery" territory="France" quantity="1" owner="French"/>
+      <unitPlacement unitType="armour" territory="France" quantity="1" owner="French"/>
+      <unitPlacement unitType="fighter" territory="France" quantity="1" owner="French"/>
+      <unitPlacement unitType="infantry" territory="Morocco Algeria" quantity="1" owner="French"/>
+      <unitPlacement unitType="infantry" territory="French Equatorial Africa" quantity="1" owner="French"/>
+      <unitPlacement unitType="transport" territory="7 Sea Zone" quantity="1" owner="French"/>
+      <unitPlacement unitType="cruiser" territory="7 Sea Zone" quantity="1" owner="French"/>
+      <unitPlacement unitType="transport" territory="13 Sea Zone" quantity="1" owner="French"/>
+      <unitPlacement unitType="destroyer" territory="13 Sea Zone" quantity="1" owner="French"/>
       <!-- US Chinese Placements -->
       <unitPlacement unitType="infantry" territory="Fukien" quantity="1" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Hupeh" quantity="1" owner="Chinese"/>
@@ -1853,6 +1903,7 @@
       <resourceGiven player="Japanese" resource="PUs" quantity="17"/>
       <resourceGiven player="British" resource="PUs" quantity="43"/>
       <resourceGiven player="Italians" resource="PUs" quantity="10"/>
+      <resourceGiven player="French" resource="PUs" quantity="12"/>
       <resourceGiven player="Chinese" resource="PUs" quantity="0"/>
       <resourceGiven player="Americans" resource="PUs" quantity="40"/>
       <resourceGiven player="Germans" resource="techTokens" quantity="0"/>
@@ -1860,6 +1911,7 @@
       <resourceGiven player="Japanese" resource="techTokens" quantity="0"/>
       <resourceGiven player="British" resource="techTokens" quantity="0"/>
       <resourceGiven player="Italians" resource="techTokens" quantity="0"/>
+      <resourceGiven player="French" resource="techTokens" quantity="0"/>
       <resourceGiven player="Chinese" resource="techTokens" quantity="0"/>
       <resourceGiven player="Americans" resource="techTokens" quantity="0"/>
     </resourceInitialize>
@@ -1869,6 +1921,9 @@
     <!-- TYPICAL OPTIONAL PROPERTIES -->
     <!-- Bidding -->
     <property name="Italians bid" value="0" editable="true">
+      <number min="0" max="1000"/>
+    </property>
+    <property name="French bid" value="0" editable="true">
       <number min="0" max="1000"/>
     </property>
     <property name="Russians bid" value="0" editable="true">

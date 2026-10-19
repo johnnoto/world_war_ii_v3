@@ -4711,7 +4711,7 @@
       <unitPlacement unitType="infantry" territory="Germany" quantity="10" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="Germany" quantity="3" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Germany" quantity="3" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Germany" quantity="4" owner="Germans"/>
+      <unitPlacement unitType="fighter" territory="Germany" quantity="5" owner="Germans"/>
       <unitPlacement unitType="bomber" territory="Germany" quantity="2" owner="Germans"/>
       <unitPlacement unitType="aaGun" territory="Germany" quantity="1" owner="Germans"/>
       <unitPlacement unitType="factory" territory="Germany" quantity="1" owner="Germans"/>
@@ -4844,7 +4844,6 @@
       <unitPlacement unitType="artillery" territory="France" quantity="2" owner="French"/>
       <unitPlacement unitType="armour" territory="France" quantity="1" owner="French"/>
       <unitPlacement unitType="fighter" territory="France" quantity="2" owner="French"/>
-      <unitPlacement unitType="bomber" territory="France" quantity="1" owner="French"/>
       <unitPlacement unitType="factory" territory="France" quantity="1" owner="French"/>
       <unitPlacement unitType="infantry" territory="Morocco Algeria" quantity="2" owner="French"/>
       <unitPlacement unitType="infantry" territory="French West Africa" quantity="1" owner="French"/>

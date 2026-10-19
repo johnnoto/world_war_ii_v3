@@ -1635,11 +1635,6 @@
       <option name="directOwnershipTerritories" value="France" count="1"/>
       <option name="players" value="Germans:Italians:Japanese"/>
     </attachment>
-    <!-- France held by one of the other Allies rather than by the French themselves -->
-    <attachment name="conditionAttachment_Allies_Liberate_France" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directOwnershipTerritories" value="France" count="1"/>
-      <option name="players" value="British:Americans:Russians"/>
-    </attachment>
     <attachment name="conditionAttachment_Axis_Hold_Low_Countries" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Northwestern Europe" count="1"/>
       <option name="players" value="Germans:Italians:Japanese"/>
@@ -3240,26 +3235,28 @@
       <option name="notification" value="VICHY_FRANCE"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="conditionAttachment_Liberation_Of_Paris" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Neutral_Germans_French:conditionAttachment_Allies_Liberate_France"/>
+    <attachment name="conditionAttachment_Germany_Attacked_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="battle" value="Germans:French:any:currentRound:France"/>
     </attachment>
-    <!-- The Allies retake Paris: the Provisional Government re-enters the war -->
-    <attachment name="triggerAttachment_Liberation_Of_Paris" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Liberation_Of_Paris"/>
-      <option name="relationshipChange" value="French:Germans:any:War"/>
-      <option name="relationshipChange" value="French:British:any:Allied"/>
-      <option name="relationshipChange" value="French:Americans:any:Allied"/>
+    <attachment name="conditionAttachment_France_Holds_Paris" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="France" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_German_Offensive_Fails_In_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Germany_Attacked_France:conditionAttachment_France_Holds_Paris:conditionAttachment_War_French_Germans"/>
+    </attachment>
+    <!-- Germany's failed offensive in the West: 5 fresh infantry divisions in Germany -->
+    <attachment name="triggerAttachment_Germany_Reinforced_After_Failure" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_German_Offensive_Fails_In_France"/>
+      <option name="when" value="before:frenchPurchase"/>
+      <option name="placement" value="5:Germany:infantry"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="conditionAttachment_French_Government_Restored" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_War_French_Germans:conditionAttachment_Allies_Liberate_France"/>
-    </attachment>
-    <attachment name="triggerAttachment_French_Government_Restored" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_French_Government_Restored"/>
-      <option name="changeOwnership" value="France:British:French:false"/>
-      <option name="changeOwnership" value="France:Americans:French:false"/>
-      <option name="changeOwnership" value="France:Russians:French:false"/>
-      <option name="notification" value="FREE_FRANCE"/>
+    <attachment name="triggerAttachment_Germany_Reinforced_Notice" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_German_Offensive_Fails_In_France"/>
+      <option name="when" value="before:frenchPurchase"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GERMANY_REINFORCED"/>
+      <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Free_France_Fights_Italy" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_War_French_Germans:conditionAttachment_War_British_Italians:conditionAttachment_Neutral_French_Italians"/>
@@ -4077,10 +4074,9 @@ during Germany's turn:
 <li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
 <li>French Indo-China stays with Vichy France but loses its garrison. Japan may occupy it (Occupy Indochina) with no wider consequences.</li>
 <li>The French fleet is disbanded except for one ship, chosen at random, which joins the Royal Navy at Scapa Flow (sea zone 3).</li>
-<li>All other French units are disbanded and France leaves the war.</li>
+<li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
-<li><b>Liberation of Paris.</b> If Britain, the USA or the USSR later take France from the Axis, the
-French government returns to the war on the Allied side and France is handed back to it.</li>
+<li><b>Germany reinforced.</b> If Germany attacks France and the French still hold Paris when their turn comes to build, Germany receives 5 infantry in Germany (once per game).</li>
 <li><b>Governments in exile.</b> When the Axis take the Low Countries, the Dutch East Indies and the
 Belgian Congo join Britain, each Dutch colony with a garrison.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with

@@ -1908,9 +1908,11 @@
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Eastern Canada:Western Canada:Gibraltar:Egypt:Australia:Union of South Africa" count="6"/>
     </attachment>
+    <!-- Paid once the Allies have taken France or the Balkans for themselves, not while France is French -->
     <attachment name="objectiveAttachment_British_A_Foothold_In_Europe" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="France:Balkans" count="1"/>
+      <option name="directOwnershipTerritories" value="France:Balkans" count="1"/>
+      <option name="players" value="British:Americans:Russians"/>
     </attachment>
     <attachment name="objectiveAttachment_French_Empire_Francais" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="3"/>
@@ -4818,7 +4820,7 @@
       <unitPlacement unitType="fighter" territory="3 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="3 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="3 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="battleship" territory="2 Sea Zone" quantity="1" owner="British"/>
+      <unitPlacement unitType="cruiser" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="1" owner="British"/>
@@ -5314,7 +5316,7 @@ their armies (5 infantry, 2 artillery).</li>
 <ul>
 <li>+5 Allies control any of Caroline Islands, Formosa, Iwo Jima, Japan, Okinawa.</li>
 <li>+5 Allies control Eastern and Western Canada, Gibraltar, Egypt, Australia and South Africa.</li>
-<li>+5 Allies control France or the Balkans.</li>
+<li>+5 Britain, the USA or the USSR control France or the Balkans (not paid while France is French).</li>
 </ul>
 <p><i>France</i></p>
 <ul>

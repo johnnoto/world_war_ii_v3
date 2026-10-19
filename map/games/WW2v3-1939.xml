@@ -3241,19 +3241,1223 @@
     <attachment name="conditionAttachment_France_Holds_Paris" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="France" count="1"/>
     </attachment>
+    <attachment name="conditionAttachment_France_Units_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_1_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_1_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_1_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_1" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_1:conditionAttachment_France_Had_Below_1_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_1_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_1:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_1_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_1_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_1:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_1_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="2"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_2"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_2_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_2_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_2_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_2" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_2:conditionAttachment_France_Had_Below_2_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_2_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_2:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_2_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_2_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_2:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_2_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="3"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_3"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_3_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_3_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_3_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_3" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_3:conditionAttachment_France_Had_Below_3_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_3_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_3:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_3_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_3_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_3:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_3_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="4"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_4"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_4_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_4_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_4_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_4" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_4:conditionAttachment_France_Had_Below_4_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_4_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_4:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_4_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_4_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_4:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_4_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_5" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="5"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_5" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_5"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_5_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_5_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_5_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_5" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_5:conditionAttachment_France_Had_Below_5_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_5_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_5:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_5_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_5_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_5:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_5_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_6" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="6"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_6" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_6"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_6_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_6_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_6_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_6" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_6:conditionAttachment_France_Had_Below_6_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_6_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_6:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_6_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_6_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_6:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_6_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_7" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="7"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_7" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_7"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_7_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_7_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_7_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_7" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_7:conditionAttachment_France_Had_Below_7_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_7_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_7:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_7_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_7_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_7:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_7_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_8" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="8"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_8" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_8"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_8_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_8_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_8_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_8" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_8:conditionAttachment_France_Had_Below_8_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_8_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_8:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_8_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_8_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_8:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_8_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_9" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="9"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_9" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_9"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_9_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_9_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_9_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_9" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_9:conditionAttachment_France_Had_Below_9_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_9_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_9:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_9_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_9_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_9:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_9_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_10" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="10"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_10" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_10"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_10_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_10_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_10_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_10" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_10:conditionAttachment_France_Had_Below_10_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_10_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_10:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_10_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_10_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_10:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_10_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_11" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="11"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_11" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_11"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_11_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_11_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_11_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_11" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_11:conditionAttachment_France_Had_Below_11_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_11_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_11:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_11_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_11_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_11:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_11_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_12" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="12"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_12" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_12"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_12_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_12_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_12_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_12" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_12:conditionAttachment_France_Had_Below_12_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_12_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_12:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_12_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_12_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_12:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_12_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_13" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="13"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_13" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_13"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_13_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_13_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_13_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_13" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_13:conditionAttachment_France_Had_Below_13_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_13_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_13:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_13_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_13_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_13:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_13_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_14" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="14"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_14" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_14"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_14_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_14_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_14_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_14" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_14:conditionAttachment_France_Had_Below_14_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_14_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_14:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_14_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_14_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_14:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_14_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_15" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="15"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_15" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_15"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_15_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_15_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_15_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_15" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_15:conditionAttachment_France_Had_Below_15_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_15_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_15:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_15_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_15_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_15:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_15_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_16" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="16"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_16" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_16"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_16_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_16_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_16_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_16" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_16:conditionAttachment_France_Had_Below_16_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_16_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_16:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_16_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_16_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_16:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_16_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_17" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="17"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_17" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_17"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_17_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_17_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_17_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_17" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_17:conditionAttachment_France_Had_Below_17_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_17_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_17:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_17_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_17_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_17:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_17_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_18" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="18"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_18" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_18"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_18_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_18_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_18_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_18" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_18:conditionAttachment_France_Had_Below_18_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_18_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_18:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_18_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_18_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_18:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_18_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_19" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="19"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_19" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_19"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_19_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_19_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_19_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_19" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_19:conditionAttachment_France_Had_Below_19_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_19_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_19:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_19_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_19_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_19:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_19_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_20" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="20"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_20" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_20"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_20_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_20_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_20_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_20" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_20:conditionAttachment_France_Had_Below_20_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_20_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_20:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_20_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_20_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_20:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_20_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_21" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="21"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_21" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_21"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_21_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_21_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_21_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_21" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_21:conditionAttachment_France_Had_Below_21_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_21_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_21:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_21_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_21_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_21:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_21_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_22" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="22"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_22" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_22"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_22_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_22_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_22_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_22" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_22:conditionAttachment_France_Had_Below_22_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_22_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_22:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_22_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_22_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_22:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_22_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_23" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="23"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_23" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_23"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_23_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_23_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_23_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_23" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_23:conditionAttachment_France_Had_Below_23_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_23_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_23:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_23_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_23_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_23:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_23_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_24" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="24"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_24" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_24"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_24_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_24_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_24_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_24" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_24:conditionAttachment_France_Had_Below_24_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_24_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_24:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_24_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_24_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_24:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_24_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_25" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="25"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_25" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_25"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_25_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_25_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_25_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_25" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_25:conditionAttachment_France_Had_Below_25_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_25_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_25:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_25_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_25_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_25:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_25_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_26" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="26"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_26" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_26"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_26_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_26_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_26_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_26" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_26:conditionAttachment_France_Had_Below_26_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_26_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_26:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_26_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_26_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_26:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_26_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_27" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="27"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_27" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_27"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_27_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_27_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_27_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_27" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_27:conditionAttachment_France_Had_Below_27_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_27_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_27:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_27_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_27_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_27:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_27_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_28" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="28"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_28" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_28"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_28_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_28_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_28_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_28" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_28:conditionAttachment_France_Had_Below_28_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_28_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_28:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_28_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_28_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_28:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_28_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_29" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="29"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_29" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_29"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_29_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_29_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_29_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_29" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_29:conditionAttachment_France_Had_Below_29_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_29_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_29:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_29_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_29_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_29:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_29_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_30" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="30"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_30" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_30"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_30_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_30_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_30_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_30" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_30:conditionAttachment_France_Had_Below_30_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_30_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_30:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_30_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_30_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_30:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_30_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_31" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="31"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_31" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_31"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_31_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_31_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_31_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_31" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_31:conditionAttachment_France_Had_Below_31_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_31_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_31:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_31_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_31_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_31:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_31_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_32" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="32"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_32" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_32"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_32_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_32_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_32_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_32" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_32:conditionAttachment_France_Had_Below_32_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_32_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_32:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_32_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_32_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_32:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_32_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_33" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="33"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_33" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_33"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_33_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_33_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_33_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_33" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_33:conditionAttachment_France_Had_Below_33_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_33_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_33:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_33_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_33_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_33:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_33_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_34" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="34"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_34" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_34"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_34_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_34_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_34_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_34" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_34:conditionAttachment_France_Had_Below_34_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_34_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_34:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_34_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_34_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_34:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_34_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_35" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="35"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_35" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_35"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_35_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_35_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_35_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_35" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_35:conditionAttachment_France_Had_Below_35_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_35_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_35:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_35_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_35_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_35:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_35_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_36" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="36"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_36" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_36"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_36_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_36_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_36_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_36" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_36:conditionAttachment_France_Had_Below_36_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_36_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_36:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_36_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_36_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_36:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_36_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_37" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="37"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_37" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_37"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_37_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_37_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_37_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_37" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_37:conditionAttachment_France_Had_Below_37_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_37_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_37:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_37_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_37_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_37:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_37_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_38" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="38"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_38" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_38"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_38_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_38_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_38_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_38" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_38:conditionAttachment_France_Had_Below_38_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_38_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_38:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_38_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_38_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_38:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_38_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_39" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="39"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_39" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_39"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_39_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_39_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_39_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_39" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_39:conditionAttachment_France_Had_Below_39_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_39_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_39:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_39_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_39_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_39:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_39_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_40" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="France" count="1"/>
+      <option name="unitPresence" value="any" count="40"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Units_Below_40" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_40"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_40_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Had_Below_40_Before_Placing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Had_40_Before_Placing"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_Past_40" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_40:conditionAttachment_France_Had_Below_40_Before_Placing"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_40_true" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_40:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_40_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_France_Count_40_false" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Units_Below_40:conditionAttachment_War_French_Germans"/>
+      <option name="when" value="before:frenchPlace"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_France_Had_40_Before_Placing"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Built_In_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Built_Past_1:conditionAttachment_France_Built_Past_2:conditionAttachment_France_Built_Past_3:conditionAttachment_France_Built_Past_4:conditionAttachment_France_Built_Past_5:conditionAttachment_France_Built_Past_6:conditionAttachment_France_Built_Past_7:conditionAttachment_France_Built_Past_8:conditionAttachment_France_Built_Past_9:conditionAttachment_France_Built_Past_10:conditionAttachment_France_Built_Past_11:conditionAttachment_France_Built_Past_12:conditionAttachment_France_Built_Past_13:conditionAttachment_France_Built_Past_14:conditionAttachment_France_Built_Past_15:conditionAttachment_France_Built_Past_16:conditionAttachment_France_Built_Past_17:conditionAttachment_France_Built_Past_18:conditionAttachment_France_Built_Past_19:conditionAttachment_France_Built_Past_20:conditionAttachment_France_Built_Past_21:conditionAttachment_France_Built_Past_22:conditionAttachment_France_Built_Past_23:conditionAttachment_France_Built_Past_24:conditionAttachment_France_Built_Past_25:conditionAttachment_France_Built_Past_26:conditionAttachment_France_Built_Past_27:conditionAttachment_France_Built_Past_28:conditionAttachment_France_Built_Past_29:conditionAttachment_France_Built_Past_30:conditionAttachment_France_Built_Past_31:conditionAttachment_France_Built_Past_32:conditionAttachment_France_Built_Past_33:conditionAttachment_France_Built_Past_34:conditionAttachment_France_Built_Past_35:conditionAttachment_France_Built_Past_36:conditionAttachment_France_Built_Past_37:conditionAttachment_France_Built_Past_38:conditionAttachment_France_Built_Past_39:conditionAttachment_France_Built_Past_40"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
     <attachment name="conditionAttachment_German_Offensive_Fails_In_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Germany_Attacked_France:conditionAttachment_France_Holds_Paris:conditionAttachment_War_French_Germans"/>
+      <option name="conditions" value="conditionAttachment_Germany_Attacked_France:conditionAttachment_France_Holds_Paris:conditionAttachment_War_French_Germans:conditionAttachment_France_Built_In_France"/>
     </attachment>
     <!-- Germany's failed offensive in the West: 5 fresh infantry divisions in Germany -->
     <attachment name="triggerAttachment_Germany_Reinforced_After_Failure" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_German_Offensive_Fails_In_France"/>
-      <option name="when" value="before:frenchPurchase"/>
+      <option name="when" value="after:frenchPlace"/>
       <option name="placement" value="5:Germany:infantry"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Germany_Reinforced_Notice" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_German_Offensive_Fails_In_France"/>
-      <option name="when" value="before:frenchPurchase"/>
+      <option name="when" value="after:frenchPlace"/>
       <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="GERMANY_REINFORCED"/>
       <option name="uses" value="1"/>
@@ -4076,7 +5280,7 @@ during Germany's turn:
 <li>The French fleet is disbanded except for one ship, chosen at random, which joins the Royal Navy at Scapa Flow (sea zone 3).</li>
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
-<li><b>Germany reinforced.</b> If Germany attacks France and the French still hold Paris when their turn comes to build, Germany receives 5 infantry in Germany (once per game).</li>
+<li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
 <li><b>Governments in exile.</b> When the Axis take the Low Countries, the Dutch East Indies and the
 Belgian Congo join Britain, each Dutch colony with a garrison.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with

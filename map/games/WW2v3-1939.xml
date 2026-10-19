@@ -4521,18 +4521,37 @@
       <option name="notification" value="FINLAND_JOINS"/>
       <option name="uses" value="1"/>
     </attachment>
-    <!-- May 1940: the Netherlands and Belgium are overrun; their colonies fight on with the Allies -->
+    <!-- May 1940: Belgium is overrun; the Belgian Congo fights on with the Allies -->
     <attachment name="triggerAttachment_Governments_In_Exile" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries"/>
-      <option name="territories" value="Borneo:East Indies:Belgian Congo"/>
+      <option name="territories" value="Belgian Congo"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="isImpassable" count="false"/>
+      <option name="changeOwnership" value="Belgian Congo:any:British:false"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENTS_IN_EXILE"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_War_British_Japanese"/>
+    </attachment>
+    <attachment name="triggerAttachment_Dutch_East_Indies_Join_Britain_japanesePolitics" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Dutch_East_Indies_Join_Britain"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="territories" value="Borneo:East Indies"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
       <option name="changeOwnership" value="Borneo:any:British:false"/>
       <option name="changeOwnership" value="East Indies:any:British:false"/>
-      <option name="changeOwnership" value="Belgian Congo:any:British:false"/>
       <option name="placement" value="Borneo:infantry"/>
       <option name="placement" value="East Indies:infantry"/>
-      <option name="notification" value="GOVERNMENTS_IN_EXILE"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Dutch_East_Indies_Notice_japanesePolitics" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Dutch_East_Indies_Join_Britain"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="DUTCH_EAST_INDIES"/>
       <option name="uses" value="1"/>
     </attachment>
     <!-- ============================================================ -->
@@ -5282,8 +5301,9 @@ during Germany's turn:
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
-<li><b>Governments in exile.</b> When the Axis take the Low Countries, the Dutch East Indies and the
-Belgian Congo join Britain, each Dutch colony with a garrison.</li>
+<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain.</li>
+<li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
+In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
 their armies (5 infantry, 2 artillery).</li>
 <li><b>Finland joins Germany</b> at the start of Germany's round 4 combat move &ndash; the round Barbarossa becomes possible &ndash; with its army (5 infantry, 2 artillery). Until then Finland is neutral and closed to everyone.</li>

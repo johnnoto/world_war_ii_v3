@@ -2343,10 +2343,10 @@
     </ownerInitialize>
     <unitInitialize>
       <!-- Germans -->
-      <unitPlacement unitType="infantry" territory="Germany" quantity="8" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="Germany" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="Germany" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Germany" quantity="3" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Germany" quantity="10" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="Germany" quantity="3" owner="Germans"/>
+      <unitPlacement unitType="armour" territory="Germany" quantity="3" owner="Germans"/>
+      <unitPlacement unitType="fighter" territory="Germany" quantity="4" owner="Germans"/>
       <unitPlacement unitType="bomber" territory="Germany" quantity="2" owner="Germans"/>
       <unitPlacement unitType="aaGun" territory="Germany" quantity="1" owner="Germans"/>
       <unitPlacement unitType="factory" territory="Germany" quantity="1" owner="Germans"/>
@@ -2362,42 +2362,27 @@
       <unitPlacement unitType="submarine" territory="8 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Germans"/>
       <!-- Russians -->
-      <unitPlacement unitType="infantry" territory="Russia" quantity="4" owner="Russians"/>
-      <unitPlacement unitType="artillery" territory="Russia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="armour" territory="Russia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="fighter" territory="Russia" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="bomber" territory="Russia" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Russia" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="artillery" territory="Russia" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="armour" territory="Russia" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="fighter" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Russia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Karelia S.S.R." quantity="4" owner="Russians"/>
-      <unitPlacement unitType="artillery" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="armour" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="fighter" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Karelia S.S.R." quantity="2" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Karelia S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Belorussia" quantity="3" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Belorussia" quantity="2" owner="Russians"/>
       <unitPlacement unitType="armour" territory="Belorussia" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Ukraine" quantity="3" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Ukraine" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="artillery" territory="Ukraine" quantity="1" owner="Russians"/>
       <unitPlacement unitType="armour" territory="Ukraine" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Eastern Ukraine" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Caucasus" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Caucasus" quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Caucasus" quantity="1" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Caucasus" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Archangel" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Kazakh S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Novosibirsk" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Urals" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Buryatia S.S.R." quantity="3" owner="Russians"/>
-      <unitPlacement unitType="armour" territory="Buryatia S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="fighter" territory="Buryatia S.S.R." quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Stanovoj Chrebet" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="battleship" territory="5 Sea Zone" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Buryatia S.S.R." quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="1" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="5 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="4 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="cruiser" territory="16 Sea Zone" quantity="1" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="16 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="63 Sea Zone" quantity="2" owner="Russians"/>
       <!-- Japanese -->
       <unitPlacement unitType="infantry" territory="Japan" quantity="3" owner="Japanese"/>
       <unitPlacement unitType="artillery" territory="Japan" quantity="1" owner="Japanese"/>
@@ -2498,12 +2483,10 @@
       <unitPlacement unitType="infantry" territory="French West Africa" quantity="1" owner="French"/>
       <unitPlacement unitType="infantry" territory="French Madagascar" quantity="1" owner="French"/>
       <unitPlacement unitType="infantry" territory="French Indo-China Thailand" quantity="2" owner="French"/>
-      <unitPlacement unitType="battleship" territory="7 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="destroyer" territory="7 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="battleship" territory="13 Sea Zone" quantity="1" owner="French"/>
-      <unitPlacement unitType="cruiser" territory="13 Sea Zone" quantity="2" owner="French"/>
+      <unitPlacement unitType="cruiser" territory="13 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="destroyer" territory="13 Sea Zone" quantity="1" owner="French"/>
-      <unitPlacement unitType="submarine" territory="13 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="transport" territory="13 Sea Zone" quantity="1" owner="French"/>
       <!-- Italians -->
       <unitPlacement unitType="infantry" territory="Italy" quantity="4" owner="Italians"/>
@@ -2531,38 +2514,27 @@
       <unitPlacement unitType="infantry" territory="Ningxia" quantity="2" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Chinghai" quantity="1" owner="Chinese"/>
       <!-- Americans -->
-      <unitPlacement unitType="infantry" territory="Eastern United States" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="artillery" territory="Eastern United States" quantity="1" owner="Americans"/>
+      <unitPlacement unitType="infantry" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="fighter" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="bomber" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="aaGun" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="factory" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Central United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Western United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Western United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="aaGun" territory="Western United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="factory" territory="Western United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Panama" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
       <unitPlacement unitType="fighter" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="infantry" territory="Philippine Islands" quantity="2" owner="Americans"/>
-      <unitPlacement unitType="battleship" territory="56 Sea Zone" quantity="2" owner="Americans"/>
+      <unitPlacement unitType="infantry" territory="Philippine Islands" quantity="1" owner="Americans"/>
+      <unitPlacement unitType="battleship" territory="56 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="carrier" territory="56 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="fighter" territory="56 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="56 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="destroyer" territory="56 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="transport" territory="56 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="battleship" territory="53 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="carrier" territory="53 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="53 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="destroyer" territory="53 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="battleship" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="10 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="destroyer" territory="10 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="transport" territory="10 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="cruiser" territory="50 Sea Zone" quantity="1" owner="Americans"/>
       <unitPlacement unitType="destroyer" territory="50 Sea Zone" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="submarine" territory="50 Sea Zone" quantity="1" owner="Americans"/>
       <!-- Neutral garrisons -->
       <unitPlacement unitType="infantry" territory="Poland" quantity="5"/>
       <unitPlacement unitType="artillery" territory="Poland" quantity="1"/>
@@ -2578,13 +2550,13 @@
     </unitInitialize>
     <resourceInitialize>
       <resourceGiven player="Germans" resource="PUs" quantity="30"/>
-      <resourceGiven player="Russians" resource="PUs" quantity="28"/>
+      <resourceGiven player="Russians" resource="PUs" quantity="18"/>
       <resourceGiven player="Japanese" resource="PUs" quantity="20"/>
       <resourceGiven player="British" resource="PUs" quantity="30"/>
       <resourceGiven player="French" resource="PUs" quantity="15"/>
       <resourceGiven player="Italians" resource="PUs" quantity="10"/>
       <resourceGiven player="Chinese" resource="PUs" quantity="0"/>
-      <resourceGiven player="Americans" resource="PUs" quantity="25"/>
+      <resourceGiven player="Americans" resource="PUs" quantity="12"/>
       <resourceGiven player="Germans" resource="techTokens" quantity="0"/>
       <resourceGiven player="Russians" resource="techTokens" quantity="0"/>
       <resourceGiven player="Japanese" resource="techTokens" quantity="0"/>
@@ -2882,13 +2854,13 @@ States is officially neutral. Nobody yet knows how wide this war will become &nd
 <table border="1" cellpadding="3" cellspacing="0">
 <tr><th>Power</th><th>Starts at war with</th><th>Starting PUs</th><th>Income</th></tr>
 <tr><td>Germany</td><td>Britain, France</td><td>30</td><td>12 + 10 from objectives</td></tr>
-<tr><td>Soviet Union</td><td>&ndash; (Molotov-Ribbentrop Pact)</td><td>28</td><td>28</td></tr>
+<tr><td>Soviet Union</td><td>&ndash; (Molotov-Ribbentrop Pact)</td><td>18</td><td>28</td></tr>
 <tr><td>Japan</td><td>China</td><td>20</td><td>17</td></tr>
 <tr><td>Britain</td><td>Germany</td><td>30</td><td>29 + 10 from objectives</td></tr>
 <tr><td>France</td><td>Germany</td><td>15</td><td>12 + 3 from objectives</td></tr>
 <tr><td>Italy</td><td>&ndash; (non-belligerent)</td><td>10</td><td>8</td></tr>
 <tr><td>China</td><td>Japan</td><td>&ndash;</td><td>1 infantry per 2 territories</td></tr>
-<tr><td>United States</td><td>&ndash; (Neutrality Acts)</td><td>25</td><td>40 &minus; 15 while at peace</td></tr>
+<tr><td>United States</td><td>&ndash; (Neutrality Acts)</td><td>12</td><td>40 &minus; 15 while at peace</td></tr>
 </table>
 <p>
 France is a full playable power in this scenario, with its own army, fleet and colonial empire.

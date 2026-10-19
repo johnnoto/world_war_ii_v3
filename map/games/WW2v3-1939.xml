@@ -1190,8 +1190,10 @@
     <attachment name="territoryAttachment" attachTo="French West Africa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
     </attachment>
+    <!-- Finland: neutral and closed until a historical event opens it -->
     <attachment name="territoryAttachment" attachTo="Finland" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="2"/>
+      <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Formosa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="1"/>
@@ -2161,6 +2163,20 @@
       <option name="notification" value="BALKAN_ACCESSION"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Finland_Joins_Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_4_Or_Later"/>
+    </attachment>
+    <!-- Round 4: Finland, neutral and closed until now, joins Germany with its army -->
+    <attachment name="triggerAttachment_Finland_Joins_Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Finland_Joins_Germany"/>
+      <option name="territories" value="Finland"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="isImpassable" count="false"/>
+      <option name="changeOwnership" value="Finland:any:Germans:false"/>
+      <option name="placement" value="Finland:infantry:infantry:infantry:artillery"/>
+      <option name="notification" value="FINLAND_JOINS"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- May 1940: the Netherlands and Belgium are overrun; their colonies fight on with the Allies -->
     <attachment name="triggerAttachment_Governments_In_Exile" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries"/>
@@ -2379,7 +2395,7 @@
       <unitPlacement unitType="battleship" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="22 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="8 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Germans"/>
@@ -2565,8 +2581,6 @@
       <unitPlacement unitType="infantry" territory="Northwestern Europe" quantity="3"/>
       <unitPlacement unitType="artillery" territory="Northwestern Europe" quantity="1"/>
       <unitPlacement unitType="infantry" territory="Norway" quantity="1"/>
-      <unitPlacement unitType="infantry" territory="Finland" quantity="3"/>
-      <unitPlacement unitType="artillery" territory="Finland" quantity="1"/>
       <unitPlacement unitType="infantry" territory="Baltic States" quantity="1"/>
       <unitPlacement unitType="infantry" territory="Balkans" quantity="3"/>
       <unitPlacement unitType="infantry" territory="Persia" quantity="1"/>
@@ -2849,7 +2863,7 @@
     <property name="Damage From Bombing Done To Units Instead Of Territories" value="true" editable="false">
       <boolean/>
     </property>
-    <!-- Neutral countries can be invaded: Poland, Norway, the Low Countries, Finland, the Baltic
+    <!-- Neutral countries can be invaded: Poland, Norway, the Low Countries, the Baltic
          States, Yugoslavia and Greece, Persia, Iceland. Spain, Sweden, Switzerland, Turkey and
          the other impassable neutrals stay out of the war. -->
     <property name="neutralCharge" value="0" editable="false"/>
@@ -2893,13 +2907,13 @@ summer 1941, round 5 the winter of 1941&ndash;42.
 
 <h3>Neutral Countries</h3>
 <p>
-Poland, East Poland, the Low Countries, Norway, Finland, the Baltic States, Yugoslavia and Greece
+Poland, East Poland, the Low Countries, Norway, the Baltic States, Yugoslavia and Greece
 (Balkans), Persia and Iceland begin neutral. Most have armies of their own (orange units) and can be
 invaded by anyone at no PU cost &ndash; they are at war with whoever attacks them. Spain, Sweden,
 Switzerland, Turkey and the other impassable neutrals stay out of the war.
 </p>
 <p>
-Romania and Bulgaria, the Dutch East Indies (Borneo, East Indies) and the Belgian Congo are sealed
+Finland, Romania and Bulgaria, the Dutch East Indies (Borneo, East Indies) and the Belgian Congo are sealed
 until history opens them (see Events).
 </p>
 
@@ -2937,6 +2951,7 @@ French government returns to the war on the Allied side and France is handed bac
 Belgian Congo join Britain, each Dutch colony with a garrison.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
 their armies (3 infantry, 1 artillery).</li>
+<li><b>Finland joins Germany</b> at the start of Germany's round 4 combat move &ndash; the round Barbarossa becomes possible &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
 <b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
 </ul>

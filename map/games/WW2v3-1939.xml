@@ -2178,16 +2178,33 @@
     <!-- ============================================================ -->
     <!-- POLITICAL ACTIONS (declarations of war)                       -->
     <!-- ============================================================ -->
-    <attachment name="politicalActionAttachment_Italy_Enters_The_War" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+    <attachment name="conditionAttachment_Italy_Joins_Germany" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_British_Italians:conditionAttachment_War_French_Germans"/>
-      <option name="relationshipChange" value="Italians:British:War"/>
-      <option name="relationshipChange" value="Italians:French:War"/>
-      <option name="text" value="ITALY_ENTERS_WAR"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Italy_Enters_The_War_After_Armistice" attachTo="Italians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+    <attachment name="conditionAttachment_Italy_Joins_Germany_After_Armistice" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_British_Italians:conditionAttachment_Neutral_Germans_French"/>
-      <option name="relationshipChange" value="Italians:British:War"/>
-      <option name="text" value="ITALY_ENTERS_WAR"/>
+    </attachment>
+    <!-- Round 2: Italy enters the war at Germany's side, against Britain and (if still fighting) France -->
+    <attachment name="triggerAttachment_Italy_Enters_The_War" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_Joins_Germany"/>
+      <option name="relationshipChange" value="Italians:British:anyNeutral:War"/>
+      <option name="relationshipChange" value="Italians:French:anyNeutral:War"/>
+      <option name="relationshipChange" value="Germans:Italians:anyNeutral:Allied"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Enters_The_War_After_Armistice" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_Joins_Germany_After_Armistice"/>
+      <option name="relationshipChange" value="Italians:British:anyNeutral:War"/>
+      <option name="relationshipChange" value="Germans:Italians:anyNeutral:Allied"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italy_At_War_With_Britain" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_War_British_Italians"/>
+    </attachment>
+    <attachment name="triggerAttachment_Italy_Enters_The_War_Notice" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Italy_At_War_With_Britain"/>
+      <option name="notification" value="ITALY_JOINS_WAR"/>
+      <option name="uses" value="1"/>
     </attachment>
     <attachment name="politicalActionAttachment_Operation_Barbarossa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_4_Or_Later:conditionAttachment_Neutral_Germans_Russians"/>
@@ -2200,23 +2217,28 @@
       <option name="text" value="SOVIET_WAR_ON_GERMANY"/>
     </attachment>
     <attachment name="politicalActionAttachment_Strike_South" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
       <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="text" value="STRIKE_SOUTH"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Strike_South_Britain_Only" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_War_Americans_Japanese"/>
+    <attachment name="politicalActionAttachment_Japan_Declares_War_On_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British"/>
       <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="text" value="STRIKE_SOUTH_BRITAIN"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Japan_Declares_War_On_The_USA" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="relationshipChange" value="Japanese:Americans:War"/>
+      <option name="text" value="JAPAN_WAR_USA"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Occupy_Indochina" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_3_Or_Later:conditionAttachment_Neutral_Japanese_French"/>
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_French"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
       <option name="text" value="OCCUPY_INDOCHINA"/>
     </attachment>
     <attachment name="politicalActionAttachment_Strike_North" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_3_Or_Later:conditionAttachment_Neutral_Russians_Japanese"/>
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Russians_Japanese"/>
       <option name="relationshipChange" value="Japanese:Russians:War"/>
       <option name="text" value="STRIKE_NORTH"/>
     </attachment>
@@ -2379,8 +2401,10 @@
       <unitPlacement unitType="infantry" territory="Caucasus" quantity="1" owner="Russians"/>
       <unitPlacement unitType="aaGun" territory="Caucasus" quantity="1" owner="Russians"/>
       <unitPlacement unitType="factory" territory="Caucasus" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Buryatia S.S.R." quantity="2" owner="Russians"/>
-      <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Buryatia S.S.R." quantity="6" owner="Russians"/>
+      <unitPlacement unitType="artillery" territory="Buryatia S.S.R." quantity="1" owner="Russians"/>
+      <unitPlacement unitType="armour" territory="Buryatia S.S.R." quantity="1" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="5 Sea Zone" quantity="1" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="16 Sea Zone" quantity="1" owner="Russians"/>
       <!-- Japanese -->
@@ -2886,12 +2910,10 @@ Powers that are at peace with each other cannot attack each other or enter each 
 territory. War is declared in the <b>Politics</b> phase, and only when history allows it:
 </p>
 <ul>
-<li><b>Italy enters the war</b> (round 2+, June 1940) &ndash; against Britain, and against France if France is still fighting.</li>
+
 <li><b>Operation Barbarossa</b> &ndash; Germany may attack the USSR from round 4 (June 1941).</li>
 <li><b>Soviet pre-emptive war</b> &ndash; the USSR may declare war on Germany from round 6 if Germany has not attacked.</li>
-<li><b>Occupation of Indochina</b> &ndash; Japan may go to war with France from round 3 (September 1940).</li>
-<li><b>Strike North</b> &ndash; Japan may attack the USSR from round 3.</li>
-<li><b>Strike South</b> &ndash; Japan may attack Britain and the United States together from round 5 (December 1941).</li>
+<li><b>Japan</b> may declare war on any Allied power from round 2: <b>Strike South</b> (Britain and the USA together), Britain alone, the USA alone, <b>Occupy Indochina</b> (France) or <b>Strike North</b> (the USSR).</li>
 <li><b>Germany declares war on the USA</b> from round 5.</li>
 <li><b>The United States enters the war</b> against Germany from round 6, or at once if the Axis take the United Kingdom;
 against Japan from round 6, or at once if Japan attacks Britain; against Italy once at war with Germany.</li>
@@ -2906,6 +2928,7 @@ and so on. Vichy France joins no one.
 
 <h3>Events</h3>
 <ul>
+<li><b>Italy enters the war</b> automatically on its round-2 turn, against Britain (and France if France is still fighting), and becomes Germany's ally. Italy sits out round 1 only.</li>
 <li><b>Fall of France.</b> If the Axis hold France at the start of the French turn while France is
 still fighting, the Armistice of Compi&egrave;gne is signed: France becomes the neutral Vichy regime and
 stops collecting income.</li>
@@ -2920,6 +2943,7 @@ their armies (3 infantry, 1 artillery).</li>
 </ul>
 
 <h3>National Objectives</h3>
+<p>Open the <b>Objectives</b> tab next to the map to see every objective and whether it is currently met, plus a Diplomacy and Events list.</p>
 <p><i>Germany</i></p>
 <ul>
 <li>+5 Soviet Trade Agreement: while not at war with the USSR.</li>

@@ -2079,86 +2079,14 @@
     <attachment name="conditionAttachment_Vichy_Regime" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Neutral_Germans_French:conditionAttachment_Axis_Hold_France"/>
     </attachment>
-    <!-- Turned off once a French ship has been handed to Britain -->
-    <attachment name="conditionAttachment_Vichy_Ship_Not_Chosen" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="switch" value="true"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_carrier" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="conditionAttachment_French_Fleet_Afloat" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="carrier" count="1"/>
+      <option name="unitPresence" value="carrier:battleship:cruiser:submarine:destroyer:transport" count="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_carrier" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_carrier:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="before:germanTech"/>
-      <option name="chance" value="1:6"/>
-      <option name="placement" value="3 Sea Zone:carrier"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_battleship" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="battleship" count="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_battleship" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_battleship:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="after:germanTech"/>
-      <option name="chance" value="1:5"/>
-      <option name="placement" value="3 Sea Zone:battleship"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_cruiser" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="cruiser" count="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_cruiser" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_cruiser:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="before:germanTechActivation"/>
-      <option name="chance" value="1:4"/>
+    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Royal_Navy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Afloat"/>
+      <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="3 Sea Zone:cruiser"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_submarine" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="submarine" count="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_submarine" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_submarine:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="after:germanTechActivation"/>
-      <option name="chance" value="1:3"/>
-      <option name="placement" value="3 Sea Zone:submarine"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_destroyer" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="destroyer" count="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_destroyer" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_destroyer:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="before:germanPurchase"/>
-      <option name="chance" value="1:2"/>
-      <option name="placement" value="3 Sea Zone:destroyer"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
-      <option name="uses" value="1"/>
-    </attachment>
-    <attachment name="conditionAttachment_French_Fleet_Has_transport" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
-      <option name="unitPresence" value="transport" count="1"/>
-    </attachment>
-    <attachment name="triggerAttachment_Vichy_Ship_Escapes_transport" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Has_transport:conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="when" value="after:germanPurchase"/>
-      <option name="chance" value="1:1"/>
-      <option name="placement" value="3 Sea Zone:transport"/>
-      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Vichy_Ship_Not_Chosen"/>
-      <option name="playerProperty" value="switch" count="false"/>
       <option name="uses" value="1"/>
     </attachment>
     <!-- Morocco-Algeria to Germany; French West and Equatorial Africa and Madagascar to Britain -->
@@ -5297,7 +5225,7 @@ during Germany's turn:
 <li>Morocco-Algeria and its garrison go over to Germany.</li>
 <li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
 <li>French Indo-China stays with Vichy France but loses its garrison. Japan may occupy it (Occupy Indochina) with no wider consequences.</li>
-<li>The French fleet is disbanded except for one ship, chosen at random, which joins the Royal Navy at Scapa Flow (sea zone 3).</li>
+<li>The French navy is removed from the game. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3).</li>
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>

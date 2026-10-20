@@ -5186,7 +5186,7 @@
     <property name="Neutral Flyover Allowed" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="mapName" value="world_war_ii_v3" editable="false"/>
+    <property name="mapName" value="world_war_ii_v3_1939" editable="false"/>
     <property name="notes">
       <value><![CDATA[
 <h2>World War II v3 &ndash; September 1939</h2>

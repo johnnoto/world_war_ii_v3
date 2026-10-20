@@ -1,4 +1,4 @@
-map_name: world_war_ii_v3
+map_name: world_war_ii_v3_1939
 games:
 - {game_name: World War II v3 1939, file_name: WW2v3-1939.xml}
 - {game_name: World War II v3 1941, file_name: WW2v3-1941.xml}

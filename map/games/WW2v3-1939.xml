@@ -4776,7 +4776,6 @@
       <unitPlacement unitType="destroyer" territory="3 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="2 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="transport" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="7 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="7 Sea Zone" quantity="1" owner="British"/>

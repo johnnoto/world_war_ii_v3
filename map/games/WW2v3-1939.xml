@@ -4465,7 +4465,7 @@
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
       <option name="changeOwnership" value="Bulgaria Romania:any:Germans:false"/>
-      <option name="placement" value="Bulgaria Romania:infantry:infantry:infantry:infantry:infantry:artillery:artillery"/>
+      <option name="placement" value="Bulgaria Romania:infantry:infantry:artillery"/>
       <option name="notification" value="BALKAN_ACCESSION"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -4479,7 +4479,7 @@
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
       <option name="changeOwnership" value="Finland:any:Germans:false"/>
-      <option name="placement" value="Finland:infantry:infantry:infantry:infantry:infantry:artillery:artillery"/>
+      <option name="placement" value="Finland:infantry:infantry:infantry:artillery"/>
       <option name="when" value="before:germanEndTurn"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -5268,8 +5268,8 @@ during Germany's turn:
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
-their armies (5 infantry, 2 artillery).</li>
-<li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (5 infantry, 2 artillery). Until then Finland is neutral and closed to everyone.</li>
+their armies (2 infantry, 1 artillery).</li>
+<li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
 <b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
 </ul>

@@ -4709,7 +4709,6 @@
       <unitPlacement unitType="artillery" territory="Czechoslovakia Hungary" quantity="1" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Czechoslovakia Hungary" quantity="2" owner="Germans"/>
       <unitPlacement unitType="fighter" territory="Czechoslovakia Hungary" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="battleship" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="2" owner="Germans"/>
@@ -4816,13 +4815,12 @@
       <unitPlacement unitType="destroyer" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="12 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="battleship" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="carrier" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="18 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="35 Sea Zone" quantity="1" owner="British"/>
+      <unitPlacement unitType="destroyer" territory="35 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="35 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="41 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="41 Sea Zone" quantity="1" owner="British"/>

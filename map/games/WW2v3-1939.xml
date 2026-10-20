@@ -4834,7 +4834,6 @@
       <unitPlacement unitType="infantry" territory="Chinghai" quantity="1" owner="Chinese"/>
       <!-- Americans -->
       <unitPlacement unitType="infantry" territory="Eastern United States" quantity="1" owner="Americans"/>
-      <unitPlacement unitType="fighter" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="aaGun" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="factory" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Western United States" quantity="1" owner="Americans"/>

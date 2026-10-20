@@ -4843,7 +4843,7 @@
       <unitPlacement unitType="transport" territory="13 Sea Zone" quantity="1" owner="French"/>
       <!-- Italians -->
       <unitPlacement unitType="infantry" territory="Italy" quantity="4" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="Italy" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="artillery" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="armour" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="fighter" territory="Italy" quantity="2" owner="Italians"/>
       <unitPlacement unitType="aaGun" territory="Italy" quantity="1" owner="Italians"/>

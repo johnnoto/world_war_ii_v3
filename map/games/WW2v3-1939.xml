@@ -4718,7 +4718,7 @@
       <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="1 Sea Zone" quantity="1" owner="Germans"/>
       <!-- Russians -->
-      <unitPlacement unitType="infantry" territory="Russia" quantity="2" owner="Russians"/>
+      <unitPlacement unitType="infantry" territory="Russia" quantity="5" owner="Russians"/>
       <unitPlacement unitType="artillery" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="armour" territory="Russia" quantity="1" owner="Russians"/>
       <unitPlacement unitType="fighter" territory="Russia" quantity="1" owner="Russians"/>

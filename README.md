@@ -2,6 +2,11 @@
 
 TripleA map for World War II v3, with three scenarios:
 
+**Installing.** Download the [ZIP](https://github.com/johnnoto/world_war_ii_v3/archive/refs/heads/master.zip),
+unzip it and put the folder in your TripleA `downloadedMaps` folder, then restart TripleA. The map's name is
+`world_war_ii_v3_1939`, so it installs alongside the official World War II v3 map instead of replacing it.
+Everyone in an online game needs this map installed, at the same version.
+
 | Scenario | File | Start |
 |---|---|---|
 | World War II v3 1939 | `map/games/WW2v3-1939.xml` | 1 September 1939: the invasion of Poland |

@@ -2115,7 +2115,7 @@
       <boolean/>
     </property>
     <!-- Map Name: also used for map utils when asked -->
-    <property name="mapName" value="world_war_ii_v3" editable="false"/>
+    <property name="mapName" value="world_war_ii_v3_1939" editable="false"/>
     <!-- notes appear in the notes menu in the main screen, format as html -->
     <property name="notes">
       <value><![CDATA[  						

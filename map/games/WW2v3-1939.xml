@@ -4834,7 +4834,6 @@
       <unitPlacement unitType="factory" territory="France" quantity="1" owner="French"/>
       <unitPlacement unitType="infantry" territory="Morocco Algeria" quantity="2" owner="French"/>
       <unitPlacement unitType="infantry" territory="French West Africa" quantity="1" owner="French"/>
-      <unitPlacement unitType="infantry" territory="French Madagascar" quantity="1" owner="French"/>
       <unitPlacement unitType="infantry" territory="French Indo-China Thailand" quantity="2" owner="French"/>
       <unitPlacement unitType="destroyer" territory="7 Sea Zone" quantity="1" owner="French"/>
       <unitPlacement unitType="battleship" territory="13 Sea Zone" quantity="1" owner="French"/>
@@ -5187,7 +5186,7 @@
     <property name="Neutral Flyover Allowed" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="mapName" value="world_war_ii_v3" editable="false"/>
+    <property name="mapName" value="world_war_ii_v3_1939" editable="false"/>
     <property name="notes">
       <value><![CDATA[
 <h2>World War II v3 &ndash; September 1939</h2>

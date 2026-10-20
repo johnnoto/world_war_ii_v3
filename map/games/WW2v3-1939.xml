@@ -4742,7 +4742,7 @@
       <unitPlacement unitType="submarine" territory="5 Sea Zone" quantity="1" owner="Russians"/>
       <unitPlacement unitType="submarine" territory="16 Sea Zone" quantity="1" owner="Russians"/>
       <!-- Japanese -->
-      <unitPlacement unitType="infantry" territory="Japan" quantity="3" owner="Japanese"/>
+      <unitPlacement unitType="infantry" territory="Japan" quantity="5" owner="Japanese"/>
       <unitPlacement unitType="artillery" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="armour" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="Japan" quantity="1" owner="Japanese"/>
@@ -4767,7 +4767,7 @@
       <unitPlacement unitType="fighter" territory="62 Sea Zone" quantity="4" owner="Japanese"/>
       <unitPlacement unitType="cruiser" territory="62 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="destroyer" territory="62 Sea Zone" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="transport" territory="62 Sea Zone" quantity="3" owner="Japanese"/>
+      <unitPlacement unitType="transport" territory="62 Sea Zone" quantity="4" owner="Japanese"/>
       <unitPlacement unitType="battleship" territory="61 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="61 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="fighter" territory="61 Sea Zone" quantity="1" owner="Japanese"/>

@@ -4761,6 +4761,7 @@
       <unitPlacement unitType="infantry" territory="Suiyuan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Formosa" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Okinawa" quantity="1" owner="Japanese"/>
+      <unitPlacement unitType="infantry" territory="Iwo Jima" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="infantry" territory="Caroline Islands" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="battleship" territory="62 Sea Zone" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="carrier" territory="62 Sea Zone" quantity="2" owner="Japanese"/>

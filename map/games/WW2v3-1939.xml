@@ -4711,7 +4711,7 @@
       <unitPlacement unitType="infantry" territory="Japan" quantity="3" owner="Japanese"/>
       <unitPlacement unitType="artillery" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="armour" territory="Japan" quantity="1" owner="Japanese"/>
-      <unitPlacement unitType="fighter" territory="Japan" quantity="2" owner="Japanese"/>
+      <unitPlacement unitType="fighter" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="bomber" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="aaGun" territory="Japan" quantity="1" owner="Japanese"/>
       <unitPlacement unitType="factory" territory="Japan" quantity="1" owner="Japanese"/>

@@ -2,10 +2,11 @@
 
 TripleA map for World War II v3, with three scenarios:
 
-**Installing.** Download the [ZIP](https://github.com/johnnoto/world_war_ii_v3/archive/refs/heads/master.zip),
-unzip it and put the folder in your TripleA `downloadedMaps` folder, then restart TripleA. The map's name is
-`world_war_ii_v3_1939`, so it installs alongside the official World War II v3 map instead of replacing it.
-Everyone in an online game needs this map installed, at the same version.
+**Installing.** Download the [ZIP](https://github.com/johnnoto/world_war_ii_v3/archive/refs/heads/master.zip)
+and unzip it. In your TripleA `downloadedMaps` folder, delete the official `world_war_ii_v3` folder if you have one,
+and put this folder there in its place, then restart TripleA. This map uses the same name as the official
+World War II v3 map, so only one of the two can be installed at a time; if both are present TripleA may pick
+either one, and France will show up in the wrong colours. Everyone in an online game needs this version installed.
 
 | Scenario | File | Start |
 |---|---|---|

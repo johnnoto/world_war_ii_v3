@@ -4709,7 +4709,7 @@
       <unitPlacement unitType="artillery" territory="Czechoslovakia Hungary" quantity="1" owner="Germans"/>
       <unitPlacement unitType="armour" territory="Czechoslovakia Hungary" quantity="2" owner="Germans"/>
       <unitPlacement unitType="fighter" territory="Czechoslovakia Hungary" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="22 Sea Zone" quantity="1" owner="Germans"/>

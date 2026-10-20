@@ -4862,7 +4862,7 @@
       <unitPlacement unitType="infantry" territory="Fukien" quantity="5" owner="Chinese"/>
       <unitPlacement unitType="artillery" territory="Fukien" quantity="1" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Ningxia" quantity="2" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Chinghai" quantity="1" owner="Chinese"/>
+      <unitPlacement unitType="infantry" territory="Chinghai" quantity="2" owner="Chinese"/>
       <!-- Americans -->
       <unitPlacement unitType="infantry" territory="Eastern United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="aaGun" territory="Eastern United States" quantity="1" owner="Americans"/>

@@ -4565,23 +4565,23 @@
       <option name="text" value="SOVIET_WAR_ON_GERMANY"/>
     </attachment>
     <attachment name="politicalActionAttachment_Strike_South" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
       <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="text" value="STRIKE_SOUTH"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japan_Declares_War_On_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British"/>
       <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="text" value="STRIKE_SOUTH_BRITAIN"/>
     </attachment>
     <attachment name="politicalActionAttachment_Japan_Declares_War_On_The_USA" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_Americans"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="text" value="JAPAN_WAR_USA"/>
     </attachment>
     <attachment name="politicalActionAttachment_Occupy_Indochina" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_French"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_French"/>
       <option name="relationshipChange" value="Japanese:French:War"/>
       <option name="text" value="OCCUPY_INDOCHINA"/>
     </attachment>
@@ -5237,7 +5237,7 @@ territory. War is declared in the <b>Politics</b> phase, and only when history a
 
 <li><b>Operation Barbarossa</b> &ndash; Germany may attack the USSR from round 4 (June 1941).</li>
 <li><b>Soviet pre-emptive war</b> &ndash; the USSR may declare war on Germany from round 6 if Germany has not attacked.</li>
-<li><b>Japan</b> may declare war on any Allied power from round 2: <b>Strike South</b> (Britain and the USA together), Britain alone, the USA alone, <b>Occupy Indochina</b> (France) or <b>Strike North</b> (the USSR).</li>
+<li><b>Japan</b> may declare war on France (<b>Occupy Indochina</b>), Britain, the USA, or Britain and the USA together (<b>Strike South</b>) from round 1, each separately and only when it chooses. <b>Strike North</b> against the USSR is possible from round 2.</li>
 <li><b>Germany declares war on the USA</b> from round 5.</li>
 <li><b>The United States enters the war</b> against Germany from round 6, or at once if the Axis take the United Kingdom;
 against Japan from round 6, or at once if Japan attacks Britain; against Italy once at war with Germany.</li>

@@ -4438,7 +4438,7 @@
     <attachment name="conditionAttachment_Finland_Joins_Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_4_Or_Later"/>
     </attachment>
-    <!-- Round 4: Finland, neutral and closed until now, joins Germany with its army -->
+    <!-- Round 4: at the end of Germany's turn, Finland (neutral and closed until now) joins Germany with its army. It cannot attack in the turn it joins. -->
     <attachment name="triggerAttachment_Finland_Joins_Germany" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Finland_Joins_Germany"/>
       <option name="territories" value="Finland"/>
@@ -4446,6 +4446,13 @@
       <option name="territoryProperty" value="isImpassable" count="false"/>
       <option name="changeOwnership" value="Finland:any:Germans:false"/>
       <option name="placement" value="Finland:infantry:infantry:infantry:infantry:infantry:artillery:artillery"/>
+      <option name="when" value="before:germanEndTurn"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Finland_Joins_Germany_Notice" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Finland_Joins_Germany"/>
+      <option name="when" value="before:germanEndTurn"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="FINLAND_JOINS"/>
       <option name="uses" value="1"/>
     </attachment>
@@ -4670,7 +4677,7 @@
       <unitPlacement unitType="fighter" territory="Czechoslovakia Hungary" quantity="1" owner="Germans"/>
       <unitPlacement unitType="battleship" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="5 Sea Zone" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="destroyer" territory="5 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="transport" territory="5 Sea Zone" quantity="2" owner="Germans"/>
       <unitPlacement unitType="cruiser" territory="22 Sea Zone" quantity="1" owner="Germans"/>
       <unitPlacement unitType="submarine" territory="8 Sea Zone" quantity="2" owner="Germans"/>
@@ -4758,8 +4765,9 @@
       <unitPlacement unitType="infantry" territory="Kwangtung" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Australia" quantity="2" owner="British"/>
       <unitPlacement unitType="artillery" territory="Australia" quantity="1" owner="British"/>
+      <unitPlacement unitType="aaGun" territory="Australia" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="New Zealand" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Union of South Africa" quantity="1" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Union of South Africa" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Eastern Canada" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Western Canada" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="3 Sea Zone" quantity="1" owner="British"/>
@@ -4771,13 +4779,12 @@
       <unitPlacement unitType="destroyer" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="2 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="6 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="submarine" territory="6 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="7 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="7 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="9 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="12 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="battleship" territory="15 Sea Zone" quantity="2" owner="British"/>
+      <unitPlacement unitType="battleship" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="carrier" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="15 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="15 Sea Zone" quantity="1" owner="British"/>
@@ -4785,7 +4792,6 @@
       <unitPlacement unitType="cruiser" territory="18 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="35 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="35 Sea Zone" quantity="1" owner="British"/>
-      <unitPlacement unitType="cruiser" territory="37 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="cruiser" territory="41 Sea Zone" quantity="1" owner="British"/>
       <unitPlacement unitType="transport" territory="41 Sea Zone" quantity="1" owner="British"/>
       <!-- French -->
@@ -4811,7 +4817,7 @@
       <unitPlacement unitType="bomber" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="aaGun" territory="Italy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="factory" territory="Italy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="infantry" territory="Libya" quantity="4" owner="Italians"/>
+      <unitPlacement unitType="infantry" territory="Libya" quantity="2" owner="Italians"/>
       <unitPlacement unitType="artillery" territory="Libya" quantity="1" owner="Italians"/>
       <unitPlacement unitType="infantry" territory="Italian Africa" quantity="3" owner="Italians"/>
       <unitPlacement unitType="battleship" territory="14 Sea Zone" quantity="1" owner="Italians"/>
@@ -4819,8 +4825,6 @@
       <unitPlacement unitType="destroyer" territory="14 Sea Zone" quantity="1" owner="Italians"/>
       <unitPlacement unitType="submarine" territory="14 Sea Zone" quantity="2" owner="Italians"/>
       <unitPlacement unitType="transport" territory="14 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="destroyer" territory="34 Sea Zone" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="submarine" territory="34 Sea Zone" quantity="1" owner="Italians"/>
       <!-- Chinese -->
       <unitPlacement unitType="infantry" territory="Sikang" quantity="2" owner="Chinese"/>
       <unitPlacement unitType="fighter" territory="Sikang" quantity="1" owner="Chinese"/>
@@ -4855,7 +4859,7 @@
       <unitPlacement unitType="infantry" territory="Poland" quantity="5"/>
       <unitPlacement unitType="artillery" territory="Poland" quantity="1"/>
       <unitPlacement unitType="infantry" territory="East Poland" quantity="2"/>
-      <unitPlacement unitType="infantry" territory="Northwestern Europe" quantity="3"/>
+      <unitPlacement unitType="infantry" territory="Northwestern Europe" quantity="2"/>
       <unitPlacement unitType="artillery" territory="Northwestern Europe" quantity="1"/>
       <unitPlacement unitType="infantry" territory="Norway" quantity="1"/>
       <unitPlacement unitType="infantry" territory="Baltic States" quantity="1"/>
@@ -5234,7 +5238,7 @@ during Germany's turn:
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
 their armies (5 infantry, 2 artillery).</li>
-<li><b>Finland joins Germany</b> at the start of Germany's round 4 combat move &ndash; the round Barbarossa becomes possible &ndash; with its army (5 infantry, 2 artillery). Until then Finland is neutral and closed to everyone.</li>
+<li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (5 infantry, 2 artillery). Until then Finland is neutral and closed to everyone.</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
 <b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
 </ul>

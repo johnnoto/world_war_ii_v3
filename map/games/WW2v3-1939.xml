@@ -3443,11 +3443,60 @@
     <attachment name="conditionAttachment_Round_1" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="1"/>
     </attachment>
-    <!-- Round 1: the Imperial General Headquarters briefing for the Japanese player -->
-    <attachment name="triggerAttachment_Japan_Briefing" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <!-- Round 1: opening briefing for the Germans player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Germans_Briefing" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_1"/>
-      <option name="when" value="before:japanesePolitics"/>
+      <option name="when" value="before:germanTech"/>
+      <option name="notification" value="GERMANY_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the Russians player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Russians_Briefing" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:russianTech"/>
+      <option name="notification" value="SOVIET_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the Japanese player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Japanese_Briefing" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:japaneseTech"/>
       <option name="notification" value="JAPAN_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the British player, at the start of its first turn -->
+    <attachment name="triggerAttachment_British_Briefing" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:britishTech"/>
+      <option name="notification" value="BRITISH_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the French player, at the start of its first turn -->
+    <attachment name="triggerAttachment_French_Briefing" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:frenchTech"/>
+      <option name="notification" value="FRENCH_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the Italians player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Italians_Briefing" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:italianTech"/>
+      <option name="notification" value="ITALIAN_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the Chinese player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Chinese_Briefing" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:chinesePurchase"/>
+      <option name="notification" value="CHINESE_BRIEFING"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Round 1: opening briefing for the Americans player, at the start of its first turn -->
+    <attachment name="triggerAttachment_Americans_Briefing" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_1"/>
+      <option name="when" value="before:americanTech"/>
+      <option name="notification" value="AMERICAN_BRIEFING"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Germany_Attacked_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5497,6 +5546,8 @@ France is a full playable power in this scenario, with its own army, fleet and c
 One round is roughly six months: round 1 is autumn 1939, round 2 spring&ndash;summer 1940, round 4
 summer 1941, round 5 the winter of 1941&ndash;42.
 </p>
+
+<p>At the start of its first turn, each power receives a <b>briefing</b>: its historical situation in September 1939 and the rules that matter most to it.</p>
 
 <h3>Neutral Countries</h3>
 <p>

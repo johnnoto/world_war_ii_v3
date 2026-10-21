@@ -4888,12 +4888,19 @@
       <option name="notification" value="GOVERNMENTS_IN_EXILE_FRANCE"/>
       <option name="uses" value="1"/>
     </attachment>
-    <attachment name="conditionAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_War_British_Japanese"/>
+    <!-- Neither island has been claimed yet, so the rule fires only once -->
+    <attachment name="conditionAttachment_Dutch_East_Indies_Neutral" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Borneo:East Indies" count="1"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="invert" value="true"/>
     </attachment>
-    <attachment name="triggerAttachment_Dutch_East_Indies_Join_Britain_japanesePolitics" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="conditionAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_War_British_Japanese:conditionAttachment_Dutch_East_Indies_Neutral"/>
+    </attachment>
+    <attachment name="triggerAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Dutch_East_Indies_Join_Britain"/>
       <option name="when" value="after:japanesePolitics"/>
+      <option name="when" value="after:britishPolitics"/>
       <option name="territories" value="Borneo:East Indies"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
@@ -4901,14 +4908,13 @@
       <option name="changeOwnership" value="East Indies:any:British:false"/>
       <option name="placement" value="Borneo:infantry"/>
       <option name="placement" value="East Indies:infantry"/>
-      <option name="uses" value="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Dutch_East_Indies_Notice_japanesePolitics" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_Dutch_East_Indies_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Dutch_East_Indies_Join_Britain"/>
       <option name="when" value="after:japanesePolitics"/>
+      <option name="when" value="after:britishPolitics"/>
       <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="DUTCH_EAST_INDIES"/>
-      <option name="uses" value="1"/>
     </attachment>
     <!-- ============================================================ -->
     <!-- POLITICAL ACTIONS (declarations of war)                       -->
@@ -5666,7 +5672,7 @@ Everyone else is at peace until war is declared.</p>
 <tr><th>Country</th><th>Opens when</th><th>Joins</th></tr>
 <tr><td>Bulgaria-Romania</td><td>Start of Germany's round-3 combat move</td><td>Germany, with 2 infantry and 1 artillery</td></tr>
 <tr><td>Finland</td><td>End of Germany's round-3 turn</td><td>Germany, with 3 infantry and 1 artillery</td></tr>
-<tr><td>Borneo, East Indies</td><td>Japan goes to war with Britain</td><td>Britain, with 1 infantry each</td></tr>
+<tr><td>Borneo, East Indies</td><td>Japan and Britain go to war (whoever declares)</td><td>Britain, with 1 infantry each</td></tr>
 <tr><td>Belgian Congo</td><td>The Axis take Northwestern Europe</td><td>Britain (or France, see 7.2)</td></tr>
 </table>
 <p>Spain, Sweden, Switzerland, Turkey, Eire, Saudi Arabia, Afghanistan, Mongolia and the other remaining neutrals are impassable for the whole game.</p>
@@ -5747,8 +5753,7 @@ without building there is not enough.</li>
 <ul>
 <li><b>Belgian Congo.</b> When the Axis take Northwestern Europe, the Belgian Congo joins Britain &ndash; or France, if the Axis already
 hold the United Kingdom while France is still at war and holds Paris.</li>
-<li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain. At the end of
-Japan's Politics phase in which that war exists, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
+<li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan and Britain are at war. They join Britain, with 1 infantry each, at the end of the Politics phase in which that war begins: if Japan declares, Japan can attack them that same turn; if Britain declares, Britain holds them at once and collects their income at the end of its turn.</li>
 </ul>
 
 <h3>7.3 If London Falls</h3>

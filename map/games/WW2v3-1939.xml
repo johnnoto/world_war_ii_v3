@@ -2120,10 +2120,10 @@
       <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
       <option name="unitPresence" value="carrier:battleship:cruiser:submarine:destroyer:transport" count="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Royal_Navy_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Royal_Navy_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Afloat:conditionAttachment_Allies_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
-      <option name="placement" value="3 Sea Zone:cruiser"/>
+      <option name="placement" value="2 Sea Zone:cruiser"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Royal_Navy_9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -5739,7 +5739,7 @@ full round to retake Paris &ndash; the Armistice of Compi&egrave;gne is signed:
 <li>Morocco-Algeria and its garrison go over to Germany, unit for unit.</li>
 <li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
 <li>French Indo-China stays with Vichy France but loses its garrison. Japan may still occupy it, with no wider consequences.</li>
-<li>The French navy is removed. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3), or off
+<li>The French navy is removed. If France still has any warship, Britain receives one cruiser in sea zone 2, off western Britain, or off
 Halifax (sea zone 9) if the Axis hold the United Kingdom.</li>
 <li>All other French units are disbanded, and France is at peace with everyone for the rest of the game.</li>
 </ul></li>

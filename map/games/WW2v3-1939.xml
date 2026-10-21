@@ -4869,6 +4869,9 @@
     <!-- Belgium is overrun; the Belgian Congo fights on with the British -->
     <attachment name="triggerAttachment_Governments_In_Exile" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_Not_France_Fights_On_Without_Britain"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
       <option name="territories" value="Belgian Congo"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
@@ -4880,6 +4883,9 @@
     <!-- Belgium is overrun; the Belgian Congo fights on with the French -->
     <attachment name="triggerAttachment_Governments_In_Exile_France" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_France_Fights_On_Without_Britain"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
       <option name="territories" value="Belgian Congo"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
@@ -5751,7 +5757,7 @@ without building there is not enough.</li>
 
 <h3>7.2 Governments in Exile</h3>
 <ul>
-<li><b>Belgian Congo.</b> When the Axis take Northwestern Europe, the Belgian Congo joins Britain &ndash; or France, if the Axis already
+<li><b>Belgian Congo.</b> The moment the Axis take Northwestern Europe &ndash; at the end of that combat phase &ndash; the Belgian Congo joins Britain &ndash; or France, if the Axis already
 hold the United Kingdom while France is still at war and holds Paris.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan and Britain are at war. They join Britain, with 1 infantry each, at the end of the Politics phase in which that war begins: if Japan declares, Japan can attack them that same turn; if Britain declares, Britain holds them at once and collects their income at the end of its turn.</li>
 </ul>

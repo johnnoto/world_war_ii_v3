@@ -661,7 +661,7 @@
       <step name="germanTechActivation" delegate="tech_activation" player="Germans"/>
       <step name="germanPurchase" delegate="purchase" player="Germans"/>
       <step name="germanPolitics" delegate="politics" player="Germans"/>
-      <step name="germanCombatMove" delegate="move" player="Germans"/>
+      <step name="germanCombatMove" delegate="move" player="Germans"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="germanBattle" delegate="battle" player="Germans"/>
       <step name="germanNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
       <step name="germanPlace" delegate="place" player="Germans"/>
@@ -671,7 +671,7 @@
       <step name="russianTechActivation" delegate="tech_activation" player="Russians"/>
       <step name="russianPurchase" delegate="purchase" player="Russians"/>
       <step name="russianPolitics" delegate="politics" player="Russians"/>
-      <step name="russianCombatMove" delegate="move" player="Russians"/>
+      <step name="russianCombatMove" delegate="move" player="Russians"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="russianBattle" delegate="battle" player="Russians"/>
       <step name="russianNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
       <step name="russianPlace" delegate="place" player="Russians"/>
@@ -681,7 +681,7 @@
       <step name="japaneseTechActivation" delegate="tech_activation" player="Japanese"/>
       <step name="japanesePurchase" delegate="purchase" player="Japanese"/>
       <step name="japanesePolitics" delegate="politics" player="Japanese"/>
-      <step name="japaneseCombatMove" delegate="move" player="Japanese"/>
+      <step name="japaneseCombatMove" delegate="move" player="Japanese"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="japaneseBattle" delegate="battle" player="Japanese"/>
       <step name="japaneseNonCombatMove" delegate="move" player="Japanese" display="Non Combat Move"/>
       <step name="japanesePlace" delegate="place" player="Japanese"/>
@@ -691,7 +691,7 @@
       <step name="britishTechActivation" delegate="tech_activation" player="British"/>
       <step name="britishPurchase" delegate="purchase" player="British"/>
       <step name="britishPolitics" delegate="politics" player="British"/>
-      <step name="britishCombatMove" delegate="move" player="British"/>
+      <step name="britishCombatMove" delegate="move" player="British"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move"/>
       <step name="britishPlace" delegate="place" player="British"/>
@@ -701,7 +701,7 @@
       <step name="frenchTechActivation" delegate="tech_activation" player="French"/>
       <step name="frenchPurchase" delegate="purchase" player="French"/>
       <step name="frenchPolitics" delegate="politics" player="French"/>
-      <step name="frenchCombatMove" delegate="move" player="French"/>
+      <step name="frenchCombatMove" delegate="move" player="French"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="frenchBattle" delegate="battle" player="French"/>
       <step name="frenchNonCombatMove" delegate="move" player="French" display="Non Combat Move"/>
       <step name="frenchPlace" delegate="place" player="French"/>
@@ -711,7 +711,7 @@
       <step name="italianTechActivation" delegate="tech_activation" player="Italians"/>
       <step name="italianPurchase" delegate="purchase" player="Italians"/>
       <step name="italianPolitics" delegate="politics" player="Italians"/>
-      <step name="italianCombatMove" delegate="move" player="Italians"/>
+      <step name="italianCombatMove" delegate="move" player="Italians"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="italianBattle" delegate="battle" player="Italians"/>
       <step name="italianNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
       <step name="italianPlace" delegate="place" player="Italians"/>
@@ -723,10 +723,10 @@
       <step name="chinesePurchase" delegate="purchaseNoPU" player="Chinese"/>
       <step name="americanPolitics" delegate="politics" player="Americans"/>
       <step name="chinesePolitics" delegate="politics" player="Chinese"/>
-      <step name="americanCombatMove" delegate="move" player="Americans"/>
+      <step name="americanCombatMove" delegate="move" player="Americans"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="americanBattle" delegate="battle" player="Americans"/>
       <step name="americanNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
-      <step name="chineseCombatMove" delegate="move" player="Chinese"/>
+      <step name="chineseCombatMove" delegate="move" player="Chinese"><stepProperty name="resetUnitStateAtStart" value="true"/></step>
       <step name="chineseBattle" delegate="battle" player="Chinese"/>
       <step name="chineseNonCombatMove" delegate="move" player="Chinese" display="Non Combat Move"/>
       <step name="americanPlace" delegate="place" player="Americans"/>
@@ -5907,6 +5907,7 @@ war the Allies have won. The old target of 17 forced the Allies to take four of 
 <li>World War II v3 rules, units and technology, as in the 1941 and 1942 scenarios. National objectives, technology development,
 politics and triggers are on. Low Luck is off.</li>
 <li>Neutral countries cost nothing to invade; aircraft may not fly over them.</li>
+<li>Units that appear through events (for example the Romanian and Bulgarian armies, or the garrisons of the Dutch East Indies) can move and attack in the combat move of the turn they appear.</li>
 <li>Battleships take two hits; subs may submerge and sneak attack; shipyards are used; heavy bombers roll two dice.</li>
 </ul>
 

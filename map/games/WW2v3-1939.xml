@@ -1667,7 +1667,7 @@
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Soviets_Free_To_Attack_Japan" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_11_Or_Later:conditionAttachment_Allies_Hold_Germany"/>
+      <option name="conditions" value="conditionAttachment_Round_4_Or_Later:conditionAttachment_Allies_Hold_Germany"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <!-- Common foe: two powers of the same camp at war with the same enemy -->
@@ -5339,7 +5339,7 @@ territory. War is declared in the <b>Politics</b> phase, and only when history a
 <li><b>Germany declares war on the USA</b> from round 5.</li>
 <li><b>The United States enters the war</b> against Germany from round 6 (automatically if the Axis take the United Kingdom);
 against Japan from round 6, or at once if Japan attacks Britain; against Italy once at war with Germany.</li>
-<li><b>August Storm</b> &ndash; the USSR may attack Japan from round 11 (August 1945), or once Germany has fallen.</li>
+<li><b>August Storm</b> &ndash; the USSR may declare war on Japan from round 4, or once Germany has fallen.</li>
 </ul>
 <p>
 <b>Alliances form automatically</b> between powers fighting a common enemy: Germany and Italy once

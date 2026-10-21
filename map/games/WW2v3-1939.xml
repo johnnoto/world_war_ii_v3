@@ -3716,6 +3716,39 @@
       <option name="relationshipChange" value="Russians:Germans:anyNeutral:War"/>
       <option name="uses" value="1"/>
     </attachment>
+    <!-- Turned off when the government moves, so the rule fires only once -->
+    <attachment name="conditionAttachment_Government_Still_In_London" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Holds_Eastern_Canada" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Eastern Canada" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Moves_To_Ottawa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_United_Kingdom:conditionAttachment_Britain_Holds_Eastern_Canada:conditionAttachment_Government_Still_In_London"/>
+    </attachment>
+    <!-- Rule: if London falls, Ottawa becomes Britain's capital and gets a factory -->
+    <attachment name="triggerAttachment_Government_Moves_To_Ottawa" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Ottawa"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="territories" value="Eastern Canada"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="capital" count="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Government_Still_In_London"/>
+      <option name="playerProperty" value="switch" count="false"/>
+      <option name="placement" value="Eastern Canada:factory"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_Ottawa_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Ottawa"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENT_TO_OTTAWA"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Germany_Attacked_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Germans:French:any:currentRound:France"/>
     </attachment>
@@ -5834,6 +5867,7 @@ In the Politics phase where that war begins, they join Britain with 1 infantry e
 their armies (2 infantry, 1 artillery).</li>
 <li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
 <li><b>Britain falls.</b> If the Axis take the United Kingdom, the United States and the Soviet Union immediately declare war on Germany, at the end of that combat phase, and join France and the British Empire. Japan may then declare war on what remains of the British Empire at once, even in round 1.</li>
+<li><b>The government moves to Ottawa.</b> When London falls, the King and Parliament cross to Canada: <b>Eastern Canada</b> becomes a second British capital and gets a factory, so Britain keeps collecting income, building and fighting with the rest of the Empire. The PUs Britain held when London fell still go to whoever took it. (This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.)</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
 <b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
 </ul>

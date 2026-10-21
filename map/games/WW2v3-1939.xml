@@ -4506,15 +4506,43 @@
       <option name="notification" value="FINLAND_JOINS"/>
       <option name="uses" value="1"/>
     </attachment>
-    <!-- May 1940: Belgium is overrun; the Belgian Congo fights on with the Allies -->
+    <attachment name="conditionAttachment_Belgian_Congo_Unclaimed" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Belgian Congo" count="1"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Axis_Not_Holding_France" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="France" count="1"/>
+      <option name="players" value="Germans:Italians:Japanese"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_France_Fights_On_Without_Britain" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_United_Kingdom:conditionAttachment_War_French_Germans:conditionAttachment_Axis_Not_Holding_France"/>
+    </attachment>
+    <attachment name="conditionAttachment_Not_France_Fights_On_Without_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Fights_On_Without_Britain"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- Belgium is overrun; the Belgian Congo fights on with Britain -->
     <attachment name="triggerAttachment_Governments_In_Exile" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries"/>
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_Not_France_Fights_On_Without_Britain"/>
       <option name="territories" value="Belgian Congo"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
       <option name="changeOwnership" value="Belgian Congo:any:British:false"/>
       <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="GOVERNMENTS_IN_EXILE"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Belgium is overrun; the Belgian Congo fights on with France (London has fallen) -->
+    <attachment name="triggerAttachment_Governments_In_Exile_France" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_France_Fights_On_Without_Britain"/>
+      <option name="territories" value="Belgian Congo"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="isImpassable" count="false"/>
+      <option name="changeOwnership" value="Belgian Congo:any:French:false"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENTS_IN_EXILE_FRANCE"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -4586,8 +4614,12 @@
       <option name="relationshipChange" value="Japanese:Americans:War"/>
       <option name="text" value="STRIKE_SOUTH"/>
     </attachment>
+    <attachment name="conditionAttachment_Japan_Free_To_Attack_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Axis_Hold_United_Kingdom"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Japan_Declares_War_On_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British:conditionAttachment_Japan_Free_To_Attack_Britain"/>
       <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="text" value="STRIKE_SOUTH_BRITAIN"/>
     </attachment>
@@ -5280,13 +5312,13 @@ during Germany's turn:
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
-<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain.</li>
+<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain &ndash; or France, if the Axis already hold the United Kingdom while France is still fighting and holds Paris.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
 their armies (2 infantry, 1 artillery).</li>
 <li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
-<li><b>Britain falls.</b> If the Axis take the United Kingdom, the United States and the Soviet Union immediately declare war on Germany, at the end of that combat phase, and join France and the British Empire.</li>
+<li><b>Britain falls.</b> If the Axis take the United Kingdom, the United States and the Soviet Union immediately declare war on Germany, at the end of that combat phase, and join France and the British Empire. Japan may then declare war on what remains of the British Empire at once, even in round 1.</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
 <b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
 </ul>

@@ -4977,7 +4977,7 @@
       <option name="text" value="STRIKE_NORTH"/>
     </attachment>
     <attachment name="politicalActionAttachment_August_Storm" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Neutral_Russians_Japanese:conditionAttachment_Soviets_Free_To_Attack_Japan"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Russians_Japanese"/>
       <option name="relationshipChange" value="Russians:Japanese:War"/>
       <option name="text" value="AUGUST_STORM"/>
     </attachment>
@@ -5686,7 +5686,7 @@ Everyone else is at peace until war is declared.</p>
 <tr><td>War with the USA</td><td>From round 2</td></tr>
 <tr><td>Strike South (Britain and the USA together)</td><td>From round 2</td></tr>
 <tr><td>Strike North (war with the USSR)</td><td>From round 2</td></tr>
-<tr><td>Soviet Union</td><td>August Storm (war with Japan)</td><td>From round 4, or once the Allies hold Germany</td></tr>
+<tr><td>Soviet Union</td><td>August Storm (war with Japan)</td><td>Any turn, from round 1</td></tr>
 <tr><td>Britain</td><td>War with Japan</td><td>After a Crisis in Indo-China (7.5)</td></tr>
 <tr><td rowspan="2">USA</td><td>War with Japan</td><td>Once Japan has declared war on Britain (a British declaration on Japan does not count)</td></tr>
 <tr><td>War with Italy</td><td>Once the USA is at war with Germany and Britain is at war with Italy</td></tr>
@@ -5715,10 +5715,10 @@ is in; China with every power fighting Japan. France only allies while it is at 
 <h2>6. Timeline at a Glance</h2>
 <table border="1" cellspacing="0">
 <tr><th>Round</th><th>Scheduled</th><th>Becomes possible</th></tr>
-<tr><td>1</td><td>Briefings for every power</td><td>Japan: Occupy Indochina</td></tr>
+<tr><td>1</td><td>Briefings for every power</td><td>Japan: Occupy Indochina. USSR: August Storm (war with Japan)</td></tr>
 <tr><td>2</td><td>Italy enters the war</td><td>Japan: war with Britain, the USA or the USSR</td></tr>
 <tr><td>3</td><td>Bulgaria-Romania join Germany (start of German combat move); Finland joins Germany (end of German turn)</td><td>Germany: Barbarossa</td></tr>
-<tr><td>4</td><td>USA enters the war (end of its turn)</td><td>USSR: August Storm</td></tr>
+<tr><td>4</td><td>USA enters the war (end of its turn)</td><td></td></tr>
 <tr><td>5</td><td>USSR declares war on Germany if not yet attacked (end of its turn)</td><td>Germany: war with the USA</td></tr>
 </table>
 
@@ -5779,7 +5779,7 @@ the Philippines.</li>
 <li><b>India falls.</b> If Japan takes India, the USA declares war on Japan at once.</li>
 <li><b>The southern advance.</b> If Japan holds Borneo, the East Indies and French Indo-China at the same time, the USA declares war on Japan at once.</li>
 <li><b>China's supply routes.</b> See section 9.</li>
-<li><b>August Storm.</b> The USSR may declare war on Japan from round 4. Japan may strike first from round 2 (Strike North).</li>
+<li><b>August Storm.</b> The USSR may declare war on Japan on any of its turns, from round 1. Japan may strike first from round 2 (Strike North).</li>
 </ul>
 
 <h3>7.6 When America Enters</h3>

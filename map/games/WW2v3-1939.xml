@@ -1679,16 +1679,13 @@
     <attachment name="conditionAttachment_Japan_Strikes_Fighting_France" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Japan_Just_Declared_On_French:conditionAttachment_War_French_Germans"/>
     </attachment>
-    <attachment name="conditionAttachment_USA_Pacific_Interests_Threatened" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Indochina_Crisis"/>
-    </attachment>
     <!-- Composite conditions for political options -->
     <attachment name="conditionAttachment_Americans_Free_To_Enter_European_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Free_To_Enter_Pacific_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Japan_Has_Attacked_Britain:conditionAttachment_USA_Pacific_Interests_Threatened"/>
+      <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Japan_Has_Attacked_Britain"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Free_To_Fight_Italy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -3383,6 +3380,40 @@
       <option name="when" value="before:chinesePlace"/>
       <option name="placement" value="Yunnan:artillery"/>
     </attachment>
+    <attachment name="conditionAttachment_Soviets_Strike_First" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Neutral_Germans_Russians"/>
+    </attachment>
+    <!-- End of the Soviet round-5 turn: the USSR declares war on Germany -->
+    <attachment name="triggerAttachment_Soviets_Strike_First" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Soviets_Strike_First"/>
+      <option name="when" value="before:russianEndTurn"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="SOVIETS_STRIKE_FIRST"/>
+      <option name="relationshipChange" value="Russians:Germans:anyNeutral:War"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_USA_Still_At_Peace_With_An_Axis_Power" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Germans_Americans:conditionAttachment_Neutral_Italians_Americans:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
+    <attachment name="conditionAttachment_USA_Early_Entry" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_3_Or_Later:conditionAttachment_Indochina_Crisis"/>
+    </attachment>
+    <attachment name="conditionAttachment_USA_Entry_Due" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_4_Or_Later:conditionAttachment_USA_Early_Entry"/>
+      <option name="conditionType" value="OR"/>
+    </attachment>
+    <!-- End of the US round-4 turn: the USA is at war with Germany, Italy and Japan -->
+    <attachment name="triggerAttachment_USA_Enters_The_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_USA_Entry_Due:conditionAttachment_USA_Still_At_Peace_With_An_Axis_Power"/>
+      <option name="when" value="before:americanEndTurn"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="USA_ENTERS_WAR"/>
+      <option name="relationshipChange" value="Americans:Germans:anyNeutral:War"/>
+      <option name="relationshipChange" value="Americans:Italians:anyNeutral:War"/>
+      <option name="relationshipChange" value="Americans:Japanese:anyNeutral:War"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="conditionAttachment_Germany_Attacked_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Germans:French:any:currentRound:France"/>
     </attachment>
@@ -4767,14 +4798,9 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="politicalActionAttachment_Operation_Barbarossa" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_4_Or_Later:conditionAttachment_Neutral_Germans_Russians"/>
+      <option name="conditions" value="conditionAttachment_Round_3_Or_Later:conditionAttachment_Neutral_Germans_Russians"/>
       <option name="relationshipChange" value="Germans:Russians:War"/>
       <option name="text" value="BARBAROSSA"/>
-    </attachment>
-    <attachment name="politicalActionAttachment_Soviet_Preemptive_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Neutral_Germans_Russians"/>
-      <option name="relationshipChange" value="Russians:Germans:War"/>
-      <option name="text" value="SOVIET_WAR_ON_GERMANY"/>
     </attachment>
     <attachment name="politicalActionAttachment_Strike_South" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
@@ -5455,12 +5481,13 @@ territory. War is declared in the <b>Politics</b> phase, and only when history a
 </p>
 <ul>
 
-<li><b>Operation Barbarossa</b> &ndash; Germany may attack the USSR from round 4 (June 1941).</li>
-<li><b>Soviet pre-emptive war</b> &ndash; the USSR may declare war on Germany from round 6 if Germany has not attacked.</li>
+<li><b>Operation Barbarossa</b> &ndash; Germany may attack the USSR from round 3.</li>
+<li><b>The Soviets strike first</b> &ndash; if Germany has not attacked by then, the USSR declares war on Germany automatically at the end of its round-5 turn.</li>
 <li><b>Japan</b> may declare war on France (<b>Occupy Indochina</b>) from round 1. From round 2 it may also declare war on Britain, the USA, Britain and the USA together (<b>Strike South</b>), or the USSR (<b>Strike North</b>), each separately and only when it chooses.</li>
 <li><b>Germany declares war on the USA</b> from round 5.</li>
-<li><b>The United States enters the war</b> against Germany from round 6 (automatically if the Axis take the United Kingdom);
-against Japan from round 6 (round 5 if Japan attacked France before its fall), or at once if Japan declares war on Britain &ndash; but not if Britain declares war on Japan; against Italy once at war with Germany.</li>
+<li><b>The United States enters the war</b> automatically at the end of its round-4 turn &ndash; round 3 after a crisis in Indo-China (see Events) &ndash; against Germany, Italy and Japan.
+Before that it may declare war on Germany at once if the Axis take the United Kingdom (and is forced to, see Events); on Japan once Japan
+declares war on Britain &ndash; but not if Britain declares war on Japan; and on Italy once at war with Germany.</li>
 <li><b>Britain declares war on Japan</b> &ndash; possible once Japan has attacked France (Occupy Indochina) while France was still fighting Germany.</li>
 <li><b>August Storm</b> &ndash; the USSR may declare war on Japan from round 4, or once Germany has fallen.</li>
 </ul>
@@ -5486,14 +5513,14 @@ during Germany's turn:
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
-<li><b>Crisis in Indo-China.</b> If Japan declares war on France while France is still fighting Germany, Britain may declare war on Japan, the USA may declare war on Japan from round 5 instead of round 6, and the USA places 1 infantry and 1 AA gun each in Hawaii and the Philippines.</li>
+<li><b>Crisis in Indo-China.</b> If Japan declares war on France while France is still fighting Germany, Britain may declare war on Japan, the USA enters the war a round early (at the end of its round-3 turn), and the USA places 1 infantry and 1 AA gun each in Hawaii and the Philippines.</li>
 <li><b>Supply routes into China.</b> At the start of each Chinese Place Units step, China receives 1 artillery in Yunnan if France holds French Indo-China (the Hanoi&ndash;Kunming railway), and 1 more if Britain holds Burma (the Burma Road), as long as China holds Yunnan.</li>
 <li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain &ndash; or France, if the Axis already hold the United Kingdom while France is still fighting and holds Paris.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
 their armies (2 infantry, 1 artillery).</li>
-<li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; the round Barbarossa becomes possible, but too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
+<li><b>Finland joins Germany</b> at the end of Germany's round 4 turn &ndash; too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
 <li><b>Britain falls.</b> If the Axis take the United Kingdom, the United States and the Soviet Union immediately declare war on Germany, at the end of that combat phase, and join France and the British Empire. Japan may then declare war on what remains of the British Empire at once, even in round 1.</li>
 <li><b>The government moves to Ottawa.</b> When London falls, the King and Parliament cross to Canada: <b>Eastern Canada</b> becomes a second British capital and gets a factory, so Britain keeps collecting income, building and fighting with the rest of the Empire. The PUs Britain held when London fell still go to whoever took it. (This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.)</li>
 <li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.

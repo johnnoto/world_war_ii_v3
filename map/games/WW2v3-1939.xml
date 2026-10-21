@@ -5129,7 +5129,7 @@
       <unitPlacement unitType="aaGun" territory="India" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Burma" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Kwangtung" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Australia" quantity="2" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Australia" quantity="3" owner="British"/>
       <unitPlacement unitType="artillery" territory="Australia" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="Australia" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="New Zealand" quantity="1" owner="British"/>

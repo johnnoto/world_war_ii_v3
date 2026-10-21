@@ -5299,6 +5299,7 @@
       <unitPlacement unitType="infantry" territory="Western United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="aaGun" territory="Western United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="factory" territory="Western United States" quantity="1" owner="Americans"/>
+      <unitPlacement unitType="bomber" territory="Central United States" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Panama" quantity="1" owner="Americans"/>
       <unitPlacement unitType="infantry" territory="Hawaiian Islands" quantity="1" owner="Americans"/>
       <unitPlacement unitType="fighter" territory="Hawaiian Islands" quantity="1" owner="Americans"/>

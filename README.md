@@ -27,6 +27,7 @@ Everyone in an online game needs this map installed, at the same version.
   enemy ally automatically.
 - **Events.** The Fall of France and Vichy, the Liberation of Paris, Romania and Bulgaria joining the Axis,
   the Dutch and Belgian governments in exile, and Germany and Italy declaring war on the USA after Pearl Harbor.
+- **Victory by surrender.** Play until one side concedes, or switch on victory cities under Game Options (recommended: Axis 13, Allies 15).
 - **Historical economics.** Germany's war economy and the Soviet trade agreement, US Neutrality Acts.
 
 Full rules are in the game notes (`map/games/WW2v3-1939.notes.html`).

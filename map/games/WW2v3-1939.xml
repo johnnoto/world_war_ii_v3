@@ -5301,7 +5301,7 @@
     </property>
     <!-- Victory: the Allies start with 13 victory cities (counting the neutral USA and USSR),
          so their thresholds are set to require the defeat of the Axis. -->
-    <property name="Projection of Power" value="true" editable="true">
+    <property name="Projection of Power" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Honorable Surrender" value="false" editable="true">
@@ -5319,7 +5319,7 @@
     <property name="Axis Total Victory VCs" value="18" editable="true">
       <number min="1" max="18"/>
     </property>
-    <property name="Allies Projection of Power VCs" value="17" editable="true">
+    <property name="Allies Projection of Power VCs" value="15" editable="true">
       <number min="1" max="18"/>
     </property>
     <property name="Allies Honorable Victory VCs" value="17" editable="true">
@@ -5553,6 +5553,7 @@ States is officially neutral. Nobody yet knows how wide this war will become &nd
 <li><b>Historical events</b> that fire on their own: Italy's entry, the Fall of France and Vichy, the Balkans and Finland joining the Axis, the Dutch East Indies, America's entry and more.</li>
 <li><b>Briefings</b>: at the start of its first turn, each power receives a letter from its high command describing its situation in September 1939, with a short timeline of what lies ahead.</li>
 </ul>
+<p>The game is played <b>until one side surrenders</b>; victory cities can be switched on under Game Options on the setup screen (section 10).</p>
 <p>Events announce themselves with pop-up messages. If you don't see them, open <b>Game &gt; User Notifications</b>
 and tick <b>Show Triggered Notifications</b>. The <b>Objectives</b> tab next to the map shows every national objective
 and a Diplomacy and Events list, each marked when it is currently in effect.</p>
@@ -5768,14 +5769,40 @@ Vichy France counts as France.</li>
 </ul>
 
 <h2>10. Victory</h2>
-<p>The game uses <b>Projection of Power</b>: a side wins by holding enough victory cities at the end of a round.</p>
+<h3>By surrender (the default)</h3>
+<p>The game does not end on its own. It is played until one side concedes: when the Axis or the Allies can no longer
+win, their players surrender and the other side wins. This lets a war be fought to its real conclusion, and lets either side
+fight on from Ottawa, the Urals or the last island if it believes it can still turn things around.</p>
+
+<h3>By victory cities (optional)</h3>
+<p>To end the game automatically, press <b>Game Options</b> on the setup screen before starting and tick a victory condition: <b>Projection of Power</b>
+(the shortest game), <b>Honorable Surrender</b> or <b>Total Victory</b>. A side wins if it holds the required number of the 18
+victory cities at the end of a round. Each target can be changed in the same window; <b>Make Default</b> keeps your choice for future games.</p>
 <table border="1" cellspacing="0">
-<tr><th>Side</th><th>Needs</th><th>Holds at the start</th></tr>
-<tr><td>Axis</td><td>13</td><td>4: Germany, Italy, Japan, Kiangsu (Shanghai)</td></tr>
-<tr><td>Allies</td><td>17</td><td>13: United Kingdom, Eastern Canada, India, Australia, Kwangtung, Eastern and Western United States, Hawaii, Philippines, Russia, Karelia, Caucasus, France</td></tr>
+<tr><th>Side</th><th>Holds at the start</th></tr>
+<tr><td>Axis</td><td>4: Germany, Italy, Japan, Kiangsu (Shanghai)</td></tr>
+<tr><td>Allies</td><td>13: United Kingdom, Eastern Canada, India, Australia, Kwangtung, Eastern and Western United States, Hawaii, Philippines, Russia, Karelia, Caucasus, France</td></tr>
 </table>
-<p>Poland (Warsaw), the eighteenth victory city, starts neutral. The Allies count the neutral USA and USSR from the start, so to win
-they must hold all of their own cities and take four of Germany, Italy, Japan, Kiangsu and Poland.</p>
+<p>Poland (Warsaw), the eighteenth victory city, starts neutral. The Allies count the neutral USA and USSR from the start.</p>
+
+<h3>Recommended victory-city settings</h3>
+<table border="1" cellspacing="0">
+<tr><th>Condition</th><th>Axis</th><th>Allies</th><th>What it means</th></tr>
+<tr><td><b>Projection of Power</b> (recommended)</td><td>13</td><td>15</td><td>A decisive win for either side, usually in rounds 7&ndash;10.</td></tr>
+<tr><td>Honorable Surrender</td><td>15</td><td>17</td><td>A longer game that goes most of the way to the end.</td></tr>
+<tr><td>Total Victory</td><td>18</td><td>18</td><td>Every victory city: in practice the same as playing to surrender.</td></tr>
+</table>
+<p>These are the default targets when you tick a condition. Why <b>13 for the Axis and 15 for the Allies</b>:</p>
+<ul>
+<li><b>The Axis</b> usually reach 6 cities early with Warsaw and Paris. Getting to 13 means seven more: Hong Kong, Manila, Calcutta,
+Leningrad, Moscow and Stalingrad, plus one of London, Ottawa, Sydney or Honolulu. That is the Soviet Union and India broken &ndash;
+a war the Axis have won.</li>
+<li><b>The Allies</b> usually fall to around 10 to 12 cities once Paris, Hong Kong and Manila are lost. Getting back to 15 means
+retaking that ground and pushing into the Axis homelands &ndash; liberating Paris and Warsaw and taking Rome or Shanghai. That is a
+war the Allies have won. The old target of 17 forced the Allies to take four of the five Axis cities while losing nothing, which almost
+never happened before the game was effectively over.</li>
+<li>The two targets ask each side for a similar share of the enemy's cities, so neither side wins on a technicality.</li>
+</ul>
 
 <h2>11. Game Settings</h2>
 <ul>

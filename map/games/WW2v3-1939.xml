@@ -5130,8 +5130,7 @@
       <unitPlacement unitType="armour" territory="Buryatia S.S.R." quantity="1" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Soviet Far East" quantity="2" owner="Russians"/>
       <unitPlacement unitType="infantry" territory="Stanovoj Chrebet" quantity="2" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="5 Sea Zone" quantity="1" owner="Russians"/>
-      <unitPlacement unitType="submarine" territory="16 Sea Zone" quantity="1" owner="Russians"/>
+      <unitPlacement unitType="submarine" territory="4 Sea Zone" quantity="1" owner="Russians"/>
       <!-- Japanese -->
       <unitPlacement unitType="infantry" territory="Japan" quantity="5" owner="Japanese"/>
       <unitPlacement unitType="artillery" territory="Japan" quantity="1" owner="Japanese"/>

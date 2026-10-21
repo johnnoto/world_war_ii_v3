@@ -5190,7 +5190,7 @@
       <!-- Chinese -->
       <unitPlacement unitType="infantry" territory="Sikang" quantity="2" owner="Chinese"/>
       <unitPlacement unitType="fighter" territory="Sikang" quantity="1" owner="Chinese"/>
-      <unitPlacement unitType="infantry" territory="Yunnan" quantity="2" owner="Chinese"/>
+      <unitPlacement unitType="infantry" territory="Yunnan" quantity="3" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Fukien" quantity="5" owner="Chinese"/>
       <unitPlacement unitType="artillery" territory="Fukien" quantity="1" owner="Chinese"/>
       <unitPlacement unitType="infantry" territory="Ningxia" quantity="2" owner="Chinese"/>

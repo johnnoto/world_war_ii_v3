@@ -2085,24 +2085,50 @@
     <attachment name="conditionAttachment_Vichy_Regime" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Neutral_Germans_French:conditionAttachment_Axis_Hold_France"/>
     </attachment>
+    <attachment name="conditionAttachment_Allies_Hold_United_Kingdom" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom" count="1"/>
+      <option name="players" value="Germans:Italians:Japanese"/>
+      <option name="invert" value="true"/>
+    </attachment>
     <attachment name="conditionAttachment_French_Fleet_Afloat" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directPresenceTerritories" value="1 Sea Zone:2 Sea Zone:3 Sea Zone:4 Sea Zone:5 Sea Zone:6 Sea Zone:7 Sea Zone:8 Sea Zone:9 Sea Zone:10 Sea Zone:11 Sea Zone:12 Sea Zone:13 Sea Zone:14 Sea Zone:15 Sea Zone:16 Sea Zone:17 Sea Zone:18 Sea Zone:19 Sea Zone:20 Sea Zone:21 Sea Zone:22 Sea Zone:23 Sea Zone:24 Sea Zone:25 Sea Zone:26 Sea Zone:27 Sea Zone:28 Sea Zone:29 Sea Zone:30 Sea Zone:31 Sea Zone:32 Sea Zone:33 Sea Zone:34 Sea Zone:35 Sea Zone:36 Sea Zone:37 Sea Zone:38 Sea Zone:39 Sea Zone:40 Sea Zone:41 Sea Zone:42 Sea Zone:43 Sea Zone:44 Sea Zone:45 Sea Zone:46 Sea Zone:47 Sea Zone:48 Sea Zone:49 Sea Zone:50 Sea Zone:51 Sea Zone:52 Sea Zone:53 Sea Zone:54 Sea Zone:55 Sea Zone:56 Sea Zone:57 Sea Zone:58 Sea Zone:59 Sea Zone:60 Sea Zone:61 Sea Zone:62 Sea Zone:63 Sea Zone:64 Sea Zone:65 Sea Zone" count="1"/>
       <option name="unitPresence" value="carrier:battleship:cruiser:submarine:destroyer:transport" count="1"/>
     </attachment>
-    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Royal_Navy" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Afloat"/>
+    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Afloat:conditionAttachment_Allies_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="3 Sea Zone:cruiser"/>
       <option name="uses" value="1"/>
     </attachment>
-    <!-- Morocco-Algeria to Germany; French West and Equatorial Africa and Madagascar to Britain -->
+    <attachment name="triggerAttachment_Vichy_Cruiser_Joins_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_French_Fleet_Afloat:conditionAttachment_Axis_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="10 Sea Zone:cruiser"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Morocco-Algeria to Germany -->
     <attachment name="triggerAttachment_Vichy_Empire_Divided" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_France_Falls"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="changeOwnership" value="Morocco Algeria:French:Germans:false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- French West and Equatorial Africa and Madagascar to the British -->
+    <attachment name="triggerAttachment_Vichy_Empire_Divided_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
       <option name="changeOwnership" value="French West Africa:French:British:false"/>
       <option name="changeOwnership" value="French Equatorial Africa:French:British:false"/>
       <option name="changeOwnership" value="French Madagascar:French:British:false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- French West and Equatorial Africa and Madagascar to the Americans -->
+    <attachment name="triggerAttachment_Vichy_Empire_Divided_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Axis_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="changeOwnership" value="French West Africa:French:Americans:false"/>
+      <option name="changeOwnership" value="French Equatorial Africa:French:Americans:false"/>
+      <option name="changeOwnership" value="French Madagascar:French:Americans:false"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Vichy_Morocco_Algeria_infantry_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -2370,7 +2396,13 @@
       <option name="unitPresence" value="infantry" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2380,7 +2412,13 @@
       <option name="unitPresence" value="infantry" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2390,7 +2428,13 @@
       <option name="unitPresence" value="infantry" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2400,7 +2444,13 @@
       <option name="unitPresence" value="infantry" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2410,7 +2460,13 @@
       <option name="unitPresence" value="infantry" count="5"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_5"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_5:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_5_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_5:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2420,7 +2476,13 @@
       <option name="unitPresence" value="infantry" count="6"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_6"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_6:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_6_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_6:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2430,7 +2492,13 @@
       <option name="unitPresence" value="infantry" count="7"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_7"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_7:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_7_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_7:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2440,7 +2508,13 @@
       <option name="unitPresence" value="infantry" count="8"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_8"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_8:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_8_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_8:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2450,7 +2524,13 @@
       <option name="unitPresence" value="infantry" count="9"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_9"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_9:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_9_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_9:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2460,7 +2540,13 @@
       <option name="unitPresence" value="infantry" count="10"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_10"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_10:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_infantry_10_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_infantry_10:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2470,7 +2556,13 @@
       <option name="unitPresence" value="artillery" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2480,7 +2572,13 @@
       <option name="unitPresence" value="artillery" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2490,7 +2588,13 @@
       <option name="unitPresence" value="artillery" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2500,7 +2604,13 @@
       <option name="unitPresence" value="artillery" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_artillery_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_artillery_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2510,7 +2620,13 @@
       <option name="unitPresence" value="armour" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2520,7 +2636,13 @@
       <option name="unitPresence" value="armour" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2530,7 +2652,13 @@
       <option name="unitPresence" value="armour" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2540,7 +2668,13 @@
       <option name="unitPresence" value="armour" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_armour_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_armour_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2550,7 +2684,13 @@
       <option name="unitPresence" value="fighter" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2560,7 +2700,13 @@
       <option name="unitPresence" value="fighter" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2570,7 +2716,13 @@
       <option name="unitPresence" value="fighter" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2580,7 +2732,13 @@
       <option name="unitPresence" value="fighter" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_fighter_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_fighter_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2590,7 +2748,13 @@
       <option name="unitPresence" value="bomber" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_bomber_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_bomber_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:bomber"/>
       <option name="uses" value="1"/>
@@ -2600,7 +2764,13 @@
       <option name="unitPresence" value="bomber" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_bomber_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_bomber_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_bomber_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:bomber"/>
       <option name="uses" value="1"/>
@@ -2610,7 +2780,13 @@
       <option name="unitPresence" value="aaGun" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_aaGun_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_aaGun_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:aaGun"/>
       <option name="uses" value="1"/>
@@ -2620,7 +2796,13 @@
       <option name="unitPresence" value="aaGun" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_West_Africa_aaGun_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French West Africa:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_West_Africa_aaGun_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_West_Africa_aaGun_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French West Africa:aaGun"/>
       <option name="uses" value="1"/>
@@ -2630,7 +2812,13 @@
       <option name="unitPresence" value="infantry" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2640,7 +2828,13 @@
       <option name="unitPresence" value="infantry" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2650,7 +2844,13 @@
       <option name="unitPresence" value="infantry" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2660,7 +2860,13 @@
       <option name="unitPresence" value="infantry" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2670,7 +2876,13 @@
       <option name="unitPresence" value="infantry" count="5"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_5"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_5:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_5_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_5:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2680,7 +2892,13 @@
       <option name="unitPresence" value="infantry" count="6"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_6"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_6:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_6_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_6:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2690,7 +2908,13 @@
       <option name="unitPresence" value="infantry" count="7"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_7"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_7:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_7_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_7:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2700,7 +2924,13 @@
       <option name="unitPresence" value="infantry" count="8"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_8"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_8:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_8_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_8:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2710,7 +2940,13 @@
       <option name="unitPresence" value="infantry" count="9"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_9"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_9:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_9_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_9:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2720,7 +2956,13 @@
       <option name="unitPresence" value="infantry" count="10"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_10"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_10:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_infantry_10_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_infantry_10:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:infantry"/>
       <option name="uses" value="1"/>
@@ -2730,7 +2972,13 @@
       <option name="unitPresence" value="artillery" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2740,7 +2988,13 @@
       <option name="unitPresence" value="artillery" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2750,7 +3004,13 @@
       <option name="unitPresence" value="artillery" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2760,7 +3020,13 @@
       <option name="unitPresence" value="artillery" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_artillery_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_artillery_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:artillery"/>
       <option name="uses" value="1"/>
@@ -2770,7 +3036,13 @@
       <option name="unitPresence" value="armour" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2780,7 +3052,13 @@
       <option name="unitPresence" value="armour" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2790,7 +3068,13 @@
       <option name="unitPresence" value="armour" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2800,7 +3084,13 @@
       <option name="unitPresence" value="armour" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_armour_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_armour_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:armour"/>
       <option name="uses" value="1"/>
@@ -2810,7 +3100,13 @@
       <option name="unitPresence" value="fighter" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2820,7 +3116,13 @@
       <option name="unitPresence" value="fighter" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2830,7 +3132,13 @@
       <option name="unitPresence" value="fighter" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2840,7 +3148,13 @@
       <option name="unitPresence" value="fighter" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_fighter_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_fighter_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:fighter"/>
       <option name="uses" value="1"/>
@@ -2850,7 +3164,13 @@
       <option name="unitPresence" value="bomber" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_bomber_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_bomber_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:bomber"/>
       <option name="uses" value="1"/>
@@ -2860,7 +3180,13 @@
       <option name="unitPresence" value="bomber" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_bomber_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_bomber_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_bomber_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:bomber"/>
       <option name="uses" value="1"/>
@@ -2870,7 +3196,13 @@
       <option name="unitPresence" value="aaGun" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_aaGun_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_aaGun_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:aaGun"/>
       <option name="uses" value="1"/>
@@ -2880,7 +3212,13 @@
       <option name="unitPresence" value="aaGun" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_aaGun_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Equatorial Africa:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Equatorial_Africa_aaGun_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Equatorial_Africa_aaGun_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Equatorial Africa:aaGun"/>
       <option name="uses" value="1"/>
@@ -2890,7 +3228,13 @@
       <option name="unitPresence" value="infantry" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2900,7 +3244,13 @@
       <option name="unitPresence" value="infantry" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2910,7 +3260,13 @@
       <option name="unitPresence" value="infantry" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2920,7 +3276,13 @@
       <option name="unitPresence" value="infantry" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2930,7 +3292,13 @@
       <option name="unitPresence" value="infantry" count="5"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_5"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_5:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_5_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_5:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2940,7 +3308,13 @@
       <option name="unitPresence" value="infantry" count="6"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_6"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_6:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_6_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_6:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2950,7 +3324,13 @@
       <option name="unitPresence" value="infantry" count="7"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_7"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_7:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_7_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_7:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2960,7 +3340,13 @@
       <option name="unitPresence" value="infantry" count="8"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_8"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_8:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_8_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_8:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2970,7 +3356,13 @@
       <option name="unitPresence" value="infantry" count="9"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_9"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_9:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_9_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_9:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2980,7 +3372,13 @@
       <option name="unitPresence" value="infantry" count="10"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_10"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_10:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_infantry_10_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_infantry_10:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:infantry"/>
       <option name="uses" value="1"/>
@@ -2990,7 +3388,13 @@
       <option name="unitPresence" value="artillery" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="uses" value="1"/>
@@ -3000,7 +3404,13 @@
       <option name="unitPresence" value="artillery" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="uses" value="1"/>
@@ -3010,7 +3420,13 @@
       <option name="unitPresence" value="artillery" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="uses" value="1"/>
@@ -3020,7 +3436,13 @@
       <option name="unitPresence" value="artillery" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_artillery_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_artillery_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:artillery"/>
       <option name="uses" value="1"/>
@@ -3030,7 +3452,13 @@
       <option name="unitPresence" value="armour" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:armour"/>
       <option name="uses" value="1"/>
@@ -3040,7 +3468,13 @@
       <option name="unitPresence" value="armour" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:armour"/>
       <option name="uses" value="1"/>
@@ -3050,7 +3484,13 @@
       <option name="unitPresence" value="armour" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:armour"/>
       <option name="uses" value="1"/>
@@ -3060,7 +3500,13 @@
       <option name="unitPresence" value="armour" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_armour_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_armour_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:armour"/>
       <option name="uses" value="1"/>
@@ -3070,7 +3516,13 @@
       <option name="unitPresence" value="fighter" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="uses" value="1"/>
@@ -3080,7 +3532,13 @@
       <option name="unitPresence" value="fighter" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="uses" value="1"/>
@@ -3090,7 +3548,13 @@
       <option name="unitPresence" value="fighter" count="3"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_3"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_3:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_3_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_3:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="uses" value="1"/>
@@ -3100,7 +3564,13 @@
       <option name="unitPresence" value="fighter" count="4"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_4"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_4:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_fighter_4_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_fighter_4:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:fighter"/>
       <option name="uses" value="1"/>
@@ -3110,7 +3580,13 @@
       <option name="unitPresence" value="bomber" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_bomber_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_bomber_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:bomber"/>
       <option name="uses" value="1"/>
@@ -3120,7 +3596,13 @@
       <option name="unitPresence" value="bomber" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_bomber_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_bomber_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_bomber_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:bomber"/>
       <option name="uses" value="1"/>
@@ -3130,7 +3612,13 @@
       <option name="unitPresence" value="aaGun" count="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_aaGun_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_1"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_1:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_aaGun_1_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_1:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:aaGun"/>
       <option name="uses" value="1"/>
@@ -3140,7 +3628,13 @@
       <option name="unitPresence" value="aaGun" count="2"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_French_Madagascar_aaGun_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_2"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_2:conditionAttachment_Allies_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="French Madagascar:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_French_Madagascar_aaGun_2_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_2:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:aaGun"/>
       <option name="uses" value="1"/>
@@ -3165,10 +3659,17 @@
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_France_Notice" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_France_Falls"/>
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Allies_Hold_United_Kingdom"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="VICHY_FRANCE"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_France_Notice_USA" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Axis_Hold_United_Kingdom"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="VICHY_FRANCE_USA"/>
       <option name="uses" value="1"/>
     </attachment>
     <!-- Turned off when the factory is removed, so the rule fires only once -->
@@ -4523,9 +5024,12 @@
       <option name="conditions" value="conditionAttachment_France_Fights_On_Without_Britain"/>
       <option name="invert" value="true"/>
     </attachment>
-    <!-- Belgium is overrun; the Belgian Congo fights on with Britain -->
+    <attachment name="conditionAttachment_London_And_Paris_Fallen" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_United_Kingdom:conditionAttachment_Not_France_Fights_On_Without_Britain"/>
+    </attachment>
+    <!-- Belgium is overrun; the Belgian Congo fights on with the British -->
     <attachment name="triggerAttachment_Governments_In_Exile" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_Not_France_Fights_On_Without_Britain"/>
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_Allies_Hold_United_Kingdom"/>
       <option name="territories" value="Belgian Congo"/>
       <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
       <option name="territoryProperty" value="isImpassable" count="false"/>
@@ -4534,7 +5038,7 @@
       <option name="notification" value="GOVERNMENTS_IN_EXILE"/>
       <option name="uses" value="1"/>
     </attachment>
-    <!-- Belgium is overrun; the Belgian Congo fights on with France (London has fallen) -->
+    <!-- Belgium is overrun; the Belgian Congo fights on with the French -->
     <attachment name="triggerAttachment_Governments_In_Exile_France" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_France_Fights_On_Without_Britain"/>
       <option name="territories" value="Belgian Congo"/>
@@ -4543,6 +5047,17 @@
       <option name="changeOwnership" value="Belgian Congo:any:French:false"/>
       <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
       <option name="notification" value="GOVERNMENTS_IN_EXILE_FRANCE"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Belgium is overrun; the Belgian Congo fights on with the Americans -->
+    <attachment name="triggerAttachment_Governments_In_Exile_USA" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Belgian_Congo_Unclaimed:conditionAttachment_London_And_Paris_Fallen"/>
+      <option name="territories" value="Belgian Congo"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="isImpassable" count="false"/>
+      <option name="changeOwnership" value="Belgian Congo:any:Americans:false"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENTS_IN_EXILE_USA"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_Dutch_East_Indies_Join_Britain" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -5306,13 +5821,13 @@ Britain and France have had a full round to retake Paris &ndash; the Armistice o
 during Germany's turn:
 <ul>
 <li>Morocco-Algeria and its garrison go over to Germany.</li>
-<li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
+<li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain &ndash; or to the United States if the Axis hold the United Kingdom.</li>
 <li>French Indo-China stays with Vichy France but loses its garrison. Japan may occupy it (Occupy Indochina) with no wider consequences.</li>
-<li>The French navy is removed from the game. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3).</li>
+<li>The French navy is removed from the game. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3) &ndash; or, if the Axis hold the United Kingdom, the United States receives it off the East Coast (sea zone 10).</li>
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
-<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain &ndash; or France, if the Axis already hold the United Kingdom while France is still fighting and holds Paris.</li>
+<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain. If the Axis already hold the United Kingdom, it joins France instead while France is still fighting and holds Paris, or the United States if France has fallen too.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 <li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with

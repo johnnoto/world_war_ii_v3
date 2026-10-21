@@ -1653,13 +1653,42 @@
       <option name="directOwnershipTerritories" value="Germany" count="1"/>
       <option name="players" value="British:French:Russians:Americans:Chinese"/>
     </attachment>
+    <!-- What Japan did in its own Politics step (a war's existence doesn't say who declared it) -->
+    <!-- Set at the start of Japan's Politics step: Japan was at peace with the French -->
+    <attachment name="conditionAttachment_Japan_At_Peace_With_French_Before_Politics" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japan_Just_Declared_On_French" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_At_Peace_With_French_Before_Politics:conditionAttachment_War_French_Japanese"/>
+    </attachment>
+    <!-- Set at the start of Japan's Politics step: Japan was at peace with the British -->
+    <attachment name="conditionAttachment_Japan_At_Peace_With_British_Before_Politics" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japan_Just_Declared_On_British" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_At_Peace_With_British_Before_Politics:conditionAttachment_War_British_Japanese"/>
+    </attachment>
+    <!-- Japan itself declared war on the British Empire (not Britain on Japan) -->
+    <attachment name="conditionAttachment_Japan_Has_Attacked_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <!-- Japan declared war on France while France was still fighting Germany -->
+    <attachment name="conditionAttachment_Indochina_Crisis" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Japan_Strikes_Fighting_France" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Just_Declared_On_French:conditionAttachment_War_French_Germans"/>
+    </attachment>
+    <attachment name="conditionAttachment_USA_Pacific_Interests_Threatened" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Indochina_Crisis"/>
+    </attachment>
     <!-- Composite conditions for political options -->
     <attachment name="conditionAttachment_Americans_Free_To_Enter_European_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Free_To_Enter_Pacific_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_War_British_Japanese"/>
+      <option name="conditions" value="conditionAttachment_Round_6_Or_Later:conditionAttachment_Japan_Has_Attacked_Britain:conditionAttachment_USA_Pacific_Interests_Threatened"/>
       <option name="conditionType" value="OR"/>
     </attachment>
     <attachment name="conditionAttachment_Americans_Free_To_Fight_Italy" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -3266,6 +3295,94 @@
       <option name="notification" value="GOVERNMENT_TO_OTTAWA"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="triggerAttachment_Japan_French_Peace_Check_True" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_French"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Japan_At_Peace_With_French_Before_Politics"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_French_Peace_Check_False" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_War_French_Japanese"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Japan_At_Peace_With_French_Before_Politics"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_British_Peace_Check_True" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Japan_At_Peace_With_British_Before_Politics"/>
+      <option name="playerProperty" value="switch" count="true"/>
+    </attachment>
+    <attachment name="triggerAttachment_Japan_British_Peace_Check_False" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_War_British_Japanese"/>
+      <option name="when" value="before:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Japan_At_Peace_With_British_Before_Politics"/>
+      <option name="playerProperty" value="switch" count="false"/>
+    </attachment>
+    <!-- Japan started the war with Britain: the USA may enter the Pacific war at once -->
+    <attachment name="triggerAttachment_Japan_Attacked_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Just_Declared_On_British"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Japan_Has_Attacked_Britain"/>
+      <option name="playerProperty" value="switch" count="true"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <!-- Japan attacks France before the fall of France -->
+    <attachment name="triggerAttachment_Indochina_Crisis" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Strikes_Fighting_France"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Indochina_Crisis"/>
+      <option name="playerProperty" value="switch" count="true"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Hold_Hawaiian_Islands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Hawaiian Islands" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Indochina_Crisis_Reinforce_Hawaiian" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Strikes_Fighting_France:conditionAttachment_Americans_Hold_Hawaiian_Islands"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="placement" value="Hawaiian Islands:infantry:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Hold_Philippine_Islands" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Philippine Islands" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Indochina_Crisis_Reinforce_Philippine" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Strikes_Fighting_France:conditionAttachment_Americans_Hold_Philippine_Islands"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="placement" value="Philippine Islands:infantry:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Indochina_Crisis_Notice" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Strikes_Fighting_France"/>
+      <option name="when" value="after:japanesePolitics"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="INDOCHINA_CRISIS"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_China_Holds_Yunnan" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Yunnan" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Hanoi_Kunming_Railway_Open" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="French Indo-China Thailand" count="1"/>
+      <option name="players" value="French"/>
+    </attachment>
+    <!-- Supply route: 1 Chinese artillery in Yunnan each turn while the Hanoi Kunming Railway is open -->
+    <attachment name="triggerAttachment_Hanoi_Kunming_Railway" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_China_Holds_Yunnan:conditionAttachment_Hanoi_Kunming_Railway_Open"/>
+      <option name="when" value="before:chinesePlace"/>
+      <option name="placement" value="Yunnan:artillery"/>
+    </attachment>
+    <attachment name="conditionAttachment_Burma_Road_Open" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Burma" count="1"/>
+      <option name="players" value="British"/>
+    </attachment>
+    <!-- Supply route: 1 Chinese artillery in Yunnan each turn while the Burma Road is open -->
+    <attachment name="triggerAttachment_Burma_Road" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_China_Holds_Yunnan:conditionAttachment_Burma_Road_Open"/>
+      <option name="when" value="before:chinesePlace"/>
+      <option name="placement" value="Yunnan:artillery"/>
+    </attachment>
     <attachment name="conditionAttachment_Germany_Attacked_France" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="battle" value="Germans:French:any:currentRound:France"/>
     </attachment>
@@ -4694,6 +4811,11 @@
       <option name="relationshipChange" value="Russians:Japanese:War"/>
       <option name="text" value="AUGUST_STORM"/>
     </attachment>
+    <attachment name="politicalActionAttachment_Britain_Declares_War_On_Japan" attachTo="British" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British:conditionAttachment_Indochina_Crisis"/>
+      <option name="relationshipChange" value="British:Japanese:War"/>
+      <option name="text" value="BRITAIN_WAR_JAPAN"/>
+    </attachment>
     <attachment name="politicalActionAttachment_Germany_Declares_War_On_USA" attachTo="Germans" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_5_Or_Later:conditionAttachment_Neutral_Germans_Americans"/>
       <option name="relationshipChange" value="Germans:Americans:War"/>
@@ -5338,7 +5460,8 @@ territory. War is declared in the <b>Politics</b> phase, and only when history a
 <li><b>Japan</b> may declare war on France (<b>Occupy Indochina</b>) from round 1. From round 2 it may also declare war on Britain, the USA, Britain and the USA together (<b>Strike South</b>), or the USSR (<b>Strike North</b>), each separately and only when it chooses.</li>
 <li><b>Germany declares war on the USA</b> from round 5.</li>
 <li><b>The United States enters the war</b> against Germany from round 6 (automatically if the Axis take the United Kingdom);
-against Japan from round 6, or at once if Japan attacks Britain; against Italy once at war with Germany.</li>
+against Japan from round 6 (round 5 if Japan attacked France before its fall), or at once if Japan declares war on Britain &ndash; but not if Britain declares war on Japan; against Italy once at war with Germany.</li>
+<li><b>Britain declares war on Japan</b> &ndash; possible once Japan has attacked France (Occupy Indochina) while France was still fighting Germany.</li>
 <li><b>August Storm</b> &ndash; the USSR may declare war on Japan from round 4, or once Germany has fallen.</li>
 </ul>
 <p>
@@ -5363,6 +5486,8 @@ during Germany's turn:
 <li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
 </ul></li>
 <li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
+<li><b>Crisis in Indo-China.</b> If Japan declares war on France while France is still fighting Germany, Britain may declare war on Japan, the USA may declare war on Japan from round 5 instead of round 6, and the USA places 1 infantry and 1 AA gun each in Hawaii and the Philippines.</li>
+<li><b>Supply routes into China.</b> At the start of each Chinese Place Units step, China receives 1 artillery in Yunnan if France holds French Indo-China (the Hanoi&ndash;Kunming railway), and 1 more if Britain holds Burma (the Burma Road), as long as China holds Yunnan.</li>
 <li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain &ndash; or France, if the Axis already hold the United Kingdom while France is still fighting and holds Paris.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
 In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>

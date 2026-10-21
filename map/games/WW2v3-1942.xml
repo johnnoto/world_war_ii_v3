@@ -1602,44 +1602,65 @@
     <attachment name="conditionAttachment_Every_Round" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="rounds" value="1-+"/>
     </attachment>
+    <attachment name="conditionAttachment_Japanese_Still_In_The_War" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Russians_Still_In_The_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Germans_Still_In_The_War" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_Still_In_The_War" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Italians_Still_In_The_War" attachTo="Italians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Chinese_Still_In_The_War" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Americans_Still_In_The_War" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Anthem_Japanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Japanese_Still_In_The_War"/>
       <option name="when" value="before:japaneseTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_JAPANESE"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_Russians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Russians_Still_In_The_War"/>
       <option name="when" value="before:russianTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_RUSSIANS"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_Germans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Germans_Still_In_The_War"/>
       <option name="when" value="before:germanTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_GERMANS"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_British_Still_In_The_War"/>
       <option name="when" value="before:britishTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_BRITISH"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_Italians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Italians_Still_In_The_War"/>
       <option name="when" value="before:italianTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_ITALIANS"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_Chinese" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Chinese_Still_In_The_War"/>
       <option name="when" value="before:chineseCombatMove"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_CHINESE"/>
     </attachment>
     <attachment name="triggerAttachment_Anthem_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="conditions" value="conditionAttachment_Americans_Still_In_The_War"/>
       <option name="when" value="before:americanTech"/>
       <option name="players" value="Japanese:Russians:Germans:British:Italians:Chinese:Americans"/>
       <option name="notification" value="ANTHEM_AMERICANS"/>

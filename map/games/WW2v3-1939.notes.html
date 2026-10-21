@@ -1,5 +1,15 @@
+<style>
+body { font-family: sans-serif; font-size: 11px; }
+h2 { color: #1f3a5f; font-size: 15px; margin-top: 18px; margin-bottom: 4px; }
+h3 { color: #1f3a5f; font-size: 12px; margin-top: 12px; margin-bottom: 2px; }
+th { background-color: #dfe6ee; text-align: left; }
+td, th { padding: 3px; }
+.small { font-size: 10px; color: #555555; }
+</style>
 
-<h2>World War II v3 &ndash; September 1939</h2>
+<h1>World War II v3 &ndash; September 1939</h1>
+<p class="small">Scenario by johnnoto &middot; Version 2026-10-21 &middot; Both players in an online game should see the same version here.</p>
+
 <p>
 1 September 1939. The Wehrmacht crosses into Poland. Two days later Britain and France declare war.
 The Soviet Union has just signed a non-aggression pact with Germany, Italy is a &quot;non-belligerent&quot;
@@ -7,150 +17,253 @@ bound to Berlin by the Pact of Steel, Japan has been at war in China for two yea
 States is officially neutral. Nobody yet knows how wide this war will become &ndash; that is up to you.
 </p>
 
-<h3>The Powers</h3>
-<table border="1" cellpadding="3" cellspacing="0">
-<tr><th>Power</th><th>Starts at war with</th><th>Starting PUs</th><th>Income</th></tr>
-<tr><td>Germany</td><td>Britain, France</td><td>45</td><td>12 + 10 from objectives</td></tr>
-<tr><td>Soviet Union</td><td>&ndash; (Molotov-Ribbentrop Pact)</td><td>18</td><td>28</td></tr>
-<tr><td>Japan</td><td>China</td><td>20</td><td>17</td></tr>
-<tr><td>Britain</td><td>Germany</td><td>30</td><td>29 + 10 from objectives</td></tr>
-<tr><td>France</td><td>Germany</td><td>15</td><td>12 + 3 from objectives</td></tr>
-<tr><td>Italy</td><td>&ndash; (non-belligerent)</td><td>10</td><td>8</td></tr>
-<tr><td>China</td><td>Japan</td><td>&ndash;</td><td>1 infantry per 2 territories</td></tr>
-<tr><td>United States</td><td>&ndash; (Neutrality Acts)</td><td>12</td><td>40 &minus; 15 while at peace</td></tr>
+<p><b>Contents</b><br>
+1. About this scenario &middot; 2. Turn order and calendar &middot; 3. The powers &middot; 4. Neutral countries &middot;
+5. Diplomacy &middot; 6. Timeline at a glance &middot; 7. Events in detail &middot; 8. National objectives &middot;
+9. China &middot; 10. Victory &middot; 11. Game settings &middot; 12. Credits</p>
+
+<h2>1. About This Scenario</h2>
+<p>This scenario starts the World War II v3 map at the outbreak of war, two years before the 1941 game. It adds:</p>
+<ul>
+<li><b>France</b> as a full eighth power, with its own army, fleet, colonies and violet units.</li>
+<li><b>Neutral countries</b> with their own armies (orange units) that anyone may invade.</li>
+<li><b>Diplomacy</b>: powers start at peace and go to war through declarations in the Politics phase, each available only when history allows.</li>
+<li><b>Historical events</b> that fire on their own: Italy's entry, the Fall of France and Vichy, the Balkans and Finland joining the Axis, the Dutch East Indies, America's entry and more.</li>
+<li><b>Briefings</b>: at the start of its first turn, each power receives a letter from its high command describing its situation in September 1939, with a short timeline of what lies ahead.</li>
+</ul>
+<p>Events announce themselves with pop-up messages. If you don't see them, open <b>Game &gt; User Notifications</b>
+and tick <b>Show Triggered Notifications</b>. The <b>Objectives</b> tab next to the map shows every national objective
+and a Diplomacy and Events list, each marked when it is currently in effect.</p>
+
+<h2>2. Turn Order and Calendar</h2>
+<p>Each round, the powers move in this order:</p>
+<table border="1" cellspacing="0">
+<tr><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+<tr><td>Germany</td><td>Soviet Union</td><td>Japan</td><td>Britain</td><td>France</td><td>Italy</td><td>USA and China (together)</td></tr>
 </table>
-<p>
-France is a full playable power in this scenario, with its own army, fleet and colonial empire.
-One round is roughly six months: round 1 is autumn 1939, round 2 spring&ndash;summer 1940, round 4
-summer 1941, round 5 the winter of 1941&ndash;42.
-</p>
+<p>Each turn runs: Research, Purchase, <b>Politics</b> (declarations of war), Combat Move, Battle, Non-Combat Move,
+Place Units, End Turn (collect income). One round is roughly six months:</p>
+<table border="1" cellspacing="0">
+<tr><th>Round 1</th><th>Round 2</th><th>Round 3</th><th>Round 4</th><th>Round 5</th></tr>
+<tr><td>Autumn 1939</td><td>Spring&ndash;summer 1940</td><td>Autumn&ndash;winter 1940</td><td>Summer 1941</td><td>Winter 1941&ndash;42</td></tr>
+</table>
 
-<p>At the start of its first turn, each power receives a <b>briefing</b>: a letter from its high command to its leader on the situation in September 1939, with a short timeline of what lies ahead.</p>
+<h2>3. The Powers</h2>
+<table border="1" cellspacing="0">
+<tr><th>Power</th><th>Starts at war with</th><th>Starting PUs</th><th>Income at start</th><th>Notes</th></tr>
+<tr><td>Germany</td><td>Britain, France</td><td>45</td><td>12 + 10 objectives</td><td>Soviet Trade Agreement and Four-Year Plan pay from the start.</td></tr>
+<tr><td>Soviet Union</td><td>&ndash;</td><td>18</td><td>28</td><td>Objectives only pay once at war with Germany.</td></tr>
+<tr><td>Japan</td><td>China</td><td>20</td><td>17</td><td></td></tr>
+<tr><td>Britain</td><td>Germany</td><td>30</td><td>29 + 5 objectives</td><td>The Empire Holds pays from the start.</td></tr>
+<tr><td>France</td><td>Germany</td><td>15</td><td>12 + 3 objectives</td><td>French Empire pays while all five colonies are French.</td></tr>
+<tr><td>Italy</td><td>&ndash;</td><td>10</td><td>8</td><td>Enters the war automatically in round 2.</td></tr>
+<tr><td>China</td><td>Japan</td><td>&ndash;</td><td>&ndash;</td><td>Receives free units instead of PUs (section 9).</td></tr>
+<tr><td>USA</td><td>&ndash;</td><td>12</td><td>40 &minus; 15</td><td>Neutrality Acts: &minus;15 PUs while at peace with every Axis power.</td></tr>
+</table>
+<p>Alliances at the start: Britain and France are allied; Germany and Italy become allies when Italy enters the war.
+Everyone else is at peace until war is declared.</p>
 
-<h3>Neutral Countries</h3>
-<p>
-Poland, East Poland, the Low Countries, Norway, the Baltic States, Yugoslavia and Greece
-(Balkans), Persia and Iceland begin neutral. Most have armies of their own (orange units) and can be
-invaded by anyone at no PU cost &ndash; they are at war with whoever attacks them. Spain, Sweden,
-Switzerland, Turkey and the other impassable neutrals stay out of the war.
-</p>
-<p>
-Finland, Romania and Bulgaria, the Dutch East Indies (Borneo, East Indies) and the Belgian Congo are sealed
-until history opens them (see Events).
-</p>
+<h2>4. Neutral Countries</h2>
+<h3>Open neutrals</h3>
+<p>These may be invaded by anyone, at no PU cost. A neutral is at war with whoever attacks it. Aircraft may not fly over neutral territory.</p>
+<table border="1" cellspacing="0">
+<tr><th>Country</th><th>Garrison</th><th>PU value</th></tr>
+<tr><td>Poland</td><td>5 infantry, 1 artillery</td><td>3 (victory city: Warsaw)</td></tr>
+<tr><td>East Poland</td><td>2 infantry</td><td>1</td></tr>
+<tr><td>Northwestern Europe (the Low Countries)</td><td>2 infantry, 1 artillery</td><td>2</td></tr>
+<tr><td>Norway</td><td>1 infantry</td><td>3</td></tr>
+<tr><td>Baltic States</td><td>1 infantry</td><td>1</td></tr>
+<tr><td>Balkans (Yugoslavia and Greece)</td><td>3 infantry</td><td>3</td></tr>
+<tr><td>Persia</td><td>1 infantry</td><td>1</td></tr>
+<tr><td>Iceland</td><td>none</td><td>0</td></tr>
+</table>
+<h3>Sealed neutrals</h3>
+<p>These are closed to everyone until an event opens them:</p>
+<table border="1" cellspacing="0">
+<tr><th>Country</th><th>Opens when</th><th>Joins</th></tr>
+<tr><td>Bulgaria-Romania</td><td>Start of Germany's round-3 combat move</td><td>Germany, with 2 infantry and 1 artillery</td></tr>
+<tr><td>Finland</td><td>End of Germany's round-3 turn</td><td>Germany, with 3 infantry and 1 artillery</td></tr>
+<tr><td>Borneo, East Indies</td><td>Japan goes to war with Britain</td><td>Britain, with 1 infantry each</td></tr>
+<tr><td>Belgian Congo</td><td>The Axis take Northwestern Europe</td><td>Britain (or France, see 7.2)</td></tr>
+</table>
+<p>Spain, Sweden, Switzerland, Turkey, Eire, Saudi Arabia, Afghanistan, Mongolia and the other remaining neutrals are impassable for the whole game.</p>
 
-<h3>Diplomacy</h3>
-<p>
-Powers that are at peace with each other cannot attack each other or enter each other's
-territory. War is declared in the <b>Politics</b> phase, and only when history allows it:
-</p>
+<h2>5. Diplomacy</h2>
+<p>Powers at peace cannot attack each other or enter each other's territory. Wars begin in two ways: a power
+<b>declares war</b> in its Politics phase, when history allows it; or an <b>event</b> starts the war automatically.</p>
+
+<h3>Declarations of war</h3>
+<table border="1" cellspacing="0">
+<tr><th>Power</th><th>Declaration</th><th>Available</th></tr>
+<tr><td rowspan="2">Germany</td><td>Operation Barbarossa (war with the USSR)</td><td>From round 3</td></tr>
+<tr><td>War with the USA</td><td>From round 5</td></tr>
+<tr><td rowspan="5">Japan</td><td>Occupy Indochina (war with France)</td><td>From round 1</td></tr>
+<tr><td>War with Britain</td><td>From round 2, or at once if the Axis hold the United Kingdom</td></tr>
+<tr><td>War with the USA</td><td>From round 2</td></tr>
+<tr><td>Strike South (Britain and the USA together)</td><td>From round 2</td></tr>
+<tr><td>Strike North (war with the USSR)</td><td>From round 2</td></tr>
+<tr><td>Soviet Union</td><td>August Storm (war with Japan)</td><td>From round 4, or once the Allies hold Germany</td></tr>
+<tr><td>Britain</td><td>War with Japan</td><td>After a Crisis in Indo-China (7.5)</td></tr>
+<tr><td rowspan="2">USA</td><td>War with Japan</td><td>Once Japan has declared war on Britain (a British declaration on Japan does not count)</td></tr>
+<tr><td>War with Italy</td><td>Once the USA is at war with Germany and Britain is at war with Italy</td></tr>
+</table>
+
+<h3>Automatic declarations</h3>
+<table border="1" cellspacing="0">
+<tr><th>When</th><th>What happens</th></tr>
+<tr><td>Italy's round-2 turn</td><td>Italy declares war on Britain (and France, if still fighting) and allies with Germany.</td></tr>
+<tr><td>Germany is at war with the USSR</td><td>Italy declares war on the USSR.</td></tr>
+<tr><td>Japan is at war with both Britain and the USA</td><td>Germany declares war on the USA, and Italy follows.</td></tr>
+<tr><td>The Axis take the United Kingdom</td><td>The USA and the USSR declare war on Germany at once (7.3).</td></tr>
+<tr><td>Japan takes India</td><td>The USA declares war on Japan at once.</td></tr>
+<tr><td>Japan holds Borneo, the East Indies and French Indo-China together</td><td>The USA declares war on Japan at once.</td></tr>
+<tr><td>End of the USA's round-4 turn (round 3 after a Crisis in Indo-China)</td><td>The USA declares war on Germany, Italy and Japan.</td></tr>
+<tr><td>End of the USSR's round-5 turn, if Germany has not attacked</td><td>The USSR declares war on Germany.</td></tr>
+<tr><td>The Fall of France</td><td>France leaves the war and is at peace with everyone (7.1).</td></tr>
+</table>
+<p>&quot;At once&quot; means at the end of the combat phase in which it happens.</p>
+
+<h3>Alliances</h3>
+<p>Alliances form automatically between powers of the same side that are at war with a common enemy, in the Politics phase of
+one of them: Germany and Italy when Italy enters the war; Britain and the USSR after Barbarossa; the Grand Alliance once the USA
+is in; China with every power fighting Japan. France only allies while it is at war with Germany; Vichy France joins no one.</p>
+
+<h2>6. Timeline at a Glance</h2>
+<table border="1" cellspacing="0">
+<tr><th>Round</th><th>Scheduled</th><th>Becomes possible</th></tr>
+<tr><td>1</td><td>Briefings for every power</td><td>Japan: Occupy Indochina</td></tr>
+<tr><td>2</td><td>Italy enters the war</td><td>Japan: war with Britain, the USA or the USSR</td></tr>
+<tr><td>3</td><td>Bulgaria-Romania join Germany (start of German combat move); Finland joins Germany (end of German turn)</td><td>Germany: Barbarossa</td></tr>
+<tr><td>4</td><td>USA enters the war (end of its turn)</td><td>USSR: August Storm</td></tr>
+<tr><td>5</td><td>USSR declares war on Germany if not yet attacked (end of its turn)</td><td>Germany: war with the USA</td></tr>
+</table>
+
+<h2>7. Events in Detail</h2>
+
+<h3>7.1 The Fall of France</h3>
 <ul>
-
-<li><b>Operation Barbarossa</b> &ndash; Germany may attack the USSR from round 3.</li>
-<li><b>The Soviets strike first</b> &ndash; if Germany has not attacked by then, the USSR declares war on Germany automatically at the end of its round-5 turn.</li>
-<li><b>Japan</b> may declare war on France (<b>Occupy Indochina</b>) from round 1. From round 2 it may also declare war on Britain, the USA, Britain and the USA together (<b>Strike South</b>), or the USSR (<b>Strike North</b>), each separately and only when it chooses.</li>
-<li><b>Germany declares war on the USA</b> from round 5.</li>
-<li><b>The United States enters the war</b> automatically at the end of its round-4 turn &ndash; round 3 after a crisis in Indo-China (see Events) &ndash; against Germany, Italy and Japan.
-Before that it may declare war on Germany at once if the Axis take the United Kingdom (and is forced to, see Events); on Japan once Japan
-declares war on Britain &ndash; but not if Britain declares war on Japan; and on Italy once at war with Germany.</li>
-<li><b>Britain declares war on Japan</b> &ndash; possible once Japan has attacked France (Occupy Indochina) while France was still fighting Germany.</li>
-<li><b>August Storm</b> &ndash; the USSR may declare war on Japan from round 4, or once Germany has fallen.</li>
-</ul>
-<p>
-<b>Alliances form automatically</b> between powers fighting a common enemy: Germany and Italy once
-Italy enters the war, Britain and the USSR after Barbarossa, the Grand Alliance after Pearl Harbor,
-and so on. Vichy France joins no one.
-</p>
-
-<h3>Events</h3>
+<li><b>French factory destroyed.</b> The first time France passes to Germany &ndash; taken by Germany, or by Italy and handed over &ndash;
+the French factory is removed at the end of that combat phase.</li>
+<li><b>The armistice.</b> If the Axis still hold France when Germany's next Politics phase begins &ndash; so Britain and France have had a
+full round to retake Paris &ndash; the Armistice of Compi&egrave;gne is signed:
 <ul>
-<li><b>Italy enters the war</b> automatically on its round-2 turn, against Britain (and France if France is still fighting), and becomes Germany's ally. Italy sits out round 1 only.</li>
-<li><b>German sphere.</b> If Italy captures France, Northwestern Europe, Poland, Bulgaria-Romania, Norway or Finland, the territory goes to Germany instead (Italian units there stay Italian).</li>
-<li><b>French factory destroyed.</b> The first time France passes to Germany &ndash; taken by Germany, or by Italy and handed over &ndash; the French factory is removed from the game at the end of that combat phase.</li>
-<li><b>Fall of France.</b> If the Axis still hold France when Germany's next turn begins &ndash; so
-Britain and France have had a full round to retake Paris &ndash; the Armistice of Compi&egrave;gne is signed
-during Germany's turn:
-<ul>
-<li>Morocco-Algeria and its garrison go over to Germany.</li>
+<li>Morocco-Algeria and its garrison go over to Germany, unit for unit.</li>
 <li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
-<li>French Indo-China stays with Vichy France but loses its garrison. Japan may occupy it (Occupy Indochina) with no wider consequences.</li>
-<li>The French navy is removed from the game. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3) &ndash; or off Halifax (sea zone 9) if the Axis hold the United Kingdom.</li>
-<li>All other French units are disbanded and France leaves the war for good. Paris can no longer be liberated: from then on, whoever takes France keeps it.</li>
+<li>French Indo-China stays with Vichy France but loses its garrison. Japan may still occupy it, with no wider consequences.</li>
+<li>The French navy is removed. If France still has any warship, Britain receives one cruiser at Scapa Flow (sea zone 3), or off
+Halifax (sea zone 9) if the Axis hold the United Kingdom.</li>
+<li>All other French units are disbanded, and France is at peace with everyone for the rest of the game.</li>
 </ul></li>
-<li><b>Germany reinforced.</b> If Germany attacks France, and on France's next turn the French still hold Paris <i>and</i> build new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). If France cannot build there &ndash; for example its factory has been bombed out &ndash; Germany gets nothing.</li>
-<li><b>India falls.</b> If Japan takes India, the United States declares war on Japan at the end of that Japanese combat phase.</li>
-<li><b>The southern advance.</b> If Japan holds Borneo, the East Indies and French Indo-China at the same time, the United States declares war on Japan at the end of that Japanese combat phase.</li>
-<li><b>Crisis in Indo-China.</b> If Japan declares war on France while France is still fighting Germany, Britain may declare war on Japan, the USA enters the war a round early (at the end of its round-3 turn), and the USA places 1 infantry and 1 AA gun each in Hawaii and the Philippines.</li>
-<li><b>Supply routes into China.</b> At the start of each Chinese Place Units step, China receives 1 artillery in Yunnan if France holds French Indo-China (the Hanoi&ndash;Kunming railway), and 1 more if Britain holds Burma (the Burma Road), as long as China holds Yunnan.</li>
-<li><b>Belgian Congo.</b> When the Axis take the Low Countries, the Belgian Congo joins Britain &ndash; or France, if the Axis already hold the United Kingdom while France is still fighting and holds Paris.</li>
-<li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain.
-In the Politics phase where that war begins, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
-<li><b>Romania and Bulgaria join the Axis</b> at the start of Germany's round 3 combat move, with
-their armies (2 infantry, 1 artillery).</li>
-<li><b>Finland joins Germany</b> at the end of Germany's round 3 turn &ndash; too late for Finland to attack that turn &ndash; with its army (3 infantry, 1 artillery). Until then Finland is neutral and closed to everyone.</li>
-<li><b>Britain falls.</b> If the Axis take the United Kingdom, the United States and the Soviet Union immediately declare war on Germany, at the end of that combat phase, and join France and the British Empire. Japan may then declare war on what remains of the British Empire at once, even in round 1.</li>
-<li><b>The government moves to Ottawa.</b> When London falls, the King and Parliament cross to Canada: <b>Eastern Canada</b> becomes a second British capital and gets a factory, so Britain keeps collecting income, building and fighting with the rest of the Empire. The PUs Britain held when London fell still go to whoever took it. (This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.)</li>
-<li><b>Italy</b> automatically declares war on the USSR when Germany is at war with it.
-<b>Germany and Italy</b> declare war on the United States once Japan is at war with Britain and the USA.</li>
+<li><b>No liberation.</b> After the armistice, whoever takes France keeps it. France does not return.</li>
+<li><b>Germany reinforced.</b> If Germany attacks France and, on France's next turn, France still holds Paris, is still at war and
+builds new units in France, Germany receives 5 infantry in Germany at the end of France's turn (once per game). Holding Paris
+without building there is not enough.</li>
 </ul>
 
-<h3>National Objectives</h3>
-<p>Open the <b>Objectives</b> tab next to the map to see every objective and whether it is currently met, plus a Diplomacy and Events list.</p>
-<p><i>Germany</i></p>
+<h3>7.2 Governments in Exile</h3>
 <ul>
-<li>+5 Soviet Trade Agreement: while not at war with the USSR.</li>
-<li>+5 Four-Year Plan: Germany controls Germany and Czechoslovakia-Hungary.</li>
-<li>+5 Fortress Europe: Axis control France, NW Europe, Germany, Poland, Czechoslovakia-Hungary and Bulgaria-Romania.</li>
-<li>+5 Lebensraum: Axis control 3 of Baltic States, East Poland, Belorussia, Eastern Ukraine, Ukraine.</li>
-<li>+5 Axis control Karelia or the Caucasus.</li>
+<li><b>Belgian Congo.</b> When the Axis take Northwestern Europe, the Belgian Congo joins Britain &ndash; or France, if the Axis already
+hold the United Kingdom while France is still at war and holds Paris.</li>
+<li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan is at war with Britain. At the end of
+Japan's Politics phase in which that war exists, they join Britain with 1 infantry each, so Japan can attack them that same turn.</li>
 </ul>
-<p><i>Soviet Union</i> (only while at war with Germany)</p>
-<ul>
-<li>+5 Great Patriotic War: Soviets control Archangel and no Allied units are in Soviet territory.</li>
-<li>+10 Allies control 3 of Norway, Finland, Poland, Bulgaria-Romania, Czechoslovakia-Hungary, Balkans.</li>
-</ul>
-<p><i>Japan</i></p>
-<ul>
-<li>+5 Axis control Manchuria, Kiangsu and French Indo-China.</li>
-<li>+5 Axis control 4 of Kwangtung, East Indies, Borneo, Philippines, New Guinea, Solomon Islands.</li>
-<li>+5 Axis control 1 of Hawaii, Australia, India.</li>
-</ul>
-<p><i>Britain</i></p>
-<ul>
-<li>+5 Allies control any of Caroline Islands, Formosa, Iwo Jima, Japan, Okinawa.</li>
-<li>+5 Allies control Eastern and Western Canada, Gibraltar, Egypt, Australia and South Africa.</li>
-<li>+5 Britain, the USA or the USSR control France or the Balkans (not paid while France is French).</li>
-</ul>
-<p><i>France</i></p>
-<ul>
-<li>+3 French control Morocco-Algeria, French West Africa, French Equatorial Africa, Madagascar and Indo-China.</li>
-</ul>
-<p><i>Italy</i></p>
-<ul>
-<li>+5 Axis control 3 of Egypt, Trans-Jordan, France, Gibraltar.</li>
-<li>+5 Axis control Italy, Balkans, Morocco-Algeria and Libya, with no enemy surface warships in sea zones 13, 14 and 15.</li>
-</ul>
-<p><i>United States</i> (only while at war)</p>
-<ul>
-<li>+5 Allies control France. +5 Allies control the Philippines. +5 Allies control all three US mainland territories.
-+5 Allies control 3 of Midway, Wake, Hawaii, Solomon Islands.</li>
-<li>&minus;15 Neutrality Acts: while at peace with all Axis powers.</li>
-</ul>
-<p><i>China</i>: one infantry for every two territories China controls, placed in China (max 3 per territory).
-Chinese units may not leave China.</p>
 
-<h3>Victory</h3>
-<p>
-Projection of Power is on by default. The Axis win by holding 13 victory cities at the end of a round.
-The Allies begin with 13 (counting the neutral USA and USSR), so they must hold 17 &ndash; in practice,
-taking Berlin, Rome and Tokyo.
-</p>
+<h3>7.3 If London Falls</h3>
+<ul>
+<li>Whoever takes the United Kingdom captures the PUs Britain had in hand, as for any captured capital.</li>
+<li><b>The USA and the USSR declare war on Germany</b> at the end of that combat phase.</li>
+<li><b>The government moves to Ottawa.</b> Eastern Canada becomes a second British capital and receives a factory, so Britain keeps
+collecting income, building and fighting. This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.</li>
+<li>Japan may declare war on Britain at once, even in round 1.</li>
+</ul>
 
-<h3>Rules</h3>
-<p>World War II v3 rules, technology and units, as in the 1941 and 1942 scenarios. Neutral countries
-may be attacked; aircraft may not fly over them.</p>
+<h3>7.4 Germany's Allies and the East</h3>
+<ul>
+<li><b>Italy</b> sits out round 1 and enters the war automatically on its round-2 turn.</li>
+<li><b>German sphere.</b> If Italy captures France, Northwestern Europe, Poland, Bulgaria-Romania, Norway or Finland, the territory goes
+to Germany instead. Italian units there stay Italian.</li>
+<li><b>Bulgaria-Romania</b> and <b>Finland</b> join Germany in round 3 (section 4).</li>
+<li><b>Operation Barbarossa</b> is possible from round 3. Italy follows Germany into the war.</li>
+<li><b>The Soviets strike first.</b> If Germany has not attacked by the end of the USSR's round-5 turn, the USSR declares war on Germany.</li>
+</ul>
 
-<h3>Credits</h3>
+<h3>7.5 Asia and the Pacific</h3>
+<ul>
+<li><b>Crisis in Indo-China.</b> If Japan declares war on France while France is still at war with Germany: Britain may declare war on
+Japan; the USA enters the war a round early (end of its round-3 turn); and the USA places 1 infantry and 1 AA gun each in Hawaii and
+the Philippines.</li>
+<li><b>India falls.</b> If Japan takes India, the USA declares war on Japan at once.</li>
+<li><b>The southern advance.</b> If Japan holds Borneo, the East Indies and French Indo-China at the same time, the USA declares war on Japan at once.</li>
+<li><b>China's supply routes.</b> See section 9.</li>
+<li><b>August Storm.</b> The USSR may declare war on Japan from round 4. Japan may strike first from round 2 (Strike North).</li>
+</ul>
+
+<h3>7.6 When America Enters</h3>
+<p>The USA is at war with Germany, Italy and Japan by the end of its round-4 turn at the latest. It goes to war sooner if:</p>
+<ul>
+<li>Japan attacks Indo-China while France is still fighting (end of round 3);</li>
+<li>the Axis take London (war with Germany, then Italy follows);</li>
+<li>Japan takes India, or holds Borneo, the East Indies and Indo-China together (war with Japan);</li>
+<li>Japan declares war on the USA, or on Britain (the USA may then declare war on Japan).</li>
+</ul>
+<p>Once Japan is at war with both Britain and the USA, Germany declares war on the USA and Italy follows.</p>
+
+<h2>8. National Objectives</h2>
+<p>Each objective pays its bonus at the end of every turn in which it is met. The Objectives tab shows which are currently met.</p>
+<table border="1" cellspacing="0">
+<tr><th>Power</th><th>Objective</th><th>PUs</th></tr>
+<tr><td rowspan="5">Germany</td><td><b>Soviet Trade Agreement:</b> Germany is not at war with the USSR</td><td>+5</td></tr>
+<tr><td><b>Four-Year Plan:</b> Germany controls Germany and Czechoslovakia-Hungary</td><td>+5</td></tr>
+<tr><td><b>Fortress Europe:</b> the Axis control France, Northwestern Europe, Germany, Poland, Czechoslovakia-Hungary and Bulgaria-Romania</td><td>+5</td></tr>
+<tr><td><b>Lebensraum:</b> the Axis control 3 of the Baltic States, East Poland, Belorussia, Eastern Ukraine, Ukraine</td><td>+5</td></tr>
+<tr><td><b>Leningrad or the Caucasus:</b> the Axis control Karelia or the Caucasus</td><td>+5</td></tr>
+<tr><td rowspan="2">Soviet Union</td><td><b>Great Patriotic War:</b> at war with Germany, the Soviets control Archangel and no other Allied units are in Soviet territory</td><td>+5</td></tr>
+<tr><td><b>Liberation of Eastern Europe:</b> at war with Germany, and the Allies control 3 of Norway, Finland, Poland, Bulgaria-Romania, Czechoslovakia-Hungary, the Balkans</td><td>+10</td></tr>
+<tr><td rowspan="3">Japan</td><td><b>Manchukuo and the China coast:</b> the Axis control Manchuria, Kiangsu and French Indo-China</td><td>+5</td></tr>
+<tr><td><b>Southern Resource Area:</b> the Axis control 4 of Kwangtung, East Indies, Borneo, Philippines, New Guinea, Solomon Islands</td><td>+5</td></tr>
+<tr><td><b>Outer perimeter:</b> the Axis control 1 of Hawaii, Australia, India</td><td>+5</td></tr>
+<tr><td rowspan="3">Britain</td><td><b>The Empire Holds:</b> the Allies control Eastern and Western Canada, Gibraltar, Egypt, Australia and South Africa</td><td>+5</td></tr>
+<tr><td><b>A Foothold in Europe:</b> Britain, the USA or the USSR control France or the Balkans (not paid while France is French)</td><td>+5</td></tr>
+<tr><td><b>Carry the War to Japan:</b> the Allies control any of the Caroline Islands, Formosa, Iwo Jima, Japan, Okinawa</td><td>+5</td></tr>
+<tr><td>France</td><td><b>French Empire:</b> France controls Morocco-Algeria, French West Africa, French Equatorial Africa, Madagascar and Indo-China</td><td>+3</td></tr>
+<tr><td rowspan="2">Italy</td><td><b>Mediterranean conquests:</b> the Axis control 3 of Egypt, Trans-Jordan, France, Gibraltar</td><td>+5</td></tr>
+<tr><td><b>Mare Nostrum:</b> the Axis control Italy, the Balkans, Morocco-Algeria and Libya, with no enemy surface warships in sea zones 13, 14 and 15</td><td>+5</td></tr>
+<tr><td rowspan="5">USA</td><td><b>Neutrality Acts:</b> the USA is at peace with every Axis power</td><td>&minus;15</td></tr>
+<tr><td><b>Liberate France:</b> at war, and the Allies control France</td><td>+5</td></tr>
+<tr><td><b>Hold the Philippines:</b> at war, and the Allies control the Philippines</td><td>+5</td></tr>
+<tr><td><b>Arsenal of Democracy:</b> at war, and the Allies control all three US mainland territories</td><td>+5</td></tr>
+<tr><td><b>Pacific island bases:</b> at war, and the Allies control 3 of Midway, Wake, Hawaii, Solomon Islands</td><td>+5</td></tr>
+</table>
+
+<h2>9. China</h2>
+<ul>
+<li>China has no PUs and no factory. Each turn it receives <b>1 infantry for every 2 territories</b> it controls.</li>
+<li>Chinese units may be placed in any territory China controls, including captured ones, up to 3 per territory.</li>
+<li>Chinese units may only move within China: Chinghai, Ningxia, Sikang, Yunnan, Hupeh, Fukien, Suiyuan, Manchuria, Kiangsu and Kwangtung.</li>
+<li><b>Supply routes.</b> At the start of each Chinese Place Units phase, as long as China holds <b>Yunnan</b>, it receives in Yunnan:
+1 artillery if France holds French Indo-China (the Hanoi&ndash;Kunming railway), and 1 more if Britain holds Burma (the Burma Road).
+Vichy France counts as France.</li>
+</ul>
+
+<h2>10. Victory</h2>
+<p>The game uses <b>Projection of Power</b>: a side wins by holding enough victory cities at the end of a round.</p>
+<table border="1" cellspacing="0">
+<tr><th>Side</th><th>Needs</th><th>Holds at the start</th></tr>
+<tr><td>Axis</td><td>13</td><td>4: Germany, Italy, Japan, Kiangsu (Shanghai)</td></tr>
+<tr><td>Allies</td><td>17</td><td>13: United Kingdom, Eastern Canada, India, Australia, Kwangtung, Eastern and Western United States, Hawaii, Philippines, Russia, Karelia, Caucasus, France</td></tr>
+</table>
+<p>Poland (Warsaw), the eighteenth victory city, starts neutral. The Allies count the neutral USA and USSR from the start, so to win
+they must hold all of their own cities and take four of Germany, Italy, Japan, Kiangsu and Poland.</p>
+
+<h2>11. Game Settings</h2>
+<ul>
+<li>World War II v3 rules, units and technology, as in the 1941 and 1942 scenarios. National objectives, technology development,
+politics and triggers are on. Low Luck is off.</li>
+<li>Neutral countries cost nothing to invade; aircraft may not fly over them.</li>
+<li>Battleships take two hits; subs may submerge and sneak attack; shipyards are used; heavy bombers roll two dice.</li>
+</ul>
+
+<h2>12. Credits</h2>
 <p>
 World War II v3 map and rules: Triplelk Jason Clark (baseline), Zero Pilot Mike McCaughey (integration),
 ComradeKev (custom code and rules), Seidelin (playtesting), Veqryn (engine updates).<br>

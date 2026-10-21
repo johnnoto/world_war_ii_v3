@@ -5788,7 +5788,7 @@ victory cities at the end of a round. Each target can be changed in the same win
 <h3>Recommended victory-city settings</h3>
 <table border="1" cellspacing="0">
 <tr><th>Condition</th><th>Axis</th><th>Allies</th><th>What it means</th></tr>
-<tr><td><b>Projection of Power</b> (recommended)</td><td>13</td><td>15</td><td>A decisive win for either side, usually in rounds 7&ndash;10.</td></tr>
+<tr><td><b>Projection of Power</b> (recommended)</td><td>13</td><td>15</td><td>A decisive win for either side.</td></tr>
 <tr><td>Honorable Surrender</td><td>15</td><td>17</td><td>A longer game that goes most of the way to the end.</td></tr>
 <tr><td>Total Victory</td><td>18</td><td>18</td><td>Every victory city: in practice the same as playing to surrender.</td></tr>
 </table>
@@ -5799,8 +5799,7 @@ Leningrad, Moscow and Stalingrad, plus one of London, Ottawa, Sydney or Honolulu
 a war the Axis have won.</li>
 <li><b>The Allies</b> usually fall to around 10 to 12 cities once Paris, Hong Kong and Manila are lost. Getting back to 15 means
 retaking that ground and pushing into the Axis homelands &ndash; liberating Paris and Warsaw and taking Rome or Shanghai. That is a
-war the Allies have won. The old target of 17 forced the Allies to take four of the five Axis cities while losing nothing, which almost
-never happened before the game was effectively over.</li>
+war the Allies have won. The old target of 17 forced the Allies to take four of the five Axis cities while losing nothing, which in practice only came long after the war was decided.</li>
 <li>The two targets ask each side for a similar share of the enemy's cities, so neither side wins on a technicality.</li>
 </ul>
 

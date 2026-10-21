@@ -1583,6 +1583,53 @@
       <option name="placementCapturedTerritory" value="true"/>
       <option name="placementPerTerritory" value="3"/>
     </attachment>
+    <!-- National anthems: each power's anthem plays at the start of its turn for every player (sound only).
+         See map/sounds.properties and the ANTHEM_*_sounds keys in map/notifications.properties. -->
+    <attachment name="conditionAttachment_Every_Round" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="rounds" value="1-+"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Germans" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:germanTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_GERMANS"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Russians" attachTo="Russians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:russianTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_RUSSIANS"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Japanese" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:japaneseTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_JAPANESE"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:britishTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_BRITISH"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Italians" attachTo="Italians" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:italianTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_ITALIANS"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Chinese" attachTo="Chinese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:chineseCombatMove"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_CHINESE"/>
+    </attachment>
+    <attachment name="triggerAttachment_Anthem_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Every_Round"/>
+      <option name="when" value="before:americanTech"/>
+      <option name="players" value="Germans:Russians:Japanese:British:Italians:Chinese:Americans"/>
+      <option name="notification" value="ANTHEM_AMERICANS"/>
+    </attachment>
   </attachmentList>
   <initialize>
     <ownerInitialize>
@@ -2159,6 +2206,7 @@
         
 					]]></value>
     </property>
+    <property name="Use Triggers" value="true" editable="false"/>
   </propertyList>
 </game>
 <!-- 

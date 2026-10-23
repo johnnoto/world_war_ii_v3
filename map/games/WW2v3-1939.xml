@@ -3042,6 +3042,320 @@
       <option name="notification" value="GOVERNMENT_TO_OTTAWA"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Britain_Has_Lost_All_Seats_Before_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom:Eastern Canada" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Holds_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Australia" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Not_Yet_In_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Moves_To_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Britain_Has_Lost_All_Seats_Before_Australia:conditionAttachment_Britain_Holds_Australia:conditionAttachment_Government_Not_Yet_In_Australia"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_British_Factory_In_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Australia" count="1"/>
+      <option name="unitPresence" value="factory" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- The British government moves to Australia -->
+    <attachment name="triggerAttachment_Government_Moves_To_Australia" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Australia"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="territories" value="Australia"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="capital" count="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Government_Not_Yet_In_Australia"/>
+      <option name="playerProperty" value="switch" count="false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_Australia_Factory" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Australia:conditionAttachment_No_British_Factory_In_Australia"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="placement" value="Australia:factory"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_Australia_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Australia"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENT_TO_CANBERRA"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Has_Lost_All_Seats_Before_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom:Eastern Canada:Australia" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Holds_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Union of South Africa" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Not_Yet_In_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Moves_To_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Britain_Has_Lost_All_Seats_Before_Union_of_South_Africa:conditionAttachment_Britain_Holds_Union_of_South_Africa:conditionAttachment_Government_Not_Yet_In_Union_of_South_Africa"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_British_Factory_In_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Union of South Africa" count="1"/>
+      <option name="unitPresence" value="factory" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- The British government moves to Union of South Africa -->
+    <attachment name="triggerAttachment_Government_Moves_To_Union_of_South_Africa" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Union_of_South_Africa"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="territories" value="Union of South Africa"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="capital" count="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Government_Not_Yet_In_Union_of_South_Africa"/>
+      <option name="playerProperty" value="switch" count="false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_Union_of_South_Africa_Factory" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Union_of_South_Africa:conditionAttachment_No_British_Factory_In_Union_of_South_Africa"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="placement" value="Union of South Africa:factory"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_Union_of_South_Africa_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_Union_of_South_Africa"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENT_TO_PRETORIA"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Has_Lost_All_Seats_Before_India" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom:Eastern Canada:Australia:Union of South Africa" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Holds_India" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="India" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Not_Yet_In_India" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Moves_To_India" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Britain_Has_Lost_All_Seats_Before_India:conditionAttachment_Britain_Holds_India:conditionAttachment_Government_Not_Yet_In_India"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_British_Factory_In_India" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="India" count="1"/>
+      <option name="unitPresence" value="factory" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- The British government moves to India -->
+    <attachment name="triggerAttachment_Government_Moves_To_India" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_India"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="territories" value="India"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="capital" count="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Government_Not_Yet_In_India"/>
+      <option name="playerProperty" value="switch" count="false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_India_Factory" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_India:conditionAttachment_No_British_Factory_In_India"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="placement" value="India:factory"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_India_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_India"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENT_TO_DELHI"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Has_Lost_All_Seats_Before_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom:Eastern Canada:Australia:Union of South Africa:India" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Holds_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="New Zealand" count="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Not_Yet_In_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Government_Moves_To_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Britain_Has_Lost_All_Seats_Before_New_Zealand:conditionAttachment_Britain_Holds_New_Zealand:conditionAttachment_Government_Not_Yet_In_New_Zealand"/>
+    </attachment>
+    <attachment name="conditionAttachment_No_British_Factory_In_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="New Zealand" count="1"/>
+      <option name="unitPresence" value="factory" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- The British government moves to New Zealand -->
+    <attachment name="triggerAttachment_Government_Moves_To_New_Zealand" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_New_Zealand"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="territories" value="New Zealand"/>
+      <option name="territoryAttachmentName" value="TerritoryAttachment" count="territoryAttachment"/>
+      <option name="territoryProperty" value="capital" count="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Government_Not_Yet_In_New_Zealand"/>
+      <option name="playerProperty" value="switch" count="false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_New_Zealand_Factory" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_New_Zealand:conditionAttachment_No_British_Factory_In_New_Zealand"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="placement" value="New Zealand:factory"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Government_Moves_To_New_Zealand_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Government_Moves_To_New_Zealand"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GOVERNMENT_TO_WELLINGTON"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_British_Empire_Has_Fallen" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="United Kingdom:Eastern Canada:Australia:Union of South Africa:India:New Zealand" count="1"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Britain_Still_Holds_Territory" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="controlledNoWater" count="1"/>
+    </attachment>
+    <!-- Every seat of government has fallen: Britain is out of the war -->
+    <attachment name="triggerAttachment_British_Empire_Falls" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_Empire_Has_Fallen:conditionAttachment_Britain_Still_Holds_Territory"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="removeUnits" value="99:all:all"/>
+      <option name="changeOwnership" value="Afghanistan:British:Americans:false"/>
+      <option name="changeOwnership" value="Alaska:British:Americans:false"/>
+      <option name="changeOwnership" value="Anglo-Egypt Sudan:British:Americans:false"/>
+      <option name="changeOwnership" value="Angola:British:Americans:false"/>
+      <option name="changeOwnership" value="Archangel:British:Americans:false"/>
+      <option name="changeOwnership" value="Argentina Chile:British:Americans:false"/>
+      <option name="changeOwnership" value="Australia:British:Americans:false"/>
+      <option name="changeOwnership" value="Balkans:British:Americans:false"/>
+      <option name="changeOwnership" value="Baltic States:British:Americans:false"/>
+      <option name="changeOwnership" value="Belgian Congo:British:Americans:false"/>
+      <option name="changeOwnership" value="Belorussia:British:Americans:false"/>
+      <option name="changeOwnership" value="Borneo:British:Americans:false"/>
+      <option name="changeOwnership" value="Brazil:British:Americans:false"/>
+      <option name="changeOwnership" value="Bulgaria Romania:British:Americans:false"/>
+      <option name="changeOwnership" value="Burma:British:Americans:false"/>
+      <option name="changeOwnership" value="Buryatia S.S.R.:British:Americans:false"/>
+      <option name="changeOwnership" value="Caroline Islands:British:Americans:false"/>
+      <option name="changeOwnership" value="Caucasus:British:Americans:false"/>
+      <option name="changeOwnership" value="Central United States:British:Americans:false"/>
+      <option name="changeOwnership" value="Chinghai:British:Americans:false"/>
+      <option name="changeOwnership" value="Czechoslovakia Hungary:British:Americans:false"/>
+      <option name="changeOwnership" value="East Indies:British:Americans:false"/>
+      <option name="changeOwnership" value="East Poland:British:Americans:false"/>
+      <option name="changeOwnership" value="Eastern Canada:British:Americans:false"/>
+      <option name="changeOwnership" value="Eastern Ukraine:British:Americans:false"/>
+      <option name="changeOwnership" value="Eastern United States:British:Americans:false"/>
+      <option name="changeOwnership" value="Egypt:British:Americans:false"/>
+      <option name="changeOwnership" value="Eire:British:Americans:false"/>
+      <option name="changeOwnership" value="Evenki National Okrug:British:Americans:false"/>
+      <option name="changeOwnership" value="Finland:British:Americans:false"/>
+      <option name="changeOwnership" value="Formosa:British:Americans:false"/>
+      <option name="changeOwnership" value="France:British:Americans:false"/>
+      <option name="changeOwnership" value="French Equatorial Africa:British:Americans:false"/>
+      <option name="changeOwnership" value="French Indo-China Thailand:British:Americans:false"/>
+      <option name="changeOwnership" value="French Madagascar:British:Americans:false"/>
+      <option name="changeOwnership" value="French West Africa:British:Americans:false"/>
+      <option name="changeOwnership" value="Fukien:British:Americans:false"/>
+      <option name="changeOwnership" value="Germany:British:Americans:false"/>
+      <option name="changeOwnership" value="Gibraltar:British:Americans:false"/>
+      <option name="changeOwnership" value="Greenland:British:Americans:false"/>
+      <option name="changeOwnership" value="Hawaiian Islands:British:Americans:false"/>
+      <option name="changeOwnership" value="Himalaya:British:Americans:false"/>
+      <option name="changeOwnership" value="Hupeh:British:Americans:false"/>
+      <option name="changeOwnership" value="Iceland:British:Americans:false"/>
+      <option name="changeOwnership" value="India:British:Americans:false"/>
+      <option name="changeOwnership" value="Italian Africa:British:Americans:false"/>
+      <option name="changeOwnership" value="Italy:British:Americans:false"/>
+      <option name="changeOwnership" value="Iwo Jima:British:Americans:false"/>
+      <option name="changeOwnership" value="Japan:British:Americans:false"/>
+      <option name="changeOwnership" value="Karelia S.S.R.:British:Americans:false"/>
+      <option name="changeOwnership" value="Kazakh S.S.R.:British:Americans:false"/>
+      <option name="changeOwnership" value="Kiangsu:British:Americans:false"/>
+      <option name="changeOwnership" value="Kwangtung:British:Americans:false"/>
+      <option name="changeOwnership" value="Libya:British:Americans:false"/>
+      <option name="changeOwnership" value="Manchuria:British:Americans:false"/>
+      <option name="changeOwnership" value="Mexico:British:Americans:false"/>
+      <option name="changeOwnership" value="Midway:British:Americans:false"/>
+      <option name="changeOwnership" value="Mongolia:British:Americans:false"/>
+      <option name="changeOwnership" value="Morocco Algeria:British:Americans:false"/>
+      <option name="changeOwnership" value="Mozambique:British:Americans:false"/>
+      <option name="changeOwnership" value="New Guinea:British:Americans:false"/>
+      <option name="changeOwnership" value="New Zealand:British:Americans:false"/>
+      <option name="changeOwnership" value="Ningxia:British:Americans:false"/>
+      <option name="changeOwnership" value="Northern South America:British:Americans:false"/>
+      <option name="changeOwnership" value="Northwestern Europe:British:Americans:false"/>
+      <option name="changeOwnership" value="Norway:British:Americans:false"/>
+      <option name="changeOwnership" value="Novosibirsk:British:Americans:false"/>
+      <option name="changeOwnership" value="Okinawa:British:Americans:false"/>
+      <option name="changeOwnership" value="Panama:British:Americans:false"/>
+      <option name="changeOwnership" value="Persia:British:Americans:false"/>
+      <option name="changeOwnership" value="Peruvian Central:British:Americans:false"/>
+      <option name="changeOwnership" value="Philippine Islands:British:Americans:false"/>
+      <option name="changeOwnership" value="Poland:British:Americans:false"/>
+      <option name="changeOwnership" value="Rhodesia:British:Americans:false"/>
+      <option name="changeOwnership" value="Russia:British:Americans:false"/>
+      <option name="changeOwnership" value="Sahara:British:Americans:false"/>
+      <option name="changeOwnership" value="Saudi Arabia:British:Americans:false"/>
+      <option name="changeOwnership" value="Sikang:British:Americans:false"/>
+      <option name="changeOwnership" value="Solomon Islands:British:Americans:false"/>
+      <option name="changeOwnership" value="Soviet Far East:British:Americans:false"/>
+      <option name="changeOwnership" value="Spain:British:Americans:false"/>
+      <option name="changeOwnership" value="Stanovoj Chrebet:British:Americans:false"/>
+      <option name="changeOwnership" value="Suiyuan:British:Americans:false"/>
+      <option name="changeOwnership" value="Sweden:British:Americans:false"/>
+      <option name="changeOwnership" value="Switzerland:British:Americans:false"/>
+      <option name="changeOwnership" value="Trans-Jordan:British:Americans:false"/>
+      <option name="changeOwnership" value="Turkey:British:Americans:false"/>
+      <option name="changeOwnership" value="Ukraine:British:Americans:false"/>
+      <option name="changeOwnership" value="Union of South Africa:British:Americans:false"/>
+      <option name="changeOwnership" value="United Kingdom:British:Americans:false"/>
+      <option name="changeOwnership" value="Urals:British:Americans:false"/>
+      <option name="changeOwnership" value="Wake Island:British:Americans:false"/>
+      <option name="changeOwnership" value="West Indies:British:Americans:false"/>
+      <option name="changeOwnership" value="Western Canada:British:Americans:false"/>
+      <option name="changeOwnership" value="Western United States:British:Americans:false"/>
+      <option name="changeOwnership" value="Yakut S.S.R.:British:Americans:false"/>
+      <option name="changeOwnership" value="Yunnan:British:Americans:false"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_British_Empire_Falls_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_British_Empire_Has_Fallen:conditionAttachment_Britain_Still_Holds_Territory"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="BRITISH_EMPIRE_FALLS"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <attachment name="triggerAttachment_Japan_French_Peace_Check_True" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Neutral_Japanese_French"/>
       <option name="when" value="before:japanesePolitics"/>
@@ -5547,6 +5861,12 @@ hold the United Kingdom while France is still at war and holds Paris.</li>
 <li><b>The government moves to Ottawa.</b> Eastern Canada becomes a second British capital and receives a factory, so Britain keeps
 collecting income, building and fighting. This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.</li>
 <li>Japan may declare war on Britain at once, even in round 1.</li>
+<li><b>The Empire fights on.</b> If Ottawa falls too, the government moves again: to <b>Australia</b>, then <b>South Africa</b>,
+then <b>India</b>, then <b>New Zealand</b>. Each move happens at the end of the combat phase in which Britain loses its last seat of
+government, if it still holds the next one; the new seat becomes a British capital, with a factory if it has none. Each time, the PUs
+Britain had in hand go to whoever took the fallen capital.</li>
+<li><b>The fall of the Empire.</b> If London, Ottawa, Australia, South Africa, India and New Zealand are all lost, Britain is out of the
+war: its remaining units are disbanded and any territory it still holds passes to the United States.</li>
 </ul>
 
 <h3>7.4 Germany's Allies and the East</h3>

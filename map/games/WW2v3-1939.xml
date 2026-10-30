@@ -2132,7 +2132,7 @@
       <option name="placement" value="9 Sea Zone:cruiser"/>
       <option name="uses" value="1"/>
     </attachment>
-    <!-- Morocco-Algeria to Germany; French West and Equatorial Africa and Madagascar to Britain -->
+    <!-- Morocco-Algeria to Germany; French West and Equatorial Africa, Madagascar and a French-held Belgian Congo to Britain -->
     <attachment name="triggerAttachment_Vichy_Empire_Divided" attachTo="Germans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachment_France_Falls"/>
       <option name="when" value="before:germanPolitics"/>
@@ -2140,6 +2140,7 @@
       <option name="changeOwnership" value="French West Africa:French:British:false"/>
       <option name="changeOwnership" value="French Equatorial Africa:French:British:false"/>
       <option name="changeOwnership" value="French Madagascar:French:British:false"/>
+      <option name="changeOwnership" value="Belgian Congo:French:British:false"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="conditionAttachment_French_Hold_Morocco" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -2930,6 +2931,266 @@
       <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_French_Madagascar_aaGun_2"/>
       <option name="when" value="before:germanPolitics"/>
       <option name="placement" value="French Madagascar:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="3"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_3"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="4"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_4"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_5" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="5"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_5" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_5"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_6" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="6"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_6" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_6"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_7" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="7"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_7" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_7"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_8" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="8"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_8" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_8"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_9" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="9"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_9" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_9"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_infantry_10" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="infantry" count="10"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_infantry_10" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_infantry_10"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:infantry"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_artillery_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="artillery" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_artillery_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_artillery_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_artillery_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="artillery" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_artillery_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_artillery_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_artillery_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="artillery" count="3"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_artillery_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_artillery_3"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_artillery_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="artillery" count="4"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_artillery_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_artillery_4"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_armour_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="armour" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_armour_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_armour_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_armour_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="armour" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_armour_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_armour_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_armour_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="armour" count="3"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_armour_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_armour_3"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_armour_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="armour" count="4"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_armour_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_armour_4"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:armour"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_fighter_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="fighter" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_fighter_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_fighter_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_fighter_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="fighter" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_fighter_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_fighter_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_fighter_3" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="fighter" count="3"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_fighter_3" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_fighter_3"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_fighter_4" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="fighter" count="4"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_fighter_4" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_fighter_4"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:fighter"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_bomber_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="bomber" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_bomber_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_bomber_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_bomber_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="bomber" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_bomber_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_bomber_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:bomber"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_aaGun_1" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="aaGun" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_aaGun_1" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_aaGun_1"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:aaGun"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Vichy_Belgian_Congo_aaGun_2" attachTo="French" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directPresenceTerritories" value="Belgian Congo" count="1"/>
+      <option name="unitPresence" value="aaGun" count="2"/>
+    </attachment>
+    <attachment name="triggerAttachment_Vichy_Belgian_Congo_aaGun_2" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_France_Falls:conditionAttachment_Vichy_Belgian_Congo_aaGun_2"/>
+      <option name="when" value="before:germanPolitics"/>
+      <option name="placement" value="Belgian Congo:aaGun"/>
       <option name="uses" value="1"/>
     </attachment>
     <attachment name="triggerAttachment_Vichy_Forces_Disbanded" attachTo="French" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
@@ -5918,7 +6179,7 @@ the French factory is removed at the end of that combat phase.</li>
 full round to retake Paris &ndash; the Armistice of Compi&egrave;gne is signed:
 <ul>
 <li>Morocco-Algeria goes over to Germany, always with a garrison of 2 German infantry, whatever French troops were there.</li>
-<li>French West Africa, French Equatorial Africa and Madagascar, with their garrisons, go over to Britain.</li>
+<li>French West Africa, French Equatorial Africa and Madagascar (and the Belgian Congo, if it had joined France), with their garrisons, go over to Britain.</li>
 <li>French Indo-China stays with Vichy France but loses its garrison. Vichy France and Japan are at war, so Japan needs no declaration (there is no button for it): it may simply move troops in during any combat move, with no wider consequences.</li>
 <li>The French navy is removed. If France still has any warship, Britain receives one cruiser in sea zone 2, off western Britain, or off
 Halifax (sea zone 9) if the Axis hold the United Kingdom.</li>
@@ -5933,7 +6194,7 @@ without building there is not enough.</li>
 <h3>7.2 Governments in Exile</h3>
 <ul>
 <li><b>Belgian Congo.</b> The moment the Axis take Northwestern Europe &ndash; at the end of that combat phase &ndash; the Belgian Congo joins Britain &ndash; or France, if the Axis already
-hold the United Kingdom while France is still at war and holds Paris.</li>
+hold the United Kingdom while France is still at war and holds Paris. A Congo that joined France goes over to Britain if France later signs the armistice.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan and Britain are at war. They join Britain, with 1 infantry each, at the end of the Politics phase in which that war begins: if Japan declares, Japan can attack them that same turn; if Britain declares, Britain holds them at once and collects their income at the end of its turn.</li>
 </ul>
 

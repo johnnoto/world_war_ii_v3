@@ -1892,27 +1892,43 @@
     <!-- ============================================================ -->
     <!-- NATIONAL OBJECTIVES                                           -->
     <!-- ============================================================ -->
-    <attachment name="objectiveAttachment_Germans_Fortress_Europe" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <attachment name="objectiveAttachment_Germans_Atlantic_Wall" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="France:Northwestern Europe:Germany:Poland:Czechoslovakia Hungary:Bulgaria Romania" count="6"/>
+      <option name="alliedOwnershipTerritories" value="France:Northwestern Europe:Poland:Norway" count="4"/>
     </attachment>
     <attachment name="objectiveAttachment_Germans_Lebensraum" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Baltic States:East Poland:Belorussia:Eastern Ukraine:Ukraine" count="3"/>
     </attachment>
-    <attachment name="objectiveAttachment_Germans_Leningrad_Or_The_Caucasus" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
-      <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="Karelia S.S.R.:Caucasus" count="1"/>
+    <!-- 1942: Germany and Finland were to take Leningrad together -->
+    <attachment name="objectiveAttachment_Germans_Operation_Nordlicht" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="2"/>
+      <option name="alliedOwnershipTerritories" value="Finland:Karelia S.S.R." count="2"/>
+    </attachment>
+    <!-- 1942: the drive for the oil of the Caucasus -->
+    <attachment name="objectiveAttachment_Germans_Case_Blue" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="4"/>
+      <option name="alliedOwnershipTerritories" value="Caucasus" count="1"/>
+    </attachment>
+    <!-- The Axis plan to break into the Middle East and link up with Japan -->
+    <attachment name="objectiveAttachment_Germans_Plan_Orient" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="2"/>
+      <option name="alliedOwnershipTerritories" value="Trans-Jordan" count="1"/>
+    </attachment>
+    <!-- Persian oil, and the supply route from the Gulf to the Soviet Union, cut -->
+    <attachment name="objectiveAttachment_Germans_Persian_Corridor" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="2"/>
+      <option name="alliedOwnershipTerritories" value="Persia" count="1"/>
     </attachment>
     <!-- Soviet oil, grain and ore flow to Germany while the Molotov-Ribbentrop Pact holds -->
     <attachment name="objectiveAttachment_Germans_Soviet_Trade_Agreement" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="conditions" value="conditionAttachment_Neutral_Germans_Russians"/>
     </attachment>
-    <!-- The Reich's rearmed war economy, with the Skoda works -->
-    <attachment name="objectiveAttachment_Germans_Four_Year_Plan" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+    <!-- Hungary, Romania and Bulgaria bound to the Axis by the Tripartite Pact; Romanian oil -->
+    <attachment name="objectiveAttachment_Germans_European_Axis" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="directOwnershipTerritories" value="Germany:Czechoslovakia Hungary" count="2"/>
+      <option name="alliedOwnershipTerritories" value="Czechoslovakia Hungary:Bulgaria Romania" count="2"/>
     </attachment>
     <attachment name="objectiveAttachment_Russians_Great_Patriotic_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -18855,7 +18871,7 @@ Place Units, End Turn (collect income). One round is roughly six months:</p>
 <h2>3. The Powers</h2>
 <table border="1" cellspacing="0">
 <tr><th>Power</th><th>Starts at war with</th><th>Starting PUs</th><th>Income at start</th><th>Notes</th></tr>
-<tr><td>Germany</td><td>Britain, France</td><td>45</td><td>12 + 10 objectives</td><td>Soviet Trade Agreement and Four-Year Plan pay from the start.</td></tr>
+<tr><td>Germany</td><td>Britain, France</td><td>45</td><td>12 + 5 objectives</td><td>Soviet Trade Agreement pays from the start; the European Axis once Bulgaria-Romania joins in round 3.</td></tr>
 <tr><td>Soviet Union</td><td>&ndash;</td><td>18</td><td>28</td><td>Objectives only pay once at war with Germany.</td></tr>
 <tr><td>Japan</td><td>China</td><td>20</td><td>17 + 5 objectives</td><td>American Oil and Scrap Iron pays until Japan and the USA are at war.</td></tr>
 <tr><td>Britain</td><td>Germany</td><td>30</td><td>29 + 5 objectives</td><td>The Empire Holds pays from the start.</td></tr>
@@ -19029,11 +19045,14 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <p>Each objective pays its bonus at the end of every turn in which it is met. The Objectives tab shows which are currently met.</p>
 <table border="1" cellspacing="0">
 <tr><th>Power</th><th>Objective</th><th>PUs</th></tr>
-<tr><td rowspan="5">Germany</td><td><b>Soviet Trade Agreement:</b> Germany is not at war with the USSR</td><td>+5</td></tr>
-<tr><td><b>Four-Year Plan:</b> Germany controls Germany and Czechoslovakia-Hungary</td><td>+5</td></tr>
-<tr><td><b>Fortress Europe:</b> the Axis control France, Northwestern Europe, Germany, Poland, Czechoslovakia-Hungary and Bulgaria-Romania</td><td>+5</td></tr>
+<tr><td rowspan="8">Germany</td><td><b>Soviet Trade Agreement:</b> Germany is not at war with the USSR</td><td>+5</td></tr>
+<tr><td><b>The European Axis:</b> the Axis control Czechoslovakia-Hungary and Bulgaria-Romania</td><td>+5</td></tr>
+<tr><td><b>Atlantic Wall:</b> the Axis control France, Northwestern Europe, Poland and Norway</td><td>+5</td></tr>
 <tr><td><b>Lebensraum:</b> the Axis control 3 of the Baltic States, East Poland, Belorussia, Eastern Ukraine, Ukraine</td><td>+5</td></tr>
-<tr><td><b>Leningrad or the Caucasus:</b> the Axis control Karelia or the Caucasus</td><td>+5</td></tr>
+<tr><td><b>Operation Nordlicht:</b> the Axis control Finland and Karelia (Leningrad)</td><td>+2</td></tr>
+<tr><td><b>Case Blue:</b> the Axis control the Caucasus</td><td>+4</td></tr>
+<tr><td><b>Plan Orient:</b> the Axis control Trans-Jordan</td><td>+2</td></tr>
+<tr><td><b>The Persian Corridor:</b> the Axis control Persia</td><td>+2</td></tr>
 <tr><td rowspan="2">Soviet Union</td><td><b>Great Patriotic War:</b> at war with Germany, the Soviets control Archangel and no other Allied units are in Soviet territory</td><td>+5</td></tr>
 <tr><td><b>Liberation of Eastern Europe:</b> at war with Germany, and the Allies control 3 of Norway, Finland, Poland, Bulgaria-Romania, Czechoslovakia-Hungary, the Balkans</td><td>+10</td></tr>
 <tr><td rowspan="4">Japan</td><td><b>American Oil and Scrap Iron:</b> Japan is not at war with the USA. Until the 1941 embargo, American oil, scrap iron and machine tools fed Japan's war in China.</td><td>+5</td></tr>

@@ -2014,6 +2014,13 @@
       <option name="conditions" value="conditionAttachment_Americans_At_War"/>
       <option name="alliedOwnershipTerritories" value="Midway:Wake Island:Hawaiian Islands:Solomon Islands" count="3"/>
     </attachment>
+    <!-- November 1942: the first American offensive against Germany (a still-French Morocco does not count) -->
+    <attachment name="objectiveAttachment_Americans_Operation_Torch" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="3"/>
+      <option name="conditions" value="conditionAttachment_War_Americans_Germans"/>
+      <option name="directOwnershipTerritories" value="Morocco Algeria" count="1"/>
+      <option name="players" value="British:Americans:Russians:Chinese"/>
+    </attachment>
     <!-- MacArthur's Southwest Pacific Area command, headquartered in Australia from 1942 -->
     <attachment name="objectiveAttachment_Americans_Southwest_Pacific_Area" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -18136,6 +18143,64 @@
       <option name="notification" value="GREENLAND_PROTECTED"/>
       <option name="uses" value="1"/>
     </attachment>
+    <!-- The Army of Africa has already joined the Allies -->
+    <attachment name="conditionAttachment_Army_Of_Africa_Rallied" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="switch" value="false"/>
+    </attachment>
+    <attachment name="conditionAttachment_Army_Of_Africa_Not_Yet_Rallied" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallied"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <attachment name="conditionAttachment_Army_Of_Africa_Rallies_To_The_British" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Germans_French:conditionAttachment_Army_Of_Africa_Not_Yet_Rallied"/>
+      <option name="directOwnershipTerritories" value="Morocco Algeria" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_British"/>
+      <option name="when" value="after:britishBattle"/>
+      <option name="placement" value="Morocco Algeria:infantry:infantry:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_British_Notice" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_British"/>
+      <option name="when" value="after:britishBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="ARMY_OF_AFRICA_BRITISH"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_British_Switch" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_British"/>
+      <option name="when" value="after:britishBattle"/>
+      <option name="players" value="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Army_Of_Africa_Rallied"/>
+      <option name="playerProperty" value="switch" count="true"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Army_Of_Africa_Rallies_To_The_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Germans_French:conditionAttachment_Army_Of_Africa_Not_Yet_Rallied"/>
+      <option name="directOwnershipTerritories" value="Morocco Algeria" count="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_Americans"/>
+      <option name="when" value="after:americanBattle"/>
+      <option name="placement" value="Morocco Algeria:infantry:infantry:artillery"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_Americans_Notice" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_Americans"/>
+      <option name="when" value="after:americanBattle"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="ARMY_OF_AFRICA_AMERICANS"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="triggerAttachment_Army_Of_Africa_Rallies_To_The_Americans_Switch" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Army_Of_Africa_Rallies_To_The_Americans"/>
+      <option name="when" value="after:americanBattle"/>
+      <option name="players" value="British"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachment_Army_Of_Africa_Rallied"/>
+      <option name="playerProperty" value="switch" count="true"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- Neither island has been claimed yet, so the rule fires only once -->
     <attachment name="conditionAttachment_Dutch_East_Indies_Neutral" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Borneo:East Indies" count="1"/>
@@ -19032,6 +19097,7 @@ without building there is not enough.</li>
 <li><b>Belgian Congo.</b> The moment the Axis take Northwestern Europe &ndash; at the end of that combat phase &ndash; the Belgian Congo joins Britain &ndash; or France, if the Axis already
 hold the United Kingdom while France is still at war and holds Paris. A Congo that joined France goes over to Britain if France later signs the armistice.</li>
 <li><b>Iceland and Greenland.</b> With Denmark occupied and the Low Countries overrun, Denmark's North Atlantic possessions pass to the Allies at the end of the same combat phase: Iceland to Britain (Operation Fork, May 1940) and Greenland to the United States (the Greenland Agreement, April 1941). Each changes hands only if it is still neutral then; neither brings any units. The USA takes Greenland even while it is at peace.</li>
+<li><b>The Army of Africa rallies.</b> The first time Britain or the USA takes Morocco-Algeria after France's armistice, Vichy's army in North Africa &ndash; some 125,000 men in November 1942 &ndash; goes over to the Allies, as it did after Operation Torch: the power that took it receives 2 infantry and 1 artillery there, at the end of that combat phase. Once per game.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan and Britain are at war. They join Britain, with 1 infantry each, at the end of the Politics phase in which that war begins: if Japan declares, Japan can attack them that same turn; if Britain declares, Britain holds them at once and collects their income at the end of its turn.</li>
 </ul>
 
@@ -19113,8 +19179,9 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <tr><td>France</td><td><b>French Empire:</b> France controls Morocco-Algeria, French West Africa, French Equatorial Africa, Madagascar and Indo-China</td><td>+3</td></tr>
 <tr><td rowspan="2">Italy</td><td><b>Mediterranean conquests:</b> the Axis control 3 of Egypt, Trans-Jordan, France, Gibraltar</td><td>+5</td></tr>
 <tr><td><b>Mare Nostrum:</b> the Axis control Italy, the Balkans, Morocco-Algeria and Libya, with no enemy surface warships in sea zones 13, 14 and 15</td><td>+5</td></tr>
-<tr><td rowspan="6">USA</td><td><b>Neutrality Acts:</b> the USA is at peace with every Axis power</td><td>&minus;15</td></tr>
+<tr><td rowspan="7">USA</td><td><b>Neutrality Acts:</b> the USA is at peace with every Axis power</td><td>&minus;15</td></tr>
 <tr><td><b>Liberate France:</b> at war, and the Allies control France</td><td>+5</td></tr>
+<tr><td><b>Operation Torch:</b> at war with Germany, and the Allies have taken Morocco-Algeria (it does not count while still French)</td><td>+3</td></tr>
 <tr><td><b>Hold the Philippines:</b> at war, and the Allies control the Philippines</td><td>+5</td></tr>
 <tr><td><b>Arsenal of Democracy:</b> at war, and the Allies control all three US mainland territories</td><td>+5</td></tr>
 <tr><td><b>Pacific island bases:</b> at war, and the Allies control 3 of Midway, Wake, Hawaii, Solomon Islands</td><td>+5</td></tr>

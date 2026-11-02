@@ -1925,6 +1925,11 @@
       <option name="conditions" value="conditionAttachment_War_Russians_Germans"/>
       <option name="alliedOwnershipTerritories" value="Norway:Finland:Poland:Bulgaria Romania:Czechoslovakia Hungary:Balkans" count="3"/>
     </attachment>
+    <!-- American oil, scrap iron and machine tools keep Japan's war in China going until the embargo -->
+    <attachment name="objectiveAttachment_Japanese_American_Oil_And_Scrap_Iron" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="5"/>
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_Americans"/>
+    </attachment>
     <attachment name="objectiveAttachment_Japanese_Manchukuo_And_China_Coast" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="alliedOwnershipTerritories" value="Manchuria:Kiangsu:French Indo-China Thailand" count="3"/>
@@ -18852,7 +18857,7 @@ Place Units, End Turn (collect income). One round is roughly six months:</p>
 <tr><th>Power</th><th>Starts at war with</th><th>Starting PUs</th><th>Income at start</th><th>Notes</th></tr>
 <tr><td>Germany</td><td>Britain, France</td><td>45</td><td>12 + 10 objectives</td><td>Soviet Trade Agreement and Four-Year Plan pay from the start.</td></tr>
 <tr><td>Soviet Union</td><td>&ndash;</td><td>18</td><td>28</td><td>Objectives only pay once at war with Germany.</td></tr>
-<tr><td>Japan</td><td>China</td><td>20</td><td>17</td><td></td></tr>
+<tr><td>Japan</td><td>China</td><td>20</td><td>17 + 5 objectives</td><td>American Oil and Scrap Iron pays until Japan and the USA are at war.</td></tr>
 <tr><td>Britain</td><td>Germany</td><td>30</td><td>29 + 5 objectives</td><td>The Empire Holds pays from the start.</td></tr>
 <tr><td>France</td><td>Germany</td><td>15</td><td>12 + 3 objectives</td><td>French Empire pays while all five colonies are French.</td></tr>
 <tr><td>Italy</td><td>&ndash;</td><td>10</td><td>8</td><td>Enters the war automatically in round 2.</td></tr>
@@ -19031,7 +19036,8 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <tr><td><b>Leningrad or the Caucasus:</b> the Axis control Karelia or the Caucasus</td><td>+5</td></tr>
 <tr><td rowspan="2">Soviet Union</td><td><b>Great Patriotic War:</b> at war with Germany, the Soviets control Archangel and no other Allied units are in Soviet territory</td><td>+5</td></tr>
 <tr><td><b>Liberation of Eastern Europe:</b> at war with Germany, and the Allies control 3 of Norway, Finland, Poland, Bulgaria-Romania, Czechoslovakia-Hungary, the Balkans</td><td>+10</td></tr>
-<tr><td rowspan="3">Japan</td><td><b>Manchukuo and the China coast:</b> the Axis control Manchuria, Kiangsu and French Indo-China</td><td>+5</td></tr>
+<tr><td rowspan="4">Japan</td><td><b>American Oil and Scrap Iron:</b> Japan is not at war with the USA. Until the 1941 embargo, American oil, scrap iron and machine tools fed Japan's war in China.</td><td>+5</td></tr>
+<tr><td><b>Manchukuo and the China coast:</b> the Axis control Manchuria, Kiangsu and French Indo-China</td><td>+5</td></tr>
 <tr><td><b>Southern Resource Area:</b> the Axis control 4 of Kwangtung, East Indies, Borneo, Philippines, New Guinea, Solomon Islands</td><td>+5</td></tr>
 <tr><td><b>Outer perimeter:</b> the Axis control 1 of Hawaii, Australia, India</td><td>+5</td></tr>
 <tr><td rowspan="4">Britain</td><td><b>The Empire Holds:</b> the Allies control Gibraltar, South Africa, Egypt, Australia and India</td><td>+5</td></tr>

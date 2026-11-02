@@ -1925,10 +1925,10 @@
       <option name="objectiveValue" value="5"/>
       <option name="conditions" value="conditionAttachment_Neutral_Germans_Russians"/>
     </attachment>
-    <!-- Hungary, Romania and Bulgaria bound to the Axis by the Tripartite Pact; Romanian oil -->
+    <!-- Italy, Hungary, Romania and Bulgaria bound to Germany by the Pact of Steel and the Tripartite Pact; Romanian oil -->
     <attachment name="objectiveAttachment_Germans_European_Axis" attachTo="Germans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="Czechoslovakia Hungary:Bulgaria Romania" count="2"/>
+      <option name="alliedOwnershipTerritories" value="Italy:Czechoslovakia Hungary:Bulgaria Romania" count="3"/>
     </attachment>
     <attachment name="objectiveAttachment_Russians_Great_Patriotic_War" attachTo="Russians" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
@@ -19081,7 +19081,7 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <table border="1" cellspacing="0">
 <tr><th>Power</th><th>Objective</th><th>PUs</th></tr>
 <tr><td rowspan="8">Germany</td><td><b>Soviet Trade Agreement:</b> Germany is not at war with the USSR</td><td>+5</td></tr>
-<tr><td><b>The European Axis:</b> the Axis control Czechoslovakia-Hungary and Bulgaria-Romania</td><td>+5</td></tr>
+<tr><td><b>The European Axis:</b> the Axis control Italy, Czechoslovakia-Hungary and Bulgaria-Romania</td><td>+5</td></tr>
 <tr><td><b>Atlantic Wall:</b> the Axis control France, Northwestern Europe, Poland and Norway</td><td>+5</td></tr>
 <tr><td><b>Lebensraum:</b> the Axis control 3 of the Baltic States, East Poland, Belorussia, Eastern Ukraine, Ukraine</td><td>+5</td></tr>
 <tr><td><b>Operation Nordlicht:</b> the Axis control Finland and Karelia (Leningrad)</td><td>+2</td></tr>

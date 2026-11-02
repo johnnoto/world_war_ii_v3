@@ -2013,7 +2013,7 @@
     <attachment name="objectiveAttachment_Americans_Southwest_Pacific_Area" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
       <option name="conditions" value="conditionAttachment_Americans_At_War"/>
-      <option name="alliedOwnershipTerritories" value="Australia" count="1"/>
+      <option name="alliedOwnershipTerritories" value="Australia:New Guinea:Solomon Islands" count="3"/>
     </attachment>
     <!-- Peacetime economy: the United States is not mobilised while it is at peace -->
     <attachment name="objectiveAttachment_Americans_Neutrality_Acts" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -19112,7 +19112,7 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <tr><td><b>Hold the Philippines:</b> at war, and the Allies control the Philippines</td><td>+5</td></tr>
 <tr><td><b>Arsenal of Democracy:</b> at war, and the Allies control all three US mainland territories</td><td>+5</td></tr>
 <tr><td><b>Pacific island bases:</b> at war, and the Allies control 3 of Midway, Wake, Hawaii, Solomon Islands</td><td>+5</td></tr>
-<tr><td><b>Southwest Pacific Area:</b> at war, and the Allies control Australia &ndash; from 1942 General MacArthur's headquarters and the base for the drive back across the Pacific</td><td>+5</td></tr>
+<tr><td><b>Southwest Pacific Area:</b> at war, and the Allies control Australia, New Guinea and the Solomon Islands &ndash; General MacArthur's command from 1942, with its headquarters in Australia</td><td>+5</td></tr>
 </table>
 
 <h2>9. China</h2>

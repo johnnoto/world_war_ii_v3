@@ -19181,7 +19181,7 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <tr><td><b>Mare Nostrum:</b> the Axis control Italy, the Balkans, Morocco-Algeria and Libya, with no enemy surface warships in sea zones 13, 14 and 15</td><td>+5</td></tr>
 <tr><td rowspan="7">USA</td><td><b>Neutrality Acts:</b> the USA is at peace with every Axis power</td><td>&minus;15</td></tr>
 <tr><td><b>Liberate France:</b> at war, and the Allies control France</td><td>+5</td></tr>
-<tr><td><b>Operation Torch:</b> at war with Germany, and the Allies have taken Morocco-Algeria (it does not count while still French)</td><td>+3</td></tr>
+<tr><td><b>Operation Torch:</b> at war with Germany, and the Allies hold Morocco-Algeria; paid each turn they hold it (a still-French Morocco-Algeria does not count)</td><td>+3</td></tr>
 <tr><td><b>Hold the Philippines:</b> at war, and the Allies control the Philippines</td><td>+5</td></tr>
 <tr><td><b>Arsenal of Democracy:</b> at war, and the Allies control all three US mainland territories</td><td>+5</td></tr>
 <tr><td><b>Pacific island bases:</b> at war, and the Allies control 3 of Midway, Wake, Hawaii, Solomon Islands</td><td>+5</td></tr>

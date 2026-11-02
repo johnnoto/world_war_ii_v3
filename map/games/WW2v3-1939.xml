@@ -1943,7 +1943,11 @@
     </attachment>
     <attachment name="objectiveAttachment_British_The_Empire_Holds" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="objectiveValue" value="5"/>
-      <option name="alliedOwnershipTerritories" value="Eastern Canada:Western Canada:Gibraltar:Egypt:Australia:Union of South Africa" count="6"/>
+      <option name="alliedOwnershipTerritories" value="Gibraltar:Union of South Africa:Egypt:Australia:India" count="5"/>
+    </attachment>
+    <attachment name="objectiveAttachment_British_Middle_Eastern_Oil" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="objectiveValue" value="5"/>
+      <option name="alliedOwnershipTerritories" value="Trans-Jordan:Persia" count="2"/>
     </attachment>
     <!-- Paid once the Allies have taken France or the Balkans for themselves, not while France is French -->
     <attachment name="objectiveAttachment_British_A_Foothold_In_Europe" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
@@ -19030,7 +19034,8 @@ other: Japan may declare war on Germany and on Italy, and Germany and Italy may 
 <tr><td rowspan="3">Japan</td><td><b>Manchukuo and the China coast:</b> the Axis control Manchuria, Kiangsu and French Indo-China</td><td>+5</td></tr>
 <tr><td><b>Southern Resource Area:</b> the Axis control 4 of Kwangtung, East Indies, Borneo, Philippines, New Guinea, Solomon Islands</td><td>+5</td></tr>
 <tr><td><b>Outer perimeter:</b> the Axis control 1 of Hawaii, Australia, India</td><td>+5</td></tr>
-<tr><td rowspan="3">Britain</td><td><b>The Empire Holds:</b> the Allies control Eastern and Western Canada, Gibraltar, Egypt, Australia and South Africa</td><td>+5</td></tr>
+<tr><td rowspan="4">Britain</td><td><b>The Empire Holds:</b> the Allies control Gibraltar, South Africa, Egypt, Australia and India</td><td>+5</td></tr>
+<tr><td><b>Middle Eastern Oil:</b> the Allies control Trans-Jordan and Persia (Persia starts neutral)</td><td>+5</td></tr>
 <tr><td><b>A Foothold in Europe:</b> Britain, the USA or the USSR control France or the Balkans (not paid while France is French)</td><td>+5</td></tr>
 <tr><td><b>Carry the War to Japan:</b> the Allies control any of the Caroline Islands, Formosa, Iwo Jima, Japan, Okinawa</td><td>+5</td></tr>
 <tr><td>France</td><td><b>French Empire:</b> France controls Morocco-Algeria, French West Africa, French Equatorial Africa, Madagascar and Indo-China</td><td>+3</td></tr>

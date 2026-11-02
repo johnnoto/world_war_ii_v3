@@ -18093,6 +18093,38 @@
       <option name="notification" value="GOVERNMENTS_IN_EXILE_FRANCE"/>
       <option name="uses" value="1"/>
     </attachment>
+    <attachment name="conditionAttachment_Iceland_Unclaimed" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Iceland" count="1"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- Denmark is occupied: Iceland passes to the British -->
+    <attachment name="triggerAttachment_Iceland_Passes_To_The_British" attachTo="British" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Iceland_Unclaimed"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="changeOwnership" value="Iceland:any:British:false"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="ICELAND_OCCUPIED"/>
+      <option name="uses" value="1"/>
+    </attachment>
+    <attachment name="conditionAttachment_Greenland_Unclaimed" attachTo="Americans" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="directOwnershipTerritories" value="Greenland" count="1"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="invert" value="true"/>
+    </attachment>
+    <!-- Denmark is occupied: Greenland passes to the Americans -->
+    <attachment name="triggerAttachment_Greenland_Passes_To_The_Americans" attachTo="Americans" javaClass="games.strategy.triplea.attachments.TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Axis_Hold_Low_Countries:conditionAttachment_Greenland_Unclaimed"/>
+      <option name="when" value="after:germanBattle"/>
+      <option name="when" value="after:italianBattle"/>
+      <option name="when" value="after:japaneseBattle"/>
+      <option name="changeOwnership" value="Greenland:any:Americans:false"/>
+      <option name="players" value="Germans:Russians:Japanese:British:French:Italians:Chinese:Americans"/>
+      <option name="notification" value="GREENLAND_PROTECTED"/>
+      <option name="uses" value="1"/>
+    </attachment>
     <!-- Neither island has been claimed yet, so the rule fires only once -->
     <attachment name="conditionAttachment_Dutch_East_Indies_Neutral" attachTo="British" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="directOwnershipTerritories" value="Borneo:East Indies" count="1"/>
@@ -18905,6 +18937,8 @@ Everyone else is at peace until war is declared.</p>
 <tr><td>Finland</td><td>End of Germany's round-3 turn</td><td>Germany, with 3 infantry and 1 artillery</td></tr>
 <tr><td>Borneo, East Indies</td><td>Japan and Britain go to war (whoever declares)</td><td>Britain, with 1 infantry each</td></tr>
 <tr><td>Belgian Congo</td><td>The Axis take Northwestern Europe</td><td>Britain (or France, see 7.2)</td></tr>
+<tr><td>Iceland</td><td>The Axis take Northwestern Europe, if Iceland is still neutral</td><td>Britain (Operation Fork)</td></tr>
+<tr><td>Greenland</td><td>The Axis take Northwestern Europe, if Greenland is still neutral</td><td>The USA (the Greenland Agreement)</td></tr>
 </table>
 <p>Spain, Sweden, Switzerland, Turkey, Eire, Saudi Arabia, Afghanistan, Mongolia and the other remaining neutrals are impassable for the whole game.</p>
 
@@ -18986,6 +19020,7 @@ without building there is not enough.</li>
 <ul>
 <li><b>Belgian Congo.</b> The moment the Axis take Northwestern Europe &ndash; at the end of that combat phase &ndash; the Belgian Congo joins Britain &ndash; or France, if the Axis already
 hold the United Kingdom while France is still at war and holds Paris. A Congo that joined France goes over to Britain if France later signs the armistice.</li>
+<li><b>Iceland and Greenland.</b> With Denmark occupied and the Low Countries overrun, Denmark's North Atlantic possessions pass to the Allies at the end of the same combat phase: Iceland to Britain (Operation Fork, May 1940) and Greenland to the United States (the Greenland Agreement, April 1941). Each changes hands only if it is still neutral then; neither brings any units. The USA takes Greenland even while it is at peace.</li>
 <li><b>Dutch East Indies.</b> Borneo and the East Indies stay neutral and closed until Japan and Britain are at war. They join Britain, with 1 infantry each, at the end of the Politics phase in which that war begins: if Japan declares, Japan can attack them that same turn; if Britain declares, Britain holds them at once and collects their income at the end of its turn.</li>
 </ul>
 

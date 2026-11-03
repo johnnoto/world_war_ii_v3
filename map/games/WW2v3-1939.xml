@@ -18273,25 +18273,19 @@
       <option name="relationshipChange" value="Germans:Russians:War"/>
       <option name="text" value="BARBAROSSA"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Strike_South" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
-      <option name="relationshipChange" value="Japanese:British:War"/>
-      <option name="relationshipChange" value="Japanese:Americans:War"/>
-      <option name="text" value="STRIKE_SOUTH"/>
-    </attachment>
     <attachment name="conditionAttachment_Japan_Free_To_Attack_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Axis_Hold_United_Kingdom"/>
       <option name="conditionType" value="OR"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Japan_Declares_War_On_Britain" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British:conditionAttachment_Japan_Free_To_Attack_Britain"/>
-      <option name="relationshipChange" value="Japanese:British:War"/>
-      <option name="text" value="STRIKE_SOUTH_BRITAIN"/>
+    <attachment name="conditionAttachment_Japan_Not_Yet_At_War_With_Both_Western_Powers" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.RulesAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Neutral_Japanese_British:conditionAttachment_Neutral_Japanese_Americans"/>
+      <option name="conditionType" value="OR"/>
     </attachment>
-    <attachment name="politicalActionAttachment_Japan_Declares_War_On_The_USA" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
-      <option name="conditions" value="conditionAttachment_Round_2_Or_Later:conditionAttachment_Neutral_Japanese_Americans"/>
+    <attachment name="politicalActionAttachment_Strike_South" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
+      <option name="conditions" value="conditionAttachment_Japan_Free_To_Attack_Britain:conditionAttachment_Japan_Not_Yet_At_War_With_Both_Western_Powers"/>
+      <option name="relationshipChange" value="Japanese:British:War"/>
       <option name="relationshipChange" value="Japanese:Americans:War"/>
-      <option name="text" value="JAPAN_WAR_USA"/>
+      <option name="text" value="STRIKE_SOUTH"/>
     </attachment>
     <attachment name="politicalActionAttachment_Occupy_Indochina" attachTo="Japanese" javaClass="games.strategy.triplea.attachments.PoliticalActionAttachment" type="player">
       <option name="conditions" value="conditionAttachment_Neutral_Japanese_French"/>
@@ -19034,14 +19028,12 @@ Everyone else is at peace until war is declared.</p>
 <tr><th>Power</th><th>Declaration</th><th>Available</th></tr>
 <tr><td rowspan="2">Germany</td><td>Operation Barbarossa (war with the USSR)</td><td>From round 3</td></tr>
 <tr><td>War with the USA</td><td>From round 5</td></tr>
-<tr><td rowspan="5">Japan</td><td>Occupy Indochina (war with France)</td><td>From round 1 (always a crisis in round 1). From round 2, once Paris has fallen, Japan is at war with France automatically, with no consequences (7.5).</td></tr>
-<tr><td>War with Britain</td><td>From round 2, or at once if the Axis hold the United Kingdom</td></tr>
-<tr><td>War with the USA</td><td>From round 2</td></tr>
-<tr><td>Strike South (Britain and the USA together)</td><td>From round 2</td></tr>
+<tr><td rowspan="3">Japan</td><td>Occupy Indochina (war with France)</td><td>From round 1 (always a crisis in round 1). From round 2, once Paris has fallen, Japan is at war with France automatically, with no consequences (7.5).</td></tr>
+<tr><td>Strike South (war with Britain and the USA together; Japan cannot declare on either alone)</td><td>From round 2, or at once if the Axis hold the United Kingdom</td></tr>
 <tr><td>Strike North (war with the USSR)</td><td>From round 2</td></tr>
 <tr><td>Soviet Union</td><td>August Storm (war with Japan)</td><td>Any turn, from round 1</td></tr>
 <tr><td>Britain</td><td>War with Japan</td><td>From round 3, or at once after a Crisis in Indo-China (7.5)</td></tr>
-<tr><td rowspan="2">USA</td><td>War with Japan</td><td>Once Japan has declared war on Britain (a British declaration on Japan does not count)</td></tr>
+<tr><td rowspan="2">USA</td><td>War with Japan</td><td>From round 6 (in practice the USA is already at war by the end of round 4, 7.6)</td></tr>
 <tr><td>War with Italy</td><td>Once the USA is at war with Germany and Britain is at war with Italy</td></tr>
 </table>
 
@@ -19114,7 +19106,7 @@ hold the United Kingdom while France is still at war and holds Paris. A Congo th
 <li><b>The USA and the USSR declare war on Germany</b> at the end of that combat phase.</li>
 <li><b>The government moves to Ottawa.</b> Eastern Canada becomes a second British capital and receives a factory, so Britain keeps
 collecting income, building and fighting. This needs Britain to hold Eastern Canada; otherwise it happens as soon as Britain does.</li>
-<li>Japan may declare war on Britain at once, even in round 1.</li>
+<li>Japan may strike south (war with Britain and the USA together) at once, even in round 1.</li>
 <li><b>The Empire fights on.</b> If Ottawa falls too, the government moves again: to <b>Australia</b>, then <b>South Africa</b>,
 then <b>India</b>, then <b>New Zealand</b>. Each move happens at the end of the combat phase in which Britain loses its last seat of
 government, if it still holds the next one; the new seat becomes a British capital, with a factory if it has none. Each time, the PUs
@@ -19152,7 +19144,7 @@ the Philippines.</li>
 <li>Japan attacks Indo-China while France is still fighting (end of round 3);</li>
 <li>the Axis take London (war with Germany, then Italy follows);</li>
 <li>Japan takes India, or holds Borneo, the East Indies and Indo-China together (war with Japan);</li>
-<li>Japan declares war on the USA, or on Britain (the USA may then declare war on Japan).</li>
+<li>Japan strikes south (war with Britain and the USA together).</li>
 </ul>
 <p>Once Japan is at war with both Britain and the USA, Germany declares war on the USA and Italy follows.</p>
 
